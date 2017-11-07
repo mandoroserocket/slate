@@ -1,0 +1,1612 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "The Platform REST API lets you integrate with Rose Rocket applications using simple HTTP methods, in JSON formats, making this an ideal API for developing mobile applications or external clients.",
+    "version": "1.0.0",
+    "title": "Rose Rocket Platform REST API",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "platform@roserocket.com"
+    }
+  },
+  "host": "platform.roserocket.com",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "order",
+      "description": "Manage orders"
+    },
+    {
+      "name": "quote",
+      "description": "Manage quotes"
+    },
+    {
+      "name": "customer",
+      "description": "Manage customers"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/orders": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Search orders",
+        "description": "",
+        "operationId": "searchOrders",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "created_start_at",
+            "in": "query",
+            "description": "Date range (start)",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "created_end_at",
+            "in": "query",
+            "description": "Date range (end)",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "search_term",
+            "in": "query",
+            "description": "Search term",
+            "type": "string"
+          },
+          {
+            "name": "external_id",
+            "in": "query",
+            "description": "External ID's to filter by",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Pagination offset",
+            "default": 0,
+            "minimum": 0,
+            "type": "integer"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Pagination limit",
+            "default": 20,
+            "minimum": 0,
+            "maximum": 50,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orders": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Order"
+                  }
+                },
+                "offset": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/customers/{customerID}/orders": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Create new customer's order",
+        "description": "",
+        "operationId": "createOrder",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "customer": {
+                  "$ref": "#/definitions/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/customers/{customerID}/orders/{orderID}": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Get customer's order by ID",
+        "description": "",
+        "operationId": "getOrderByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "$ref": "#/definitions/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Update customer's order by ID",
+        "description": "",
+        "operationId": "updateOrderByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "$ref": "#/definitions/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Delete customer's order by ID",
+        "description": "",
+        "operationId": "deleteOrderByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "$ref": "#/definitions/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers": {
+      "get": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Search customers",
+        "description": "",
+        "operationId": "searchCustomers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "search_term",
+            "in": "query",
+            "description": "Search term",
+            "type": "string"
+          },
+          {
+            "name": "external_id",
+            "in": "query",
+            "description": "External ID's to filter by",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "csv"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Pagination offset",
+            "default": 0,
+            "minimum": 0,
+            "type": "integer"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Pagination limit",
+            "default": 20,
+            "minimum": 0,
+            "maximum": 50,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "customers": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Customer"
+                  }
+                },
+                "offset": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Create new customer",
+        "description": "",
+        "operationId": "createCustomer",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "customer": {
+                  "$ref": "#/definitions/Customer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/customers/{customerID}": {
+      "get": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Get customer by ID",
+        "description": "",
+        "operationId": "getCustomerByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "customer": {
+                  "$ref": "#/definitions/Customer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Update customer by ID",
+        "description": "",
+        "operationId": "updateCustomerByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "$ref": "#/definitions/Order"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Delete customer by ID",
+        "description": "",
+        "operationId": "deleteCustomerByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "customer": {
+                  "$ref": "#/definitions/Customer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/customers/{customerExtID}/upsert": {
+      "put": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "Upsert customer by external ID",
+        "description": "",
+        "operationId": "upsertCustomerByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerExtID",
+            "in": "path",
+            "description": "External ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "customer": {
+                  "$ref": "#/definitions/Customer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/customers/{customerID}/orders/{orderID}/spot_quote": {
+      "post": {
+        "tags": [
+          "quote"
+        ],
+        "summary": "Create a spot quote for a customer's order",
+        "description": "",
+        "operationId": "createOrderSpotQuote",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SpotQuote"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quote": {
+                  "$ref": "#/definitions/Quote"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "roserocket_auth": {
+      "type": "oauth2",
+      "tokenUrl": "https://auth.roserocket.com/oauth/token",
+      "flow": "password",
+      "scopes": {
+        "orders": "manage orders"
+      }
+    },
+    "jwt": {
+      "description": "",
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Order": {
+      "description": "Customer's order",
+      "type": "object",
+      "required": [
+        "origin",
+        "destination",
+        "billing"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Auto generated system ID",
+          "readOnly": true
+        },
+        "sequence_id": {
+          "type": "integer",
+          "description": "Auto generated sequence ID per customer",
+          "readOnly": true
+        },
+        "external_id": {
+          "type": "string",
+          "description": "External ID for mapping the order to an external system. This field value can be _null_"
+        },
+        "public_id": {
+          "type": "string",
+          "description": "Auto generated human readable ID",
+          "readOnly": true
+        },
+        "customer": {
+          "$ref": "#/definitions/OrderCustomer"
+        },
+        "origin": {
+          "$ref": "#/definitions/OrderAddress"
+        },
+        "destination": {
+          "$ref": "#/definitions/OrderAddress"
+        },
+        "billing": {
+          "$ref": "#/definitions/OrderAddress"
+        },
+        "status": {
+          "type": "string",
+          "description": "Order Status",
+          "enum": [
+            "new",
+            "saved",
+            "cancelled",
+            "quoting",
+            "quoted",
+            "no-quote",
+            "spot-quote-requested",
+            "pending-dispatch",
+            "dispatched",
+            "in-transit",
+            "delivered",
+            "archived",
+            "invoice-created",
+            "invoice-sent",
+            "invoice-paid",
+            "claim"
+          ],
+          "readOnly": true
+        },
+        "billing_option": {
+          "type": "string",
+          "description": "Billing Option",
+          "enum": [
+            "prepaid",
+            "collect",
+            "thirdparty"
+          ],
+          "default": "prepaid"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes that will appear on BOL"
+        },
+        "po_num": {
+          "type": "string",
+          "description": "Purchase order numbers (if multiple use comma separated values)"
+        },
+        "tender_num": {
+          "type": "string",
+          "description": "Tender number"
+        },
+        "ref_num": {
+          "type": "string",
+          "description": "Reference number"
+        },
+        "custom_broker": {
+          "type": "string",
+          "description": "Custom broker information"
+        },
+        "declared_value": {
+          "type": "number",
+          "format": "float",
+          "description": "Declared value"
+        },
+        "declared_value_currency": {
+          "type": "string",
+          "description": "Declared value currency",
+          "enum": [
+            "cad",
+            "usd"
+          ]
+        },
+        "pickup_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Pickup time range (start)"
+        },
+        "pickup_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Pickup time range (end)"
+        },
+        "pickup_appt_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Pickup appointment time range (start). This field value can be _null_"
+        },
+        "pickup_appt_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Pickup appointment time range (end). This field value can be _null_"
+        },
+        "delivery_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expected delivery time range (start). This field value can be _null_"
+        },
+        "delivery_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Expected delivery time range (end). This field value can be _null_"
+        },
+        "delivery_appt_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Delivery appointment time range (start). This field value can be _null_"
+        },
+        "delivery_appt_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Delivery appointment time range (end). This field value can be _null_"
+        },
+        "dim_type": {
+          "type": "string",
+          "description": "Dimension type",
+          "enum": [
+            "ltl",
+            "ftl",
+            "volume"
+          ],
+          "default": "ltl"
+        },
+        "commodities": {
+          "description": "Commodities items",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrderCommodity"
+          }
+        },
+        "accessorials": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      }
+    },
+    "OrderAddress": {
+      "description": "Address",
+      "type": "object",
+      "properties": {
+        "address_book_id": {
+          "description": "Auto generated address book id. This field value can be _null_",
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "address_book_external_id": {
+          "description": "Address book external id. This field value can be _null_",
+          "type": "string",
+          "format": "uuid"
+        },
+        "org_name": {
+          "description": "Organization name",
+          "type": "string"
+        },
+        "contact_name": {
+          "description": "Contact name",
+          "type": "string"
+        },
+        "address_1": {
+          "description": "Address line 1",
+          "type": "string"
+        },
+        "address_2": {
+          "description": "Address line 2",
+          "type": "string"
+        },
+        "suite": {
+          "description": "Suite number",
+          "type": "string"
+        },
+        "city": {
+          "description": "City",
+          "type": "string"
+        },
+        "state": {
+          "description": "State / Province",
+          "type": "string"
+        },
+        "country": {
+          "description": "Country (2 letter ISO)",
+          "type": "string"
+        },
+        "postal": {
+          "description": "Postal / Zip code",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Phone number",
+          "type": "string"
+        },
+        "phone_ext": {
+          "description": "Phone extension",
+          "type": "string"
+        },
+        "email": {
+          "description": "Email",
+          "type": "string"
+        },
+        "fax": {
+          "description": "Fax",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "bus_hours_start_at": {
+          "description": "Business hours range (start). This field value can be _null_",
+          "type": "string",
+          "format": "date-time"
+        },
+        "bus_hours_end_at": {
+          "description": "Business hours range (end). This field value can be _null_",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "OrderCustomer": {
+      "description": "Customer",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto generated customer id",
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "external_id": {
+          "description": "Customer external id. This field value can be _null_",
+          "type": "string",
+          "readOnly": true
+        },
+        "short_code": {
+          "description": "Customer's short code",
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "OrderCommodity": {
+      "description": "Commodity item",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto generated commodity id",
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "measurement_unit": {
+          "type": "string",
+          "description": "Measurement unit",
+          "enum": [
+            "inch",
+            "cm"
+          ]
+        },
+        "weight_unit": {
+          "type": "string",
+          "description": "Weight unit",
+          "enum": [
+            "lb",
+            "kg"
+          ]
+        },
+        "freight_class": {
+          "description": "Freight class",
+          "type": "string"
+        },
+        "commodity_type": {
+          "type": "string",
+          "description": "Commodity type",
+          "enum": [
+            "skid",
+            "other"
+          ],
+          "default": "skid"
+        },
+        "commodity_type_other": {
+          "description": "If commodity type is set to _other_, then this field must have value",
+          "type": "string"
+        },
+        "description": {
+          "description": "Description of the commodity",
+          "type": "string"
+        },
+        "feet": {
+          "description": "Total feet in length of the truck the commodity is occupying. This field must have value if order's dimension type is set to _ftl_",
+          "type": "number",
+          "format": "float"
+        },
+        "volume": {
+          "description": "Total volume of the commodity item. This field must have value if order's dimension type is set to _volume_",
+          "type": "number",
+          "format": "float"
+        },
+        "length": {
+          "description": "Length of the commodity",
+          "type": "number",
+          "format": "float"
+        },
+        "width": {
+          "description": "Width of the commodity",
+          "type": "number",
+          "format": "float"
+        },
+        "height": {
+          "description": "Height of the commodity",
+          "type": "number",
+          "format": "float"
+        },
+        "weight": {
+          "description": "Weight of the commodity",
+          "type": "number",
+          "format": "float"
+        },
+        "nmfc": {
+          "description": "NMFC number",
+          "type": "string"
+        },
+        "is_stackable": {
+          "description": "Is this commodity can be stacked?",
+          "type": "boolean"
+        },
+        "quantity": {
+          "description": "Quantity of the commodity",
+          "type": "integer"
+        },
+        "pieces": {
+          "description": "Total number of pieces. This field value can be _null_",
+          "type": "integer"
+        },
+        "sku": {
+          "description": "SKU number",
+          "type": "string"
+        }
+      }
+    },
+    "Customer": {
+      "description": "Customer",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Auto generated customner id",
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "external_id": {
+          "description": "Customer external id. This field value can be _null_",
+          "type": "string",
+          "readOnly": true
+        },
+        "short_code": {
+          "description": "Customer's short code",
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "description": "Organization name",
+          "type": "string"
+        },
+        "address_1": {
+          "description": "Address line 1",
+          "type": "string"
+        },
+        "address_2": {
+          "description": "Address line 2",
+          "type": "string"
+        },
+        "suite": {
+          "description": "Suite number",
+          "type": "string"
+        },
+        "city": {
+          "description": "City",
+          "type": "string"
+        },
+        "state": {
+          "description": "State / Province",
+          "type": "string"
+        },
+        "country": {
+          "description": "Country (2 letter ISO)",
+          "type": "string"
+        },
+        "postal": {
+          "description": "Postal / Zip code",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Phone number",
+          "type": "string"
+        },
+        "phone_ext": {
+          "description": "Phone extension",
+          "type": "string"
+        },
+        "email": {
+          "description": "Email",
+          "type": "string"
+        },
+        "fax": {
+          "description": "Fax",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "default_billing_option": {
+          "type": "string",
+          "description": "Billing Option",
+          "enum": [
+            "prepaid",
+            "collect",
+            "thirdparty"
+          ],
+          "default": "prepaid"
+        },
+        "default_dim_type": {
+          "type": "string",
+          "description": "Dimension type",
+          "enum": [
+            "ltl",
+            "ftl",
+            "volume"
+          ],
+          "default": "ltl"
+        },
+        "default_order_notes": {
+          "description": "This notes will always show up as internal note everytime an order is created for this customer",
+          "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency used when doing billing/invoicing",
+          "enum": [
+            "cad",
+            "usd"
+          ]
+        },
+        "is_active": {
+          "type": "boolean",
+          "description": "Is customer active?",
+          "default": false
+        },
+        "credit_limit": {
+          "type": "number",
+          "format": "float",
+          "description": "Credit limit for this customer"
+        },
+        "credit_balance": {
+          "type": "number",
+          "format": "float",
+          "description": "Credit balance for this customer"
+        },
+        "dispatch__contact_name": {
+          "type": "string",
+          "description": "Dispatch contact name"
+        },
+        "dispatch_contact_phone": {
+          "type": "string",
+          "description": "Dispatch contact phone"
+        },
+        "dispatch_contact_email": {
+          "type": "string",
+          "description": "Dispatch contact email"
+        },
+        "billing_contact_name": {
+          "type": "string",
+          "description": "Billing contact name"
+        },
+        "billing_contact_phone": {
+          "type": "string",
+          "description": "Billing contact phone"
+        },
+        "billing_contact_email": {
+          "type": "string",
+          "description": "Billing contact email"
+        },
+        "sales_contact_name": {
+          "type": "string",
+          "description": "Sales contact name"
+        },
+        "sales_contact_phone": {
+          "type": "string",
+          "description": "Sales contact phone"
+        },
+        "sales_contact_email": {
+          "type": "string",
+          "description": "Sales contact email"
+        },
+        "management_contact_name": {
+          "type": "string",
+          "description": "Management contact name"
+        },
+        "management_contact_phone": {
+          "type": "string",
+          "description": "Management contact phone"
+        },
+        "management_contact_email": {
+          "type": "string",
+          "description": "Management contact email"
+        },
+        "other_contact_name": {
+          "type": "string",
+          "description": "Other contact name"
+        },
+        "other_contact_phone": {
+          "type": "string",
+          "description": "Other contact phone"
+        },
+        "other_contact_email": {
+          "type": "string",
+          "description": "Other contact email"
+        }
+      }
+    },
+    "SpotQuote": {
+      "type": "object",
+      "properties": {
+        "notes": {
+          "type": "string",
+          "description": "Notes"
+        },
+        "est_delivery_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Estimated delivery time range (start). This field value can be _null_"
+        },
+        "est_delivery_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Estimated delivery time range (end). This field value can be _null_"
+        },
+        "freight_charge": {
+          "type": "number",
+          "format": "float",
+          "description": "Freight charge"
+        },
+        "original_freight_charge": {
+          "type": "number",
+          "format": "float",
+          "description": "Orginal freight charge. This field value can be _null_"
+        },
+        "fuel_charge": {
+          "type": "number",
+          "format": "float",
+          "description": "Fuel charge"
+        },
+        "original_fuel_charge": {
+          "type": "number",
+          "format": "float",
+          "description": "Orginal fuel charge. This field value can be _null_"
+        },
+        "accessorial_charges": {
+          "description": "Accessorials charges",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "accessorial_id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Accessorial id"
+              },
+              "charge": {
+                "type": "number",
+                "format": "float",
+                "description": "Accessorial charge"
+              },
+              "original_charge": {
+                "type": "number",
+                "format": "float",
+                "description": "Orginal accessorial charge. This field value can be _null_"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Quote": {
+      "description": "Quote",
+      "type": "object",
+      "readOnly": true,
+      "properties": {
+        "id": {
+          "description": "Auto generated quote id",
+          "type": "string",
+          "format": "uuid",
+          "readOnly": true
+        },
+        "order_id": {
+          "description": "Order id this quote is associated to",
+          "type": "string",
+          "format": "uuid"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Declared value currency",
+          "enum": [
+            "cad",
+            "usd"
+          ]
+        },
+        "customer_service_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Customer's service of this quote generated from"
+        },
+        "is_expired": {
+          "type": "boolean",
+          "description": "Is this quote has expired?"
+        },
+        "pickup_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Pickup time range (start)"
+        },
+        "pickup_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Pickup time range (end)"
+        },
+        "est_delivery_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Estimated delivery time range (start). This field value can be _null_"
+        },
+        "est_delivery_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Estimated delivery time range (end). This field value can be _null_"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Notes"
+        },
+        "error_message": {
+          "type": "string",
+          "description": "Error message"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status",
+          "enum": [
+            "quote-success",
+            "quote-pending",
+            "quote-rejected",
+            "quote-error",
+            "dispatch-success",
+            "dispatch-pending",
+            "dispatch-rejected",
+            "dispatch-error"
+          ]
+        },
+        "charges": {
+          "type": "object",
+          "properties": {
+            "freight": {
+              "type": "number",
+              "format": "float",
+              "description": "Freight charge"
+            },
+            "fuel": {
+              "type": "number",
+              "format": "float",
+              "description": "Fuel charge"
+            },
+            "accessorials": {
+              "type": "number",
+              "format": "float",
+              "description": "Accessorials charge"
+            },
+            "total": {
+              "type": "number",
+              "format": "float",
+              "description": "Total charge"
+            }
+          },
+          "items": {
+            "description": "Quote items",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "description": "Type",
+                  "type": "string",
+                  "format": "uuid",
+                  "enum": [
+                    "freight",
+                    "freight-cwt",
+                    "freight-cwt-min",
+                    "freight-spot",
+                    "freight-pallets",
+                    "freight-pallets-min",
+                    "accessorial",
+                    "fuel",
+                    "misc"
+                  ]
+                },
+                "quote_id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "description": "Quote id this item is associated to",
+                  "readOnly": true
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description"
+                },
+                "quantity": {
+                  "type": "integer",
+                  "description": "Unit quantity"
+                },
+                "unit_price": {
+                  "type": "integer",
+                  "description": "Unit price"
+                },
+                "total": {
+                  "type": "integer",
+                  "description": "Total"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ApiError": {
+      "type": "object",
+      "properties": {
+        "error_code": {
+          "description": "Error code",
+          "type": "string"
+        },
+        "error_message": {
+          "description": "Error message",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
