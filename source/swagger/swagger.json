@@ -794,6 +794,146 @@
           }
         ]
       }
+    },
+    "/orders/customers/{customerID}/orders/{orderID}/quotes": {
+      "post": {
+        "tags": [
+          "quote"
+        ],
+        "summary": "Generate new quotes for a customer's order",
+        "description": "",
+        "operationId": "generateOrderQuotes",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quotes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Quote"
+                  }
+                },
+                "offset": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "quote"
+        ],
+        "summary": "Get existing quotes for a customer's order",
+        "description": "",
+        "operationId": "getOrderQuotes",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quotes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Quote"
+                  }
+                },
+                "offset": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
     }
   },
   "securityDefinitions": {

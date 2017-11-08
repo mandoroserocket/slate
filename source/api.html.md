@@ -21,6 +21,10 @@ headingLevel: 2
 
 The Platform REST API lets you integrate with Rose Rocket applications using simple HTTP methods, in JSON formats, making this an ideal API for developing mobile applications or external clients.
 
+Swagger definition:
+
+* <a href="https://platform.roserocket.com/swagger.json">https://platform.roserocket.com/swagger.json</a>
+
 Base URLs:
 
 * <a href="https://platform.roserocket.com/v1">https://platform.roserocket.com/v1</a>
@@ -205,8 +209,8 @@ limit|query|integer|false|Pagination limit
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2017-11-07T20:11:26Z",
-        "bus_hours_end_at": "2017-11-07T20:11:26Z"
+        "bus_hours_start_at": "2017-11-08T19:22:59Z",
+        "bus_hours_end_at": "2017-11-08T19:22:59Z"
       },
       "destination": {
         "address_book_id": "string",
@@ -226,8 +230,8 @@ limit|query|integer|false|Pagination limit
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2017-11-07T20:11:26Z",
-        "bus_hours_end_at": "2017-11-07T20:11:26Z"
+        "bus_hours_start_at": "2017-11-08T19:22:59Z",
+        "bus_hours_end_at": "2017-11-08T19:22:59Z"
       },
       "billing": {
         "address_book_id": "string",
@@ -247,8 +251,8 @@ limit|query|integer|false|Pagination limit
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2017-11-07T20:11:26Z",
-        "bus_hours_end_at": "2017-11-07T20:11:26Z"
+        "bus_hours_start_at": "2017-11-08T19:22:59Z",
+        "bus_hours_end_at": "2017-11-08T19:22:59Z"
       },
       "status": "new",
       "billing_option": "prepaid",
@@ -259,14 +263,14 @@ limit|query|integer|false|Pagination limit
       "custom_broker": "string",
       "declared_value": 0,
       "declared_value_currency": "cad",
-      "pickup_start_at": "2017-11-07T20:11:26Z",
-      "pickup_end_at": "2017-11-07T20:11:26Z",
-      "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-      "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-      "delivery_start_at": "2017-11-07T20:11:26Z",
-      "delivery_end_at": "2017-11-07T20:11:26Z",
-      "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-      "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+      "pickup_start_at": "2017-11-08T19:22:59Z",
+      "pickup_end_at": "2017-11-08T19:22:59Z",
+      "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+      "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+      "delivery_start_at": "2017-11-08T19:22:59Z",
+      "delivery_end_at": "2017-11-08T19:22:59Z",
+      "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+      "delivery_appt_end_at": "2017-11-08T19:22:59Z",
       "dim_type": "ltl",
       "commodities": [
         {
@@ -497,8 +501,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -517,8 +521,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -537,8 +541,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -548,14 +552,14 @@ const inputBody = '{
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2017-11-07T20:11:26Z",
-  "pickup_end_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-  "delivery_start_at": "2017-11-07T20:11:26Z",
-  "delivery_end_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+  "pickup_start_at": "2017-11-08T19:22:59Z",
+  "pickup_end_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+  "delivery_start_at": "2017-11-08T19:22:59Z",
+  "delivery_end_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_end_at": "2017-11-08T19:22:59Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -674,8 +678,8 @@ System.out.println(response.toString());
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -694,8 +698,8 @@ System.out.println(response.toString());
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -714,8 +718,8 @@ System.out.println(response.toString());
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -725,14 +729,14 @@ System.out.println(response.toString());
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2017-11-07T20:11:26Z",
-  "pickup_end_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-  "delivery_start_at": "2017-11-07T20:11:26Z",
-  "delivery_end_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+  "pickup_start_at": "2017-11-08T19:22:59Z",
+  "pickup_end_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+  "delivery_start_at": "2017-11-08T19:22:59Z",
+  "delivery_end_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_end_at": "2017-11-08T19:22:59Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -941,8 +945,8 @@ body|body|[Order](#schemaorder)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -962,8 +966,8 @@ body|body|[Order](#schemaorder)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -983,8 +987,8 @@ body|body|[Order](#schemaorder)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -995,14 +999,14 @@ body|body|[Order](#schemaorder)|true|Order object
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2017-11-07T20:11:26Z",
-    "pickup_end_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-    "delivery_start_at": "2017-11-07T20:11:26Z",
-    "delivery_end_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+    "pickup_start_at": "2017-11-08T19:22:59Z",
+    "pickup_end_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+    "delivery_start_at": "2017-11-08T19:22:59Z",
+    "delivery_end_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_end_at": "2017-11-08T19:22:59Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -1311,8 +1315,8 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -1332,8 +1336,8 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -1353,8 +1357,8 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -1365,14 +1369,14 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2017-11-07T20:11:26Z",
-    "pickup_end_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-    "delivery_start_at": "2017-11-07T20:11:26Z",
-    "delivery_end_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+    "pickup_start_at": "2017-11-08T19:22:59Z",
+    "pickup_end_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+    "delivery_start_at": "2017-11-08T19:22:59Z",
+    "delivery_end_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_end_at": "2017-11-08T19:22:59Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -1596,8 +1600,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -1616,8 +1620,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -1636,8 +1640,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -1647,14 +1651,14 @@ const inputBody = '{
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2017-11-07T20:11:26Z",
-  "pickup_end_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-  "delivery_start_at": "2017-11-07T20:11:26Z",
-  "delivery_end_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+  "pickup_start_at": "2017-11-08T19:22:59Z",
+  "pickup_end_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+  "delivery_start_at": "2017-11-08T19:22:59Z",
+  "delivery_end_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_end_at": "2017-11-08T19:22:59Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -1773,8 +1777,8 @@ System.out.println(response.toString());
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -1793,8 +1797,8 @@ System.out.println(response.toString());
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -1813,8 +1817,8 @@ System.out.println(response.toString());
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -1824,14 +1828,14 @@ System.out.println(response.toString());
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2017-11-07T20:11:26Z",
-  "pickup_end_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-  "delivery_start_at": "2017-11-07T20:11:26Z",
-  "delivery_end_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+  "pickup_start_at": "2017-11-08T19:22:59Z",
+  "pickup_end_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+  "delivery_start_at": "2017-11-08T19:22:59Z",
+  "delivery_end_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_end_at": "2017-11-08T19:22:59Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -2041,8 +2045,8 @@ body|body|[Order](#schemaorder)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -2062,8 +2066,8 @@ body|body|[Order](#schemaorder)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -2083,8 +2087,8 @@ body|body|[Order](#schemaorder)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -2095,14 +2099,14 @@ body|body|[Order](#schemaorder)|true|Order object
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2017-11-07T20:11:26Z",
-    "pickup_end_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-    "delivery_start_at": "2017-11-07T20:11:26Z",
-    "delivery_end_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+    "pickup_start_at": "2017-11-08T19:22:59Z",
+    "pickup_end_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+    "delivery_start_at": "2017-11-08T19:22:59Z",
+    "delivery_end_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_end_at": "2017-11-08T19:22:59Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -2411,8 +2415,8 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -2432,8 +2436,8 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -2453,8 +2457,8 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -2465,14 +2469,14 @@ orderID|path|string(uuid)|true|ID of the order. It could also be the external ID
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2017-11-07T20:11:26Z",
-    "pickup_end_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-    "delivery_start_at": "2017-11-07T20:11:26Z",
-    "delivery_end_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+    "pickup_start_at": "2017-11-08T19:22:59Z",
+    "pickup_end_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+    "delivery_start_at": "2017-11-08T19:22:59Z",
+    "delivery_end_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_end_at": "2017-11-08T19:22:59Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -3746,8 +3750,8 @@ body|body|[Customer](#schemacustomer)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -3767,8 +3771,8 @@ body|body|[Customer](#schemacustomer)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -3788,8 +3792,8 @@ body|body|[Customer](#schemacustomer)|true|Order object
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2017-11-07T20:11:26Z",
-      "bus_hours_end_at": "2017-11-07T20:11:26Z"
+      "bus_hours_start_at": "2017-11-08T19:22:59Z",
+      "bus_hours_end_at": "2017-11-08T19:22:59Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -3800,14 +3804,14 @@ body|body|[Customer](#schemacustomer)|true|Order object
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2017-11-07T20:11:26Z",
-    "pickup_end_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-    "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-    "delivery_start_at": "2017-11-07T20:11:26Z",
-    "delivery_end_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-    "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+    "pickup_start_at": "2017-11-08T19:22:59Z",
+    "pickup_end_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+    "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+    "delivery_start_at": "2017-11-08T19:22:59Z",
+    "delivery_end_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+    "delivery_appt_end_at": "2017-11-08T19:22:59Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -4606,8 +4610,8 @@ $.ajax({
 const request = require('node-fetch');
 const inputBody = '{
   "notes": "string",
-  "est_delivery_start_at": "2017-11-07T20:11:26Z",
-  "est_delivery_end_at": "2017-11-07T20:11:26Z",
+  "est_delivery_start_at": "2017-11-08T19:22:59Z",
+  "est_delivery_end_at": "2017-11-08T19:22:59Z",
   "freight_charge": 0,
   "original_freight_charge": 0,
   "fuel_charge": 0,
@@ -4694,8 +4698,8 @@ System.out.println(response.toString());
 ```json
 {
   "notes": "string",
-  "est_delivery_start_at": "2017-11-07T20:11:26Z",
-  "est_delivery_end_at": "2017-11-07T20:11:26Z",
+  "est_delivery_start_at": "2017-11-08T19:22:59Z",
+  "est_delivery_end_at": "2017-11-08T19:22:59Z",
   "freight_charge": 0,
   "original_freight_charge": 0,
   "fuel_charge": 0,
@@ -4739,10 +4743,10 @@ body|body|[SpotQuote](#schemaspotquote)|true|Order object
     "currency": "cad",
     "customer_service_id": "string",
     "is_expired": true,
-    "pickup_start_at": "2017-11-07T20:11:26Z",
-    "pickup_end_at": "2017-11-07T20:11:26Z",
-    "est_delivery_start_at": "2017-11-07T20:11:26Z",
-    "est_delivery_end_at": "2017-11-07T20:11:26Z",
+    "pickup_start_at": "2017-11-08T19:22:59Z",
+    "pickup_end_at": "2017-11-08T19:22:59Z",
+    "est_delivery_start_at": "2017-11-08T19:22:59Z",
+    "est_delivery_end_at": "2017-11-08T19:22:59Z",
     "notes": "string",
     "error_message": "string",
     "status": "quote-success",
@@ -4775,6 +4779,404 @@ Status Code **200**
 Name|Type|Required|Description
 ---|---|---|---|---|
 quote|[Quote](#schemaquote)|false|Quote
+» id|string(uuid)|false|Auto generated quote id
+» order_id|string(uuid)|false|Order id this quote is associated to
+» currency|string|false|Declared value currency
+» customer_service_id|string(uuid)|false|Customer's service of this quote generated from
+» is_expired|boolean|false|Is this quote has expired?
+» pickup_start_at|string(date-time)|false|Pickup time range (start)
+» pickup_end_at|string(date-time)|false|Pickup time range (end)
+» est_delivery_start_at|string(date-time)|false|Estimated delivery time range (start). This field value can be _null_
+» est_delivery_end_at|string(date-time)|false|Estimated delivery time range (end). This field value can be _null_
+» notes|string|false|Notes
+» error_message|string|false|Error message
+» status|string|false|Status
+» charges|object|false|No description
+»» freight|number(float)|false|Freight charge
+»» fuel|number(float)|false|Fuel charge
+»» accessorials|number(float)|false|Accessorials charge
+»» total|number(float)|false|Total charge
+»» items|[object]|false|Quote items
+»»» type|string(uuid)|false|Type
+»»» quote_id|string(uuid)|false|Quote id this item is associated to
+»»» description|string|false|Description
+»»» quantity|integer|false|Unit quantity
+»»» unit_price|integer|false|Unit price
+»»» total|integer|false|Total
+
+
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: orders )
+</aside>
+
+## generateOrderQuotes
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes \
+  -H 'Accept: application/json'
+
+```
+
+```http
+POST https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes HTTP/1.1
+Host: platform.roserocket.com
+
+Accept: application/json
+
+```
+
+```javascript
+var headers = {
+  'Accept':'application/json'
+
+};
+
+$.ajax({
+  url: 'https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes',
+  method: 'post',
+
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```javascript--nodejs
+const request = require('node-fetch');
+
+const headers = {
+  'Accept':'application/json'
+
+};
+
+fetch('https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes',
+{
+  method: 'POST',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.post 'https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.post('https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes', params={
+
+}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+```
+
+`POST /orders/customers/{customerID}/orders/{orderID}/quotes`
+
+*Generate new quotes for a customer's order*
+
+<h3 id="generateOrderQuotes-parameters">Parameters</h3>
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+customerID|path|string|true|ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.
+orderID|path|string(uuid)|true|ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.
+
+
+> Example responses
+
+```json
+{
+  "quotes": [
+    {
+      "id": "string",
+      "order_id": "string",
+      "currency": "cad",
+      "customer_service_id": "string",
+      "is_expired": true,
+      "pickup_start_at": "2017-11-08T19:22:59Z",
+      "pickup_end_at": "2017-11-08T19:22:59Z",
+      "est_delivery_start_at": "2017-11-08T19:22:59Z",
+      "est_delivery_end_at": "2017-11-08T19:22:59Z",
+      "notes": "string",
+      "error_message": "string",
+      "status": "quote-success",
+      "charges": {
+        "freight": 0,
+        "fuel": 0,
+        "accessorials": 0,
+        "total": 0
+      }
+    }
+  ],
+  "offset": 0,
+  "limit": 0,
+  "total": 0
+}
+```
+```json
+{
+  "error_code": "string",
+  "error_message": "string"
+}
+```
+<h3 id="generateOrderQuotes-responses">Responses</h3>
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|successful operation|Inline
+400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request|[ApiError](#schemaapierror)
+
+<h3 id="generateOrderQuotes-responseschema">Response Schema</h3>
+
+Status Code **200**
+
+Name|Type|Required|Description
+---|---|---|---|---|
+offset|integer|false|No description
+limit|integer|false|No description
+total|integer|false|No description
+quotes|[[Quote](#schemaquote)]|false|No description
+» id|string(uuid)|false|Auto generated quote id
+» order_id|string(uuid)|false|Order id this quote is associated to
+» currency|string|false|Declared value currency
+» customer_service_id|string(uuid)|false|Customer's service of this quote generated from
+» is_expired|boolean|false|Is this quote has expired?
+» pickup_start_at|string(date-time)|false|Pickup time range (start)
+» pickup_end_at|string(date-time)|false|Pickup time range (end)
+» est_delivery_start_at|string(date-time)|false|Estimated delivery time range (start). This field value can be _null_
+» est_delivery_end_at|string(date-time)|false|Estimated delivery time range (end). This field value can be _null_
+» notes|string|false|Notes
+» error_message|string|false|Error message
+» status|string|false|Status
+» charges|object|false|No description
+»» freight|number(float)|false|Freight charge
+»» fuel|number(float)|false|Fuel charge
+»» accessorials|number(float)|false|Accessorials charge
+»» total|number(float)|false|Total charge
+»» items|[object]|false|Quote items
+»»» type|string(uuid)|false|Type
+»»» quote_id|string(uuid)|false|Quote id this item is associated to
+»»» description|string|false|Description
+»»» quantity|integer|false|Unit quantity
+»»» unit_price|integer|false|Unit price
+»»» total|integer|false|Total
+
+
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+oauth2 ( Scopes: orders )
+</aside>
+
+## getOrderQuotes
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes \
+  -H 'Accept: application/json'
+
+```
+
+```http
+GET https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes HTTP/1.1
+Host: platform.roserocket.com
+
+Accept: application/json
+
+```
+
+```javascript
+var headers = {
+  'Accept':'application/json'
+
+};
+
+$.ajax({
+  url: 'https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes',
+  method: 'get',
+
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+```
+
+```javascript--nodejs
+const request = require('node-fetch');
+
+const headers = {
+  'Accept':'application/json'
+
+};
+
+fetch('https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes',
+{
+  method: 'GET',
+
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Accept' => 'application/json'
+}
+
+result = RestClient.get 'https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+```
+
+```python
+import requests
+headers = {
+  'Accept': 'application/json'
+}
+
+r = requests.get('https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes', params={
+
+}, headers = headers)
+
+print r.json()
+```
+
+```java
+URL obj = new URL("https://platform.roserocket.com/v1/orders/customers/{customerID}/orders/{orderID}/quotes");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("GET");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+```
+
+`GET /orders/customers/{customerID}/orders/{orderID}/quotes`
+
+*Get existing quotes for a customer's order*
+
+<h3 id="getOrderQuotes-parameters">Parameters</h3>
+
+Parameter|In|Type|Required|Description
+---|---|---|---|---|
+customerID|path|string|true|ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.
+orderID|path|string(uuid)|true|ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.
+
+
+> Example responses
+
+```json
+{
+  "quotes": [
+    {
+      "id": "string",
+      "order_id": "string",
+      "currency": "cad",
+      "customer_service_id": "string",
+      "is_expired": true,
+      "pickup_start_at": "2017-11-08T19:22:59Z",
+      "pickup_end_at": "2017-11-08T19:22:59Z",
+      "est_delivery_start_at": "2017-11-08T19:22:59Z",
+      "est_delivery_end_at": "2017-11-08T19:22:59Z",
+      "notes": "string",
+      "error_message": "string",
+      "status": "quote-success",
+      "charges": {
+        "freight": 0,
+        "fuel": 0,
+        "accessorials": 0,
+        "total": 0
+      }
+    }
+  ],
+  "offset": 0,
+  "limit": 0,
+  "total": 0
+}
+```
+```json
+{
+  "error_code": "string",
+  "error_message": "string"
+}
+```
+<h3 id="getOrderQuotes-responses">Responses</h3>
+
+Status|Meaning|Description|Schema
+---|---|---|---|
+200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|successful operation|Inline
+400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|Bad request|[ApiError](#schemaapierror)
+
+<h3 id="getOrderQuotes-responseschema">Response Schema</h3>
+
+Status Code **200**
+
+Name|Type|Required|Description
+---|---|---|---|---|
+offset|integer|false|No description
+limit|integer|false|No description
+total|integer|false|No description
+quotes|[[Quote](#schemaquote)]|false|No description
 » id|string(uuid)|false|Auto generated quote id
 » order_id|string(uuid)|false|Order id this quote is associated to
 » currency|string|false|Declared value currency
@@ -4842,8 +5244,8 @@ oauth2 ( Scopes: orders )
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "destination": {
     "address_book_id": "string",
@@ -4863,8 +5265,8 @@ oauth2 ( Scopes: orders )
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "billing": {
     "address_book_id": "string",
@@ -4884,8 +5286,8 @@ oauth2 ( Scopes: orders )
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2017-11-07T20:11:26Z",
-    "bus_hours_end_at": "2017-11-07T20:11:26Z"
+    "bus_hours_start_at": "2017-11-08T19:22:59Z",
+    "bus_hours_end_at": "2017-11-08T19:22:59Z"
   },
   "status": "new",
   "billing_option": "prepaid",
@@ -4896,14 +5298,14 @@ oauth2 ( Scopes: orders )
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2017-11-07T20:11:26Z",
-  "pickup_end_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_start_at": "2017-11-07T20:11:26Z",
-  "pickup_appt_end_at": "2017-11-07T20:11:26Z",
-  "delivery_start_at": "2017-11-07T20:11:26Z",
-  "delivery_end_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_start_at": "2017-11-07T20:11:26Z",
-  "delivery_appt_end_at": "2017-11-07T20:11:26Z",
+  "pickup_start_at": "2017-11-08T19:22:59Z",
+  "pickup_end_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_start_at": "2017-11-08T19:22:59Z",
+  "pickup_appt_end_at": "2017-11-08T19:22:59Z",
+  "delivery_start_at": "2017-11-08T19:22:59Z",
+  "delivery_end_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_start_at": "2017-11-08T19:22:59Z",
+  "delivery_appt_end_at": "2017-11-08T19:22:59Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -5104,8 +5506,8 @@ dim_type|volume|
   "fax": "string",
   "latitude": 0,
   "longitude": 0,
-  "bus_hours_start_at": "2017-11-07T20:11:26Z",
-  "bus_hours_end_at": "2017-11-07T20:11:26Z"
+  "bus_hours_start_at": "2017-11-08T19:22:59Z",
+  "bus_hours_end_at": "2017-11-08T19:22:59Z"
 } 
 ```
 
@@ -5334,8 +5736,8 @@ currency|usd|
 ```json
 {
   "notes": "string",
-  "est_delivery_start_at": "2017-11-07T20:11:26Z",
-  "est_delivery_end_at": "2017-11-07T20:11:26Z",
+  "est_delivery_start_at": "2017-11-08T19:22:59Z",
+  "est_delivery_end_at": "2017-11-08T19:22:59Z",
   "freight_charge": 0,
   "original_freight_charge": 0,
   "fuel_charge": 0,
@@ -5379,10 +5781,10 @@ accessorial_charges|[object]|false|Accessorials charges
   "currency": "cad",
   "customer_service_id": "string",
   "is_expired": true,
-  "pickup_start_at": "2017-11-07T20:11:26Z",
-  "pickup_end_at": "2017-11-07T20:11:26Z",
-  "est_delivery_start_at": "2017-11-07T20:11:26Z",
-  "est_delivery_end_at": "2017-11-07T20:11:26Z",
+  "pickup_start_at": "2017-11-08T19:22:59Z",
+  "pickup_end_at": "2017-11-08T19:22:59Z",
+  "est_delivery_start_at": "2017-11-08T19:22:59Z",
+  "est_delivery_end_at": "2017-11-08T19:22:59Z",
   "notes": "string",
   "error_message": "string",
   "status": "quote-success",

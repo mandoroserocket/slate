@@ -1,13 +1,12 @@
 # Internal Rose Rocket Readme
 
-To build the API docs:
+To build the docs:
 ```
-$ mv source/api.html.md source/index.html.md
 $ bundle exec middleman build --clean
 ```
 
-To build the Webhooks docs:
+To copy to platform docs:
 ```
-$ mv source/webhooks.html.md source/index.html.md
-$ bundle exec middleman build --clean
+$ cp -R /usr/local/src/github.com/roserocket/api-docs/build/* /usr/local/src/github.com/roserocket/roserocket/platform/static/docs/.
+$ cp /usr/local/src/github.com/roserocket/api-docs/source/swagger/swagger.json /usr/local/src/github.com/roserocket/roserocket/platform/static/docs/swagger.json
 ```
