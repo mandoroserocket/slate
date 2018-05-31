@@ -23,7 +23,7 @@ The Platform REST API lets you integrate with Rose Rocket applications using sim
 
 Swagger definition:
 
-* <a href="https://platform.roserocket.com/swagger.json">https://platform.roserocket.com/swagger.json</a>
+* <a href="https://platform.roserocket.com/docs/swagger.json">https://platform.roserocket.com/docs/swagger.json</a>
 
 Base URLs:
 
