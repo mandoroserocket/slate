@@ -57,3 +57,45 @@ Event Name: `order.status_updated`
 ```
 
 Occurs whenever an order status changed.
+
+## Leg Created
+
+Event Name: `leg.created`
+
+```json
+{
+    "event": "leg.created",
+    "leg_id": "dba74129-806a-4bec-b7d2-81a8e0e1ad35",
+    "timestamp": "2018-06-08T13:51:14.649392Z"
+}
+```
+
+Occurs whenever a leg is created.
+
+## Leg Deleted
+
+Event Name: `leg.deleted`
+
+```json
+{
+    "event": "leg.deleted",
+    "leg_id": "dba74129-806a-4bec-b7d2-81a8e0e1ad35",
+    "timestamp": "2018-06-08T13:51:14.649392Z"
+}
+```
+
+Occurs whenever a leg is deleted.
+
+## Leg Dispatched
+
+Event Name: `leg.dispatched`
+
+```json
+{
+    "event": "leg.dispatched",
+    "leg_id": "dba74129-806a-4bec-b7d2-81a8e0e1ad35",
+    "timestamp": "2018-06-08T13:51:14.649392Z"
+}
+```
+
+Occurs whenever a leg is dispatched.
