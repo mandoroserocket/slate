@@ -64,6 +64,12 @@
           {
             "name": "external_id",
             "in": "query",
+            "description": "External ID to filter by",
+            "type": "string"
+          },
+          {
+            "name": "in_external_ids",
+            "in": "query",
             "description": "External ID's to filter by",
             "type": "array",
             "items": {
@@ -129,7 +135,7 @@
         ]
       }
     },
-    "/orders/customers/{customerID}/orders": {
+    "/customers/{customerID}/orders": {
       "post": {
         "tags": [
           "order"
@@ -147,7 +153,7 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
@@ -189,7 +195,510 @@
         ]
       }
     },
-    "/orders/customers/{customerID}/orders/{orderID}": {
+    "/customers/{customerID}/orders/bulk_create": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Bulk create orders for a given customer.",
+        "description": "",
+        "operationId": "bulkCreateOrder",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Bulk create request object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orders": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Order"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BulkOrderCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/bulk_create": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Bulk create orders for several customers.",
+        "description": "",
+        "operationId": "bulkCreateOrderCustomerAgnostic",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Bulk create request object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orders": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "order": {
+                        "$ref": "#/definitions/Order"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BulkOrderCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers/{customerID}/bulk_create_booked_order": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Bulk create booked orders for a given customer.",
+        "description": "",
+        "operationId": "bulkCreateBookedOrder",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Bulk create request object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orders": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Order"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BulkOrderCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/bulk_create_booked_order": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Bulk create booked orders for several customers.",
+        "description": "",
+        "operationId": "bulkCreateBookedOrderCustomerAgnostic",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Bulk create request object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orders": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "order": {
+                        "$ref": "#/definitions/Order"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BulkOrderCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/orders/bulk_upsert_booked_order": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Upsert orders for several customers.",
+        "description": "",
+        "operationId": "bulkUpsertBookedOrderCustomerAgnostic",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Bulk upsert request object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "orders": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "order": {
+                        "$ref": "#/definitions/Order"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/BulkOrderCreateResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}/revise_origin": {
+      "put": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Revise the origin of an order by ID",
+        "description": "",
+        "operationId": "reviseOrderOriginByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Revise order address request object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderAddressReviseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/OrderAndLegsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}/revise_destination": {
+      "put": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Revise the destination of an order by ID",
+        "description": "",
+        "operationId": "reviseOrderDestinationByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Revise order address request object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderAddressReviseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/OrderAndLegsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}/revise_commodities": {
+      "put": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Revise the commodities of an order by ID",
+        "description": "",
+        "operationId": "reviseOrderCommoditiesByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Revise order commodities request object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommodityReviseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/OrderAndLegsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}": {
       "get": {
         "tags": [
           "order"
@@ -207,14 +716,14 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
           {
             "name": "orderID",
             "in": "path",
-            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -264,14 +773,14 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
           {
             "name": "orderID",
             "in": "path",
-            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -330,14 +839,14 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
           {
             "name": "orderID",
             "in": "path",
-            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -371,6 +880,1532 @@
         ]
       }
     },
+    "/customers/{customerID}/create_booked_order": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Create a booked order",
+        "description": "",
+        "operationId": "createBookedOrder",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Order"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "$ref": "#/definitions/Order"
+                },
+                "legs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Leg"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "orders"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs": {
+      "get": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Search legs",
+        "description": "",
+        "operationId": "searchLegs",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "created_start_at",
+            "in": "query",
+            "description": "Date range (start)",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "created_end_at",
+            "in": "query",
+            "description": "Date range (end)",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "search_term",
+            "in": "query",
+            "description": "Search term",
+            "type": "string"
+          },
+          {
+            "name": "external_id",
+            "in": "query",
+            "description": "External ID to filter by",
+            "type": "string"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Pagination offset",
+            "default": 0,
+            "minimum": 0,
+            "type": "integer"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Pagination limit",
+            "default": 20,
+            "minimum": 0,
+            "maximum": 50,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "legs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Leg"
+                  }
+                },
+                "offset": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/revise_origin": {
+      "put": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Revise the origin of a leg by ID",
+        "description": "",
+        "operationId": "reviseLegOriginById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg to revise. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Leg address revise object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LegAddressReviseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg": {
+                  "type": "object",
+                  "$ref": "#/definitions/Leg"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/revise_destination": {
+      "put": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Revise the destination of a leg by ID",
+        "description": "",
+        "operationId": "reviseLegDestinationById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg to revise. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Leg address revise object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LegAddressReviseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg": {
+                  "type": "object",
+                  "$ref": "#/definitions/Leg"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/revise_commodities": {
+      "put": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Revise the commodities of a leg by ID",
+        "description": "",
+        "operationId": "reviseLegCommoditiesById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg to revise. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Leg address revise object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CommodityReviseRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg": {
+                  "type": "object",
+                  "$ref": "#/definitions/Leg"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/load": {
+      "post": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Load leg by ID",
+        "description": "",
+        "operationId": "loadLegById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg to load. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "from_arrive_at",
+            "in": "query",
+            "description": "From arrive at",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "from_in_at",
+            "in": "query",
+            "description": "From in at",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "from_out_at",
+            "in": "query",
+            "description": "From out at",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "pickedup_at",
+            "in": "query",
+            "description": "Picked up at",
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg": {
+                  "type": "object",
+                  "$ref": "#/definitions/Leg"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/unload": {
+      "post": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Unload leg by ID",
+        "description": "",
+        "operationId": "unloadLegById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg to unload. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "to_arrive_at",
+            "in": "query",
+            "description": "From arrive at",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to_in_at",
+            "in": "query",
+            "description": "From in at",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "to_out_at",
+            "in": "query",
+            "description": "From out at",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "delivered_at",
+            "in": "query",
+            "description": "Picked up at",
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg": {
+                  "type": "object",
+                  "$ref": "#/definitions/Leg"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/files/{fileID}": {
+      "put": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Add a file/document to a specified leg",
+        "description": "",
+        "operationId": "updateLegFileByLegIdAndFileID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg for which to update a file/document. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fileID",
+            "in": "path",
+            "description": "ID of the leg file",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Leg file create request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LegFileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/LegFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Delete a file/document from a specified leg",
+        "description": "",
+        "operationId": "deleteLegFileByLegIdAndFileID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg for which to delete file/document. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fileID",
+            "in": "path",
+            "description": "ID of the leg file to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Message": {
+                  "type": "string",
+                  "enum": [
+                    "Success",
+                    "Failure"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/files": {
+      "get": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Get all leg files/documents for a given ID of a leg",
+        "description": "",
+        "operationId": "getLegFilesById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg to get files for. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_files": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/LegFile"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Add a file/document to a specified leg",
+        "description": "",
+        "operationId": "addLegFileByLegId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg for which to add a file/document. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Leg file create request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LegFileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/LegFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/legs/{legID}/upload_file": {
+      "post": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Upload file for a specified leg",
+        "description": "",
+        "operationId": "uploadLegFileByLegID",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "File to upload",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "Type of leg file to upload",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "other",
+              "comm-invoice",
+              "pod",
+              "pop",
+              "pod-sig",
+              "pop-sig",
+              "carrier-invoice",
+              "smc",
+              "bol"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/LegFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
+    "/legs/{legID}/upload_file/{fileID}": {
+      "put": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Update an uploaded file for a specified leg",
+        "description": "",
+        "operationId": "updateUploadedFileByLegAndFileID",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg to get files for. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fileID",
+            "in": "path",
+            "description": "ID of the leg file.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "File to upload",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "Type of leg file to upload",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "other",
+              "comm-invoice",
+              "pod",
+              "pop",
+              "pod-sig",
+              "pop-sig",
+              "carrier-invoice",
+              "smc",
+              "bol"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/LegFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
+    "/orders/{orderID}/legs": {
+      "get": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Get legs by order ID",
+        "description": "",
+        "operationId": "getLegsByOrder",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "legs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Leg"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}/files": {
+      "get": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Get all leg files/documents for a given ID of a leg",
+        "description": "",
+        "operationId": "getOrderFilesById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order to get files for. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer to of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_files": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/OrderFile"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Add a file/document to a specified order",
+        "description": "",
+        "operationId": "addOrderFileByLegId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order to get files for. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer to of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order file create request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderFileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/OrderFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}/files/{fileID}": {
+      "put": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Update a file for a specified order",
+        "description": "",
+        "operationId": "updateFileByOrderAndFileID",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order to get files for. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fileID",
+            "in": "path",
+            "description": "ID of the order file.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer to of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Order file create request",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/OrderFileRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/OrderFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Delete a file for a specified order",
+        "description": "",
+        "operationId": "deleteFileByOrderAndFileID",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order to get files for. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fileID",
+            "in": "path",
+            "description": "ID of the order file.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer to of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Message": {
+                  "type": "string",
+                  "enum": [
+                    "Success",
+                    "Failure"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}/upload_file": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Upload file for a specified order",
+        "description": "",
+        "operationId": "uploadOrderFileByLegID",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order to get files for. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer to of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "File to upload",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "Type of order file to upload",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "other",
+              "comm-invoice",
+              "pod",
+              "pop",
+              "pod-sig",
+              "pop-sig",
+              "carrier-invoice",
+              "smc",
+              "bol"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/OrderFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
+    "/customers/{customerID}/orders/{orderID}/upload_file/{fileID}": {
+      "put": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Update an uploaded file for a specified order",
+        "description": "",
+        "operationId": "updatedUploadedFileByOrderAndFileID",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order to get files for. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fileID",
+            "in": "path",
+            "description": "ID of the order file.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer to of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "File to upload",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "Type of order file to upload",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "other",
+              "comm-invoice",
+              "pod",
+              "pop",
+              "pod-sig",
+              "pop-sig",
+              "carrier-invoice",
+              "smc",
+              "bol"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/OrderFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
+    "/legs/{legID}": {
+      "get": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Get leg by ID",
+        "description": "",
+        "operationId": "getLegByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "$ref": "#/definitions/Leg"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "legs"
+            ]
+          }
+        ]
+      }
+    },
+    "/manifests/{manifestID}": {
+      "get": {
+        "tags": [
+          "manifests"
+        ],
+        "summary": "Get manifest by ID",
+        "description": "",
+        "operationId": "getManifestByID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manifestID",
+            "in": "path",
+            "description": "ID of the manifest. It could also be the external ID of the manifest, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the manifest's external ID is __test123__ then the value of manifestID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "manifest": {
+                  "type": "object",
+                  "$ref": "#/definitions/Manifest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "manifests"
+            ]
+          }
+        ]
+      }
+    },
+    "/manifests/{manifestID}/legs": {
+      "get": {
+        "tags": [
+          "manifests",
+          "leg"
+        ],
+        "summary": "Get legs by manifest ID",
+        "description": "",
+        "operationId": "getLegsByManifestID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manifestID",
+            "in": "path",
+            "description": "ID of the manifest for which to get legs. It could also be the external ID of the manifest, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the manifest's external ID is __test123__ then the value of manifestID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "legs": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Leg"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "manifests"
+            ]
+          }
+        ]
+      }
+    },
+    "/manifests/{manifestID}/notes": {
+      "post": {
+        "tags": [
+          "manifests"
+        ],
+        "summary": "Create notes event for a manifest by manifest ID",
+        "description": "",
+        "operationId": "createNotesByManifestID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manifestID",
+            "in": "path",
+            "description": "ID of the manifest for which to create a notes event. It could also be the external ID of the manifest, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the manifest's external ID is __test123__ then the value of manifestID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "event": {
+                  "type": "object",
+                  "$ref": "#/definitions/ManifestEvent"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "manifests"
+            ]
+          }
+        ]
+      }
+    },
     "/customers": {
       "get": {
         "tags": [
@@ -392,7 +2427,13 @@
           {
             "name": "external_id",
             "in": "query",
-            "description": "External ID's to filter by",
+            "description": "External ID to filter by",
+            "type": "string"
+          },
+          {
+            "name": "in_external_ids",
+            "in": "query",
+            "description": "External IDs to filter by",
             "type": "array",
             "items": {
               "type": "string"
@@ -451,7 +2492,7 @@
         "security": [
           {
             "roserocket_auth": [
-              "orders"
+              "customers"
             ]
           }
         ]
@@ -502,13 +2543,13 @@
         "security": [
           {
             "roserocket_auth": [
-              "orders"
+              "customers"
             ]
           }
         ]
       }
     },
-    "/orders/customers/{customerID}": {
+    "/customers/{customerID}": {
       "get": {
         "tags": [
           "customer"
@@ -526,7 +2567,7 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           }
@@ -553,7 +2594,7 @@
         "security": [
           {
             "roserocket_auth": [
-              "orders"
+              "customers"
             ]
           }
         ]
@@ -575,7 +2616,7 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
@@ -611,7 +2652,7 @@
         "security": [
           {
             "roserocket_auth": [
-              "orders"
+              "customers"
             ]
           }
         ]
@@ -633,7 +2674,7 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -661,13 +2702,13 @@
         "security": [
           {
             "roserocket_auth": [
-              "orders"
+              "customers"
             ]
           }
         ]
       }
     },
-    "/orders/customers/{customerExtID}/upsert": {
+    "/customers/{customerExtID}/upsert": {
       "put": {
         "tags": [
           "customer"
@@ -685,7 +2726,7 @@
           {
             "name": "customerExtID",
             "in": "path",
-            "description": "External ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "External ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
@@ -721,13 +2762,13 @@
         "security": [
           {
             "roserocket_auth": [
-              "orders"
+              "customers"
             ]
           }
         ]
       }
     },
-    "/orders/customers/{customerID}/orders/{orderID}/spot_quote": {
+    "/customers/{customerID}/orders/{orderID}/spot_quote": {
       "post": {
         "tags": [
           "quote"
@@ -745,14 +2786,14 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
           {
             "name": "orderID",
             "in": "path",
-            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -795,7 +2836,7 @@
         ]
       }
     },
-    "/orders/customers/{customerID}/orders/{orderID}/quotes": {
+    "/customers/{customerID}/orders/{orderID}/quotes": {
       "post": {
         "tags": [
           "quote"
@@ -813,14 +2854,14 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
           {
             "name": "orderID",
             "in": "path",
-            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -882,14 +2923,14 @@
           {
             "name": "customerID",
             "in": "path",
-            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__.",
+            "description": "ID of the customer that creates the order. It could also be the external ID of the customer, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the customer's external ID is __test123__ then the value of customerID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string"
           },
           {
             "name": "orderID",
             "in": "path",
-            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__. So for example if the order's external ID is __order123__ then the value of customerID should be __ext:order1234__.",
+            "description": "ID of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
             "required": true,
             "type": "string",
             "format": "uuid"
@@ -942,7 +2983,10 @@
       "tokenUrl": "https://auth.roserocket.com/oauth/token",
       "flow": "password",
       "scopes": {
-        "orders": "manage orders"
+        "orders": "manage orders",
+        "customers": "manage customers",
+        "legs": "manage legs",
+        "manifests": "manage manifests"
       }
     },
     "jwt": {
@@ -1013,7 +3057,14 @@
             "invoice-created",
             "invoice-sent",
             "invoice-paid",
-            "claim"
+            "claim",
+            "draft-quick-quote",
+            "quick-quoting",
+            "quick-quoted",
+            "no-quick-quote",
+            "spot-qq-requested",
+            "pickup-request",
+            "rejected"
           ],
           "readOnly": true
         },
@@ -1114,7 +3165,7 @@
           "description": "Commodities items",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/OrderCommodity"
+            "$ref": "#/definitions/Commodity"
           }
         },
         "accessorials": {
@@ -1127,17 +3178,17 @@
       }
     },
     "OrderAddress": {
-      "description": "Address",
+      "description": "Order address",
       "type": "object",
       "properties": {
         "address_book_id": {
-          "description": "Auto generated address book id. This field value can be _null_",
+          "description": "Auto generated address book id. This field value can be _null_. Leave this field as null if you want to manually specify the address. If you want to populate the address using address_book_id, you must leave address_book_external_id empty.",
           "type": "string",
           "format": "uuid",
           "readOnly": true
         },
         "address_book_external_id": {
-          "description": "Address book external id. This field value can be _null_",
+          "description": "Address book external id. This field value can be _null_. Leave this field as null if you want to manually specify the address. If you want to populate the address using address_book_external_id, you must leave address_book_id empty.",
           "type": "string",
           "format": "uuid"
         },
@@ -1237,7 +3288,7 @@
         }
       }
     },
-    "OrderCommodity": {
+    "Commodity": {
       "description": "Commodity item",
       "type": "object",
       "properties": {
@@ -1333,6 +3384,199 @@
         "sku": {
           "description": "SKU number",
           "type": "string"
+        }
+      }
+    },
+    "Leg": {
+      "description": "Leg",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Auto generated system ID",
+          "readOnly": true
+        },
+        "sequence_id": {
+          "type": "integer",
+          "description": "Auto generated sequence ID per customer",
+          "readOnly": true
+        },
+        "version": {
+          "type": "integer",
+          "description": "Auto generated version number (incremental)",
+          "readOnly": true
+        },
+        "external_id": {
+          "type": "string",
+          "description": "External ID for mapping the leg to an external system. This field value can be _null_"
+        },
+        "public_id": {
+          "type": "string",
+          "description": "Auto generated human readable ID",
+          "readOnly": true
+        },
+        "order_id": {
+          "type": "string",
+          "description": "Related order ID",
+          "readOnly": true
+        },
+        "manifest_id": {
+          "type": "string",
+          "description": "Related manifest ID (assigned). This field value can be _null_"
+        },
+        "origin": {
+          "$ref": "#/definitions/LegAddress"
+        },
+        "destination": {
+          "$ref": "#/definitions/LegAddress"
+        },
+        "status": {
+          "type": "string",
+          "description": "Leg Status",
+          "enum": [
+            "available",
+            "pending",
+            "dispatched",
+            "arrived_origin",
+            "in_origin",
+            "loaded",
+            "departed_origin",
+            "arrived_destination",
+            "in_destination",
+            "unloaded",
+            "departed_destination",
+            "cancelled",
+            "problem"
+          ],
+          "readOnly": true
+        },
+        "origin_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Origin ready time range (start)"
+        },
+        "origin_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Origin ready time range (end)"
+        },
+        "origin_appt_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Origin appointment time range (start). This field value can be _null_"
+        },
+        "origin_appt_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Origin appointment time range (end). This field value can be _null_"
+        },
+        "destination_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Destination expected time range (start). This field value can be _null_"
+        },
+        "destination_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Destination expected time range (end). This field value can be _null_"
+        },
+        "destination_appt_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Destination appointment time range (start). This field value can be _null_"
+        },
+        "destination_appt_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Destination appointment time range (end). This field value can be _null_"
+        },
+        "commodities": {
+          "description": "Commodities items",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Commodity"
+          }
+        },
+        "accessorials": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      }
+    },
+    "LegAddress": {
+      "description": "Leg address",
+      "type": "object",
+      "properties": {
+        "terminal_id": {
+          "description": "Related terminal ID. This field value can be _null_",
+          "type": "string",
+          "format": "uuid"
+        },
+        "org_name": {
+          "description": "Organization name",
+          "type": "string"
+        },
+        "contact_name": {
+          "description": "Contact name",
+          "type": "string"
+        },
+        "address_1": {
+          "description": "Address line 1",
+          "type": "string"
+        },
+        "address_2": {
+          "description": "Address line 2",
+          "type": "string"
+        },
+        "suite": {
+          "description": "Suite number",
+          "type": "string"
+        },
+        "city": {
+          "description": "City",
+          "type": "string"
+        },
+        "state": {
+          "description": "State / Province",
+          "type": "string"
+        },
+        "country": {
+          "description": "Country (2 letter ISO)",
+          "type": "string"
+        },
+        "postal": {
+          "description": "Postal / Zip code",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Phone number",
+          "type": "string"
+        },
+        "phone_ext": {
+          "description": "Phone extension",
+          "type": "string"
+        },
+        "email": {
+          "description": "Email",
+          "type": "string"
+        },
+        "fax": {
+          "description": "Fax",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
         }
       }
     },
@@ -1745,6 +3989,477 @@
         "error_message": {
           "description": "Error message",
           "type": "string"
+        }
+      }
+    },
+    "Manifest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Id of the manifest",
+          "type": "string",
+          "format": "uuid"
+        },
+        "nickname": {
+          "description": "The nickname for the manifest",
+          "type": "string"
+        },
+        "org_id": {
+          "description": "Id of the organization to which the manifest belongs",
+          "type": "string",
+          "format": "uuid"
+        },
+        "vehicle_id": {
+          "description": "Id of the vehicle corresponding to the manifest",
+          "type": "string",
+          "format": "uuid"
+        },
+        "dispathcer_user_id": {
+          "description": "Id of the dispatcher of the manifest",
+          "type": "string",
+          "format": "uuid"
+        },
+        "driver_user_id": {
+          "description": "Id of the driver corresponding to the manifest",
+          "type": "string",
+          "format": "uuid"
+        },
+        "trailer_id": {
+          "description": "Id of the trailer corresponding to the manifest",
+          "type": "string",
+          "format": "uuid"
+        },
+        "partner_carrier_id": {
+          "description": "Id of the partner/carrier that corresponds to the manifest",
+          "type": "string",
+          "format": "uuid"
+        },
+        "partner_carrier_service_id": {
+          "description": "Id of the partner/carrier service that corresponds to the manifest",
+          "type": "string",
+          "format": "uuid"
+        },
+        "sequential_id": {
+          "description": "The manifest's sequential id",
+          "type": "string",
+          "format": "uuid"
+        },
+        "full_id": {
+          "description": "The full id of the string",
+          "type": "string",
+          "format": "uuid"
+        },
+        "scheduled_at": {
+          "description": "The time at which the manifest was scheduled",
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "description": "The status of the manifest",
+          "type": "string",
+          "enum": [
+            "planning",
+            "planned",
+            "cancelled",
+            "assigned",
+            "accepted",
+            "rejected",
+            "problem",
+            "completed",
+            "bill-created",
+            "bill-sent",
+            "bill-paid"
+          ]
+        },
+        "dispatched_at": {
+          "description": "The time at which the manifest was dispatched",
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "description": "The time at which the manifest was completed",
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "ManifestEvent": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The id of the manifest event",
+          "type": "string",
+          "format": "uuid"
+        },
+        "created_at": {
+          "description": "The time of the event's creation",
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "description": "The time the event was last updated",
+          "type": "string",
+          "format": "date-time"
+        },
+        "user_id": {
+          "description": "The id of the user who created the event",
+          "type": "string",
+          "format": "date-time"
+        },
+        "manifest_id": {
+          "description": "The id of the manifest for which the event belongs",
+          "type": "string",
+          "format": "uuid"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "author": {
+              "description": "The name of the user who authored the event",
+              "type": "string"
+            },
+            "text": {
+              "description": "The contents of the message",
+              "type": "string"
+            },
+            "type": {
+              "description": "The type of manifest message",
+              "type": "string",
+              "enum": [
+                "notes"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "BulkOrderCreateResponse": {
+      "type": "object",
+      "properties": {
+        "job_id": {
+          "description": "The id of the bulk create job",
+          "type": "string",
+          "format": "uuid"
+        },
+        "message": {
+          "description": "Information about the status of the bulk job.",
+          "type": "string"
+        }
+      }
+    },
+    "BulkOrderEmailResults": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "description": "The results of the bulk create job.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "order": {
+                "$ref": "#/definitions/Order"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "Imported",
+                  "Failed"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "LegFileRequest": {
+      "description": "A request to create a file/document for a leg",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of leg file",
+          "enum": [
+            "other",
+            "comm-invoice",
+            "pod",
+            "pop",
+            "pod-sig",
+            "pop-sig",
+            "carrier-invoice",
+            "smc",
+            "bol"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "description": "The url location for the leg file"
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the leg file"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata object for the leg file"
+        }
+      }
+    },
+    "LegFile": {
+      "description": "The file for the leg",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid for the leg file"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp for the creation of the leg file"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp for the last update of the leg file"
+        },
+        "org_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid for the organization of the leg file"
+        },
+        "leg_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid of the leg corresponding to the leg file"
+        },
+        "uploaded_by": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid of the user who uploaded the leg file"
+        },
+        "uploaded_at": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of leg file",
+          "enum": [
+            "other",
+            "comm-invoice",
+            "pod",
+            "pop",
+            "pod-sig",
+            "pop-sig",
+            "carrier-invoice",
+            "smc",
+            "bol"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "description": "The url location for the leg file"
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the leg file"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata object for the leg file"
+        },
+        "task_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The task id of the leg that corresponds to the leg file"
+        }
+      }
+    },
+    "OrderFileRequest": {
+      "description": "A request to create a file/document for an order",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "The type of order file",
+          "enum": [
+            "other",
+            "comm-invoice",
+            "pod",
+            "pop",
+            "pod-sig",
+            "pop-sig",
+            "carrier-invoice",
+            "smc",
+            "bol"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "description": "The url location for the order file"
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the order file"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata object for the order file"
+        }
+      }
+    },
+    "OrderFile": {
+      "description": "The file for the order",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid for the order file"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp for the creation of the order file"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp for the last update of the order file"
+        },
+        "org_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid for the organization of the order file"
+        },
+        "leg_id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid of the order corresponding to the order file"
+        },
+        "uploaded_by": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid of the user who uploaded the order file"
+        },
+        "uploaded_at": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The uuid"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of order file",
+          "enum": [
+            "other",
+            "comm-invoice",
+            "pod",
+            "pop",
+            "pod-sig",
+            "pop-sig",
+            "carrier-invoice",
+            "smc",
+            "bol"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "description": "The url location for the order file"
+        },
+        "description": {
+          "type": "string",
+          "description": "A description of the order file"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata object for the order file"
+        }
+      }
+    },
+    "OrderAndLegsResponse": {
+      "description": "An order with its corresponding legs",
+      "type": "object",
+      "properties": {
+        "order": {
+          "$ref": "#/definitions/Order"
+        },
+        "legs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Leg"
+          }
+        }
+      }
+    },
+    "OrderAddressReviseRequest": {
+      "description": "A request to change the origin or destination of an order",
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/OrderAddress"
+        }
+      }
+    },
+    "CommodityReviseRequest": {
+      "description": "A request to change the commodities of an order/leg",
+      "type": "object",
+      "properties": {
+        "commodities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Commodity"
+          }
+        }
+      }
+    },
+    "LegAddressReviseRequest": {
+      "description": "A request to change the origin or destination of an leg",
+      "type": "object",
+      "properties": {
+        "address": {
+          "$ref": "#/definitions/LegAddress"
         }
       }
     }

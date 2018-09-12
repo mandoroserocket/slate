@@ -31,5 +31,20 @@ Then copy to platform docs:
 
 ```
 $ cp -R /usr/local/src/github.com/roserocket/api-docs/build/* /usr/local/src/github.com/roserocket/roserocket/platform/static/docs/.
-$ cp /usr/local/src/github.com/roserocket/api-docs/source/swagger/swagger.json /usr/local/src/github.com/roserocket/roserocket/platform/static/docs/swagger.json
+```
+
+# Swagger files
+
+To convert from swagger to slate use widdersins
+
+```
+$ node /usr/local/src/github.com/Mermade/widdershins/widdershins.js /usr/local/src/github.com/roserocket/api-docs/source/swagger/swagger.json /usr/local/src/github.com/roserocket/api-docs/source/index.html.md
+```
+
+Add this to the markdown:
+
+```
+Swagger definition:
+
+* <a href="https://platform.roserocket.com/swagger/swagger.json">https://platform.roserocket.com/swagger/swagger.json</a>
 ```
