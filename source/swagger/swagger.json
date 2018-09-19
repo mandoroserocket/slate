@@ -1597,6 +1597,58 @@
         ]
       }
     },
+    "/legs/{legID}/upload_bol": {
+      "post": {
+        "tags": [
+          "leg"
+        ],
+        "summary": "Upload BOL for a specified leg",
+        "description": "",
+        "operationId": "uploadLegBOLByLegID",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "legID",
+            "in": "path",
+            "description": "ID of the leg. It could also be the external ID of the leg, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the leg's external ID is __test123__ then the value of legID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "File to upload",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "leg_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/LegFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
     "/legs/{legID}/upload_file": {
       "post": {
         "tags": [
@@ -2044,6 +2096,65 @@
         }
       }
     },
+    "/customers/{customerID}/orders/{orderID}/upload_bol": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "Upload BOL for a specified order",
+        "description": "",
+        "operationId": "uploadOrderBOL",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "parameters": [
+          {
+            "name": "orderID",
+            "in": "path",
+            "description": "ID of the order to get files for. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "ID of the customer to of the order. It could also be the external ID of the order, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the order's external ID is __test123__ then the value of orderID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "formData",
+            "description": "File to upload",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order_file": {
+                  "type": "object",
+                  "$ref": "#/definitions/OrderFile"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        }
+      }
+    },
     "/customers/{customerID}/orders/{orderID}/upload_file": {
       "post": {
         "tags": [
@@ -2051,7 +2162,7 @@
         ],
         "summary": "Upload file for a specified order",
         "description": "",
-        "operationId": "uploadOrderFileByLegID",
+        "operationId": "uploadOrderFile",
         "produces": [
           "application/json"
         ],
@@ -2105,7 +2216,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "leg_file": {
+                "order_file": {
                   "type": "object",
                   "$ref": "#/definitions/OrderFile"
                 }
@@ -2128,7 +2239,7 @@
         ],
         "summary": "Update an uploaded file for a specified order",
         "description": "",
-        "operationId": "updatedUploadedFileByOrderAndFileID",
+        "operationId": "updateOrderFile",
         "produces": [
           "application/json"
         ],
@@ -2189,7 +2300,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "leg_file": {
+                "order_file": {
                   "type": "object",
                   "$ref": "#/definitions/OrderFile"
                 }
@@ -2234,7 +2345,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "order": {
+                "leg": {
                   "$ref": "#/definitions/Leg"
                 }
               }
@@ -2259,7 +2370,7 @@
     "/manifests/{manifestID}": {
       "get": {
         "tags": [
-          "manifests"
+          "manifest"
         ],
         "summary": "Get manifest by ID",
         "description": "",
@@ -2308,7 +2419,7 @@
     "/manifests/{manifestID}/legs": {
       "get": {
         "tags": [
-          "manifests",
+          "manifest",
           "leg"
         ],
         "summary": "Get legs by manifest ID",
@@ -2360,7 +2471,7 @@
     "/manifests/{manifestID}/notes": {
       "post": {
         "tags": [
-          "manifests"
+          "manifest"
         ],
         "summary": "Create notes event for a manifest by manifest ID",
         "description": "",
@@ -2386,6 +2497,199 @@
                 "event": {
                   "type": "object",
                   "$ref": "#/definitions/ManifestEvent"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "manifests"
+            ]
+          }
+        ]
+      }
+    },
+    "/manifests/{manifestID}/stops": {
+      "get": {
+        "tags": [
+          "manifest",
+          "stop"
+        ],
+        "summary": "Get stops by manifest ID",
+        "description": "",
+        "operationId": "getStopsByManifestID",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manifestID",
+            "in": "path",
+            "description": "ID of the manifest for which to get stops. It could also be the external ID of the manifest, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the manifest's external ID is __test123__ then the value of manifestID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "stops": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Stop"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "manifests"
+            ]
+          }
+        ]
+      }
+    },
+    "/manifests/{manifestID}/stops/{stopID}": {
+      "get": {
+        "tags": [
+          "manifest",
+          "stop"
+        ],
+        "summary": "Get manifest's stop by ID",
+        "description": "",
+        "operationId": "getManifestStopByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manifestID",
+            "in": "path",
+            "description": "ID of the manifest. It could also be the external ID of the manifest, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the manifest's external ID is __test123__ then the value of manifestID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "stopID",
+            "in": "path",
+            "description": "ID of the stop",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "stop": {
+                  "$ref": "#/definitions/Stop"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/ApiError"
+            }
+          }
+        },
+        "security": [
+          {
+            "roserocket_auth": [
+              "manifests"
+            ]
+          }
+        ]
+      }
+    },
+    "/manifests/{manifestID}/stops/{stopID}/update_schedule": {
+      "put": {
+        "tags": [
+          "manifest",
+          "stop"
+        ],
+        "summary": "Update manifest's stop schedule by ID",
+        "description": "",
+        "operationId": "updateManifestStopScheduleByID",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "manifestID",
+            "in": "path",
+            "description": "ID of the manifest. It could also be the external ID of the manifest, but in order to use external ID it has to follow this format: __ext:{externalID}__ or __external_id:{externalID}__. So for example if the manifest's external ID is __test123__ then the value of manifestID should be __ext:test1234__ or __external_id:test1234__.",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "stopID",
+            "in": "path",
+            "description": "ID of the stop",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Stop object",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "schedule_start_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Schedule time range (start)"
+                },
+                "schedule_end_at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "Schedule time range (start)"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "stop": {
+                  "$ref": "#/definitions/Stop"
                 }
               }
             }
@@ -3425,6 +3729,16 @@
           "type": "string",
           "description": "Related manifest ID (assigned). This field value can be _null_"
         },
+        "origin_stop_id": {
+          "type": "string",
+          "description": "Stop ID of the origin (only if this leg has been assigned to a manifest). This field value can be _null_",
+          "readOnly": true
+        },
+        "destination_stop_id": {
+          "type": "string",
+          "description": "Stop ID of the destination (only if this leg has been assigned to a manifest). This field value can be _null_",
+          "readOnly": true
+        },
         "origin": {
           "$ref": "#/definitions/LegAddress"
         },
@@ -3504,6 +3818,9 @@
             "type": "string",
             "format": "uuid"
           }
+        },
+        "history": {
+          "$ref": "#/definitions/LegHistory"
         }
       }
     },
@@ -3515,6 +3832,158 @@
           "description": "Related terminal ID. This field value can be _null_",
           "type": "string",
           "format": "uuid"
+        },
+        "org_name": {
+          "description": "Organization name",
+          "type": "string"
+        },
+        "contact_name": {
+          "description": "Contact name",
+          "type": "string"
+        },
+        "address_1": {
+          "description": "Address line 1",
+          "type": "string"
+        },
+        "address_2": {
+          "description": "Address line 2",
+          "type": "string"
+        },
+        "suite": {
+          "description": "Suite number",
+          "type": "string"
+        },
+        "city": {
+          "description": "City",
+          "type": "string"
+        },
+        "state": {
+          "description": "State / Province",
+          "type": "string"
+        },
+        "country": {
+          "description": "Country (2 letter ISO)",
+          "type": "string"
+        },
+        "postal": {
+          "description": "Postal / Zip code",
+          "type": "string"
+        },
+        "phone": {
+          "description": "Phone number",
+          "type": "string"
+        },
+        "phone_ext": {
+          "description": "Phone extension",
+          "type": "string"
+        },
+        "email": {
+          "description": "Email",
+          "type": "string"
+        },
+        "fax": {
+          "description": "Fax",
+          "type": "string"
+        },
+        "latitude": {
+          "description": "Coordinate (latitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "description": "Coordinate (longitude). This field value can be _null_",
+          "type": "number",
+          "format": "float"
+        }
+      }
+    },
+    "LegHistory": {
+      "description": "Historical timestamps of a leg",
+      "type": "object",
+      "readOnly": true,
+      "properties": {
+        "origin_arrived_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner arrived at origin"
+        },
+        "origin_in_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner in at origin"
+        },
+        "origin_pickedup_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner picked up at origin"
+        },
+        "origin_out_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner out at origin"
+        },
+        "destination_arrived_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner arrived at destination"
+        },
+        "destination_in_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner in at destination"
+        },
+        "destination_delivered_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner delievered up at destination"
+        },
+        "destination_out_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp of when the driver/partner out at destination"
+        }
+      }
+    },
+    "Stop": {
+      "description": "Stop",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Auto generated system ID",
+          "readOnly": true
+        },
+        "manifest_id": {
+          "type": "string",
+          "description": "Related Manifest ID",
+          "readOnly": true
+        },
+        "ordinal": {
+          "type": "integer",
+          "description": "Ordinal of the stop in the manifest",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "description": "Stop Type",
+          "enum": [
+            "stop",
+            "start",
+            "end",
+            "terminal"
+          ],
+          "readOnly": true
+        },
+        "schedule_start_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Scheduled time range (start)"
+        },
+        "schedule_end_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Scheduled time range (end)"
         },
         "org_name": {
           "description": "Organization name",
