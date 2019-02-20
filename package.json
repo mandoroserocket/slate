@@ -1,0 +1,17 @@
+{
+    "name": "roserocket-slate",
+    "version": "1.0.0",
+    "description": "Libary to create and maintain RoseRocket Docs",
+    "contributors": [
+        {
+            "name": "Alexander Luksidadi",
+            "email": "alex.l@roserocket.com"
+        }
+    ],
+    "keywords": [],
+    "dependencies": {
+        "widdershins": "^3.6.7"
+    },
+    "devDependencies": {},
+    "engine": "node >= 0.10.x"
+}
