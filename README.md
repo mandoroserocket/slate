@@ -48,6 +48,12 @@ You're going to need:
 4. Initialize and start Slate. You can either do this locally, or with Vagrant:
 
 ```shell
+# installing bundler (as admin)
+sudo gem install bundler
+
+# run bundle, it will install it's own dependencies
+bundle
+
 # either run this to run locally
 bundle install
 bundle exec middleman server
@@ -61,6 +67,20 @@ You can now see the docs at http://localhost:4567. Whoa! That was fast!
 Now that Slate is all set up on your machine, you'll probably want to learn more about [editing Slate markdown](https://github.com/lord/slate/wiki/Markdown-Syntax), or [how to publish your docs](https://github.com/lord/slate/wiki/Deploying-Slate).
 
 If you'd prefer to use Docker, instructions are available [in the wiki](https://github.com/lord/slate/wiki/Docker).
+
+Update Instructions
+---------------------------------
+```shell
+# 1 - The existing swagger file can be found here:
+# /RoseRocket/platform/static/docs/swagger/swagger.yaml
+Use a swagger editor to make the changes you want
+
+# 2 - Setting up your local executable (from this project root)
+cp updateDocs.sh.example updateDocs.sh
+chmod 755 updateDocs.sh
+
+# 3 - Update updateDocs.sh to use the proper paths in your favorite editor
+```
 
 Companies Using Slate
 ---------------------------------
