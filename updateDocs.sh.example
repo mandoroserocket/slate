@@ -3,4 +3,5 @@
 #Below - Path to Local Roserocket and Local Slate
 rrPath="${HOMEPATH}/src/github.com/RoseRocket/roserocket" 
 rrSlate="${HOMEPATH}/src/github.com//RoseRocket/slate"
-node $rrSlate/node_modules/widdershins/widdershins.js $rrSlate/source/swagger/swagger.json $rrSlate/source/index.html.md && bundle exec middleman build --clean && cp -R $rrSlate/build/* $rrPath/platform/static/docs
+cp $rrPath/platform/static/docs/swagger/swagger.yaml $rrSlate/source/swagger/swagger.yaml
+yaml2json $rrSlate/source/swagger/swagger.yaml > $rrSlate/source/swagger/swagger.json && node $rrSlate/node_modules/widdershins/widdershins.js $rrSlate/source/swagger/swagger.json $rrSlate/source/index.html.md && bundle exec middleman build --clean && cp -R $rrSlate/build/* $rrPath/platform/static/docs

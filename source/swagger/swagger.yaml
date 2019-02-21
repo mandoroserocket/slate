@@ -503,6 +503,55 @@ paths:
       security:
         - roserocket_auth:
             - orders
+  '/customers/{customerID}/orders/{orderID}/events/internal_notes':
+    get:
+      tags:
+        - order
+      summary: Get an internal event by orderID
+      description: ''
+      operationId: getOrderInternalEventByOrderID
+      produces:
+        - application/json
+      parameters:
+        - name: customerID
+          in: path
+          description: >-
+            ID of the customer that creates the order. It could also be the
+            external ID of the customer, but in order to use external ID it has
+            to follow this format: __ext:{externalID}__ or
+            __external_id:{externalID}__. So for example if the customer's
+            external ID is __test123__ then the value of customerID should be
+            __ext:test1234__ or __external_id:test1234__.
+          required: true
+          type: string
+        - name: orderID
+          in: path
+          description: >-
+            ID of the order. It could also be the external ID of the order, but
+            in order to use external ID it has to follow this format:
+            __ext:{externalID}__ or __external_id:{externalID}__. So for example
+            if the order's external ID is __test123__ then the value of orderID
+            should be __ext:test1234__ or __external_id:test1234__.
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              order_audit_history:
+                type: array
+                items:
+                  $ref: '#/definitions/OrderAuditEvent'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - orders
   '/customers/{customerID}/orders/{orderID}':
     get:
       tags:
@@ -1328,6 +1377,37 @@ paths:
           description: Bad request
           schema:
             $ref: '#/definitions/ApiError'
+  '/orders/{orderID}':
+    get:
+      tags:
+        - order
+      summary: Get order by Rose Rocket order ID
+      description: ''
+      operationId: getOrderByRRID
+      produces:
+        - application/json
+      parameters:
+        - name: orderID
+          in: path
+          description:
+            ID of the order. Must be the Rose Rocket ID of the order.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              order:
+                $ref: '#/definitions/Order'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - orders
   '/orders/{orderID}/legs':
     get:
       tags:
@@ -1829,6 +1909,292 @@ paths:
       security:
         - roserocket_auth:
             - manifests
+  '/manifests':
+    post:
+      tags:
+        - manifest
+      summary: Create a new manifest
+      description: ''
+      operationId: createManifest
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Manifest create object
+          required: true
+          schema:
+            type: object
+            properties:
+              manifest:
+                $ref: '#/definitions/Manifest'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest:
+                type: object
+                $ref: '#/definitions/Manifest'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/assign_driver':
+    post:
+      tags:
+        - manifest
+      summary: Assign a driver to a manifest
+      description: ''
+      operationId: assignDriverToManifest
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest. It could also be the external ID of the
+            manifest, but in order to use external ID it has to follow this
+            format: __ext:{externalID}__ or __external_id:{externalID}__. So for
+            example if the manifest's external ID is __test123__ then the value
+            of manifestID should be __ext:test1234__ or
+            __external_id:test1234__.
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Assign manifest driver request object
+          required: true
+          schema:
+            type: object
+            properties:
+              driver_user_id:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest:
+                type: object
+                $ref: '#/definitions/Manifest'
+              driver_user_name:
+                type: string
+                format: uuid
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/assign_carrier':
+    post:
+      tags:
+        - manifest
+      summary: Assign a carrier to a manifest
+      description: ''
+      operationId: assignCarrierToManifest
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest. It could also be the external ID of the
+            manifest, but in order to use external ID it has to follow this
+            format: __ext:{externalID}__ or __external_id:{externalID}__. So for
+            example if the manifest's external ID is __test123__ then the value
+            of manifestID should be __ext:test1234__ or
+            __external_id:test1234__.
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Assign manifest carrier request object
+          required: true
+          schema:
+            type: object
+            properties:
+              partner_carrier_id:
+                type: string
+                format: uuid
+              service_id:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest:
+                type: object
+                $ref: '#/definitions/Manifest'
+              partner_carrier_id:
+                type: string
+                format: uuid
+              service_id:
+                type: string
+                format: uuid
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/dispatch_to_carrier':
+    post:
+      tags:
+        - manifest
+      summary: Dispatch a manifest to a carrier
+      description: ''
+      operationId: dispatchManifestToCarrier
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest. It could also be the external ID of the
+            manifest, but in order to use external ID it has to follow this
+            format: __ext:{externalID}__ or __external_id:{externalID}__. So for
+            example if the manifest's external ID is __test123__ then the value
+            of manifestID should be __ext:test1234__ or
+            __external_id:test1234__.
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Dispatch to carrier request
+          required: true
+          schema:
+            type: object
+            properties:
+              from:
+                type: string
+              cc:
+                type: string
+              subject:
+                type: string
+              to:
+                type: string
+              message:
+                type: string
+              copy_to_myself:
+                type: string
+              include_as_attachment:
+                type: string
+              attach_rate_confirmation:
+                type: string
+              attach_bol:
+                type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest:
+                type: object
+                $ref: '#/definitions/Manifest'
+              partner_carrier_id:
+                type: string
+                format: uuid
+              service_id:
+                type: string
+                format: uuid
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/assign_and_dispatch_to_carrier':
+    post:
+      tags:
+        - manifest
+      summary: Dispatch a manifest to a carrier
+      description: ''
+      operationId: assignAndDispatchManifestToCarrier
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest. It could also be the external ID of the
+            manifest, but in order to use external ID it has to follow this
+            format: __ext:{externalID}__ or __external_id:{externalID}__. So for
+            example if the manifest's external ID is __test123__ then the value
+            of manifestID should be __ext:test1234__ or
+            __external_id:test1234__.
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Dispatch to carrier request
+          required: true
+          schema:
+            type: object
+            properties:
+              dispatch_request:
+                type: object
+                properties:
+                  from:
+                    type: string
+                  cc:
+                    type: string
+                  subject:
+                    type: string
+                  to:
+                    type: string
+                  message:
+                    type: string
+                  copy_to_myself:
+                    type: string
+                  include_as_attachment:
+                    type: string
+                  attach_rate_confirmation:
+                    type: string
+                  attach_bol:
+                    type: string
+              partner_carrier_id:
+                type: string
+                format: uuid
+              service_id:
+                type: string
+                format: uuid
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest:
+                type: object
+                $ref: '#/definitions/Manifest'
+              partner_carrier_id:
+                type: string
+                format: uuid
+              service_id:
+                type: string
+                format: uuid
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
   '/manifests/{manifestID}/legs':
     get:
       tags:
@@ -1861,6 +2227,254 @@ paths:
                 type: array
                 items:
                   $ref: '#/definitions/Leg'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/add_legs':
+    post:
+      tags:
+        - manifest
+        - leg
+      summary: Bulk add legs to specified manifest
+      description: ''
+      operationId: bulkAddLegsByManifestID
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest for which to add legs. It could also be the
+            external ID of the manifest, but in order to use external ID it has
+            to follow this format: __ext:{externalID}__ or
+            __external_id:{externalID}__. So for example if the manifest's
+            external ID is __test123__ then the value of manifestID should be
+            __ext:test1234__ or __external_id:test1234__.
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Add legs to manifest request object
+          required: true
+          schema:
+            type: object
+            properties:
+              leg_ids:
+                type: array
+                items:
+                  type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              legs:
+                type: array
+                items:
+                  $ref: '#/definitions/Leg'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/payment':
+    get:
+      tags:
+        - manifest
+      summary: Get manifest payment by manifest ID
+      description: ''
+      operationId: getManifestPaymentByManifestID
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest for which to get a payment. It could also
+            be the external ID of the manifest, but in order to use external ID
+            it has to follow this format: __ext:{externalID}__ or
+            __external_id:{externalID}__. So for example if the manifest's
+            external ID is __test123__ then the value of manifestID should be
+            __ext:test1234__ or __external_id:test1234__.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest_payment:
+                type: object
+                $ref: '#/definitions/ManifestPayment'
+              payment_items:
+                type: array
+                items:
+                  $ref: '#/definitions/ManifestPaymentItem'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+    put:
+      tags:
+        - manifest
+      summary: Update a manifest payment by manifest ID. Note - this endpoint does not affect manifest payment items
+      description: ''
+      operationId: updateManifestPaymentByManifestID
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest for which to update a payment. It could also
+            be the external ID of the manifest, but in order to use external ID
+            it has to follow this format: __ext:{externalID}__ or
+            __external_id:{externalID}__. So for example if the manifest's
+            external ID is __test123__ then the value of manifestID should be
+            __ext:test1234__ or __external_id:test1234__.
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: Request to update manifest payment
+          schema:
+            type: object
+            properties:
+              manifest_payment:
+                type: object
+                $ref: '#/definitions/ManifestPayment'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest_payment:
+                type: object
+                $ref: '#/definitions/ManifestPayment'
+              payment_items:
+                type: array
+                items:
+                  $ref: '#/definitions/ManifestPaymentItem'
+              created_by:
+                type: string
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/payment/items/upsert':
+    put:
+      tags:
+        - manifest
+      summary: Upsert payment items to a manifest payment. To update a payment, specify a valid id for the payment. Payments without ids will be created.
+      description: ''
+      operationId: upsertManifestPaymentItemsByManifestID
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest for which to upsert a set of payments. It could also
+            be the external ID of the manifest, but in order to use external ID
+            it has to follow this format: __ext:{externalID}__ or
+            __external_id:{externalID}__. So for example if the manifest's
+            external ID is __test123__ then the value of manifestID should be
+            __ext:test1234__ or __external_id:test1234__.
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: Request to update manifest payment
+          schema:
+            type: object
+            properties:
+              payment_items:
+                type: array
+                items:
+                  $ref: '#/definitions/ManifestPaymentItem'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest_payment:
+                type: object
+                $ref: '#/definitions/ManifestPayment'
+              payment_items:
+                type: array
+                items:
+                  $ref: '#/definitions/ManifestPaymentItem'
+              created_by:
+                type: string
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+      security:
+        - roserocket_auth:
+            - manifests
+  '/manifests/{manifestID}/payment/items':
+    delete:
+      tags:
+        - manifest
+      summary: Delete manifest payment items by supplying an array of manifest payment item ids.
+      description: ''
+      operationId: deleteManifestPaymentItemsByManifestID
+      produces:
+        - application/json
+      parameters:
+        - name: manifestID
+          in: path
+          description: >-
+            ID of the manifest for which to delete a set of payments. It could also
+            be the external ID of the manifest, but in order to use external ID
+            it has to follow this format: __ext:{externalID}__ or
+            __external_id:{externalID}__. So for example if the manifest's
+            external ID is __test123__ then the value of manifestID should be
+            __ext:test1234__ or __external_id:test1234__.
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: Request to delete manifest payment items
+          schema:
+            type: object
+            properties:
+              payment_items:
+                type: array
+                items:
+                  type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              manifest_payment:
+                type: object
+                $ref: '#/definitions/ManifestPayment'
+              payment_items:
+                type: array
+                items:
+                  $ref: '#/definitions/ManifestPaymentItem'
+              created_by:
+                type: string
         '400':
           description: Bad request
           schema:
@@ -2051,6 +2665,180 @@ paths:
       security:
         - roserocket_auth:
             - manifests
+  /partner_carriers:
+    get:
+      tags:
+        - partner_carrier
+      summary: Search partner carriers
+      description: ''
+      operationId: searchPartnerCarriers
+      produces:
+        - application/json
+      parameters:
+        - name: search_term
+          in: query
+          description: Search term
+          type: string
+        - name: offset
+          in: query
+          description: Pagination offset
+          default: 0
+          minimum: 0
+          type: integer
+        - name: limit
+          in: query
+          description: Pagination limit
+          default: 20
+          minimum: 0
+          maximum: 50
+          type: integer
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              partner_carriers:
+                type: array
+                items:
+                  $ref: '#/definitions/PartnerCarrier'
+              offset:
+                type: integer
+              limit:
+                type: integer
+              total:
+                type: integer
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+    post:
+      tags:
+        - partner_carrier
+      summary: Create a partner carrier
+      description: ''
+      operationId: createPartnerCarrier
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: New Partner Carrier object
+          required: true
+          schema:
+            type: object
+            $ref: '#/definitions/PartnerCarrier'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              partner_carrier:
+                $ref: '#/definitions/PartnerCarrier'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+  '/partner_carriers/{partnerCarrierID}':
+    get:
+      tags:
+        - partner_carrier
+      summary: Get partner carrier by ID
+      description: ''
+      operationId: getPartnerCarrierByID
+      produces:
+        - application/json
+      parameters:
+        - name: partnerCarrierID
+          in: path
+          required: true
+          description: ID of the partner carrier
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              partner_carrier:
+                $ref: '#/definitions/PartnerCarrier'
+              services:
+                type: array
+                items:
+                  $ref: '#/definitions/Service'
+
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+    put:
+      tags:
+        - partner_carrier
+      summary: Update partner carrier by ID
+      description: ''
+      operationId: updatePartnerCarrierByID
+      produces:
+        - application/json
+      parameters:
+        - name: partnerCarrierID
+          in: path
+          description: ID of the partner carrier
+          type: string
+          format: uuid
+          required: true
+        - in: body
+          name: body
+          description: partner Carrier object
+          required: true
+          schema:
+            type: object
+            $ref: '#/definitions/PartnerCarrier'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              partner_carrier:
+                $ref: '#/definitions/PartnerCarrier'
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
+    delete:
+      tags:
+        - partner_carrier
+      summary: Delete partner carrier by ID
+      description: ''
+      operationId: deletePartnerCarrierByID
+      produces:
+        - application/json
+      parameters:
+        - name: partnerCarrierID
+          in: path
+          required: true
+          description: ID of the partner carrier
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: object
+            properties:
+              partner_carrier:
+                $ref: '#/definitions/PartnerCarrier'
+              services:
+                type: array
+                items:
+                  $ref: '#/definitions/Service'
+
+        '400':
+          description: Bad request
+          schema:
+            $ref: '#/definitions/ApiError'
   /customers:
     get:
       tags:
@@ -2477,7 +3265,7 @@ paths:
 securityDefinitions:
   roserocket_auth:
     type: oauth2
-    tokenUrl: 'https://auth.roserocket.com/oauth/token'
+    tokenUrl: 'https://auth.roserocket.com/oauth2/token'
     flow: password
     scopes:
       orders: manage orders
@@ -3461,8 +4249,8 @@ definitions:
         description: The full id of the string
         type: string
         format: uuid
-      scheduled_at:
-        description: The time at which the manifest was scheduled
+      start_at:
+        description: The time at which the manifest was scheduled to start
         type: string
         format: date-time
       status:
@@ -3525,6 +4313,124 @@ definitions:
             type: string
             enum:
               - notes
+  ManifestPayment:
+    type: object
+    properties:
+      id:
+        description: The id of the manifest payment
+        type: string
+        format: uuid
+      created_at:
+        description: The time of the payment's creation
+        type: string
+        format: date-time
+      updated_at:
+        description: The time the payment was last updated
+        type: string
+        format: date-time
+      created_by:
+        description: The id of the user who created the payment
+        type: string
+        format: date-time
+      manifest_id:
+        description: The id of the manifest for which the payment belongs
+        type: string
+        format: uuid
+      currency_id:
+        description: The currency of the payment
+        type: string
+        enum:
+          - cad
+          - usd
+      full_id:
+        description: The full id of the payment. This includes the full_id of the payment's manifest
+        type: string
+      revision:
+        description: The revision number of the payment
+        type: integer
+      send_to_email:
+        description: The email of the recipient of the payment
+        type: string
+      cc_to_email:
+        description: The email of the cc recipient of the payment
+        type: string
+      pay_to_company_name:
+        description: The company name of the recipient of the payment
+        type: string
+      pay_to_contact_name:
+        description: The contact name of the recipient of the payment
+        type: string
+      pay_to_address_1:
+        description: Line 1 of the address of the recipient of payment
+        type: string
+      pay_to_address_2:
+        description: Line 2 of the address of the recipient of payment
+        type: string
+      pay_to_city:
+        description: The city of recipient of the payment
+        type: string
+      pay_to_state:
+        description: The state/province of the recipient of the payment
+        type: string
+      pay_to_country:
+        description: The country of the recipient of the payment
+        type: string
+      pay_to_timezone:
+        description: The timezone of the recipient of the payment
+        type: string
+      notes:
+        description: Notes on the payment
+        type: string
+      sub_total_amount:
+        description: The subtotal of the payment
+        type: number
+      tax_amount:
+        description: The total tax amount of the payment
+        type: number
+      total_amount:
+        description: The total amount of the payment
+        type: number
+  ManifestPaymentItem:
+    type: object
+    properties:
+      id:
+        description: The id of the manifest payment item
+        type: string
+        format: uuid
+      created_at:
+        description: The time of the payment item's creation
+        type: string
+        format: date-time
+      updated_at:
+        description: The time the payment item was last updated
+        type: string
+        format: date-time
+      manifest_payment_id:
+        description: The id of the manifest payment to which the payment belongs
+        type: string
+        format: uuid
+      bill_class:
+        description: The bill class of payment item
+        type: string
+        enum:
+          - misc
+          - misc-deduction
+          - partner-freight
+          - partner-accessorial
+          - partner-fuel
+          - partner-misc
+      unit_price:
+        description: The per-unit price of the payment item
+        type: number
+      quantity:
+        description: The quantity of the payment item
+        type: number
+      total_amount:
+        description: The total amount of the payment item
+        type: number
+      description:
+        description: A description of the payment item
+        type: string
   BulkOrderCreateResponse:
     type: object
     properties:
@@ -3763,6 +4669,236 @@ definitions:
     properties:
       address:
         $ref: '#/definitions/OrderAddress'
+  OrderAuditEvent:
+    description: An order audit event
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      created_at:
+        type: string
+        format: date-time
+        description: The timestamp for the creation of the order file
+      updated_at:
+        type: string
+        format: date-time
+        description: The timestamp for the last update of the order file
+      user_id:
+        type: string
+        format: uuid
+      order_id:
+        type: string
+        format: uuid
+      data:
+        type: object
+  Service:
+    description: A service offered by a carrier
+    type: object
+    properties:
+      created_at:
+        type: string
+        format: date-time
+        description: The timestamp for the creation of the service
+      updated_at:
+        type: string
+        format: date-time
+        description: The timestamp for the last update of the service
+      id:
+        type: string
+        format: uuid
+      org_id:
+        type: string
+        format: uuid
+        description: The uuid for the organization of the service
+      carrier_app_id:
+        type: string
+        description: The id of the carrier app associated with the service
+      tariff_id:
+        type: string
+        description: The id of the tariff associated with the service
+      name:
+        type: string
+        description: The name of the service
+      is_active:
+        type: boolean
+        description: Whether or not the service is active
+      carrier_credential_json:
+        type: string
+        description: The unique json credential for the service
+      min_markup:
+        type: number
+        description: The minimum markup of the service
+      max_markup:
+        type: number
+        description: The maximum markup of the service
+      default_markup:
+        type: number
+        description: The default markup of the service
+      default_fuel_surcharge:
+        type: number
+        description: The default fuel surcharge of the service
+      currency_id:
+        type: string
+        description: The type of currency of the service
+      partner_carrier_id:
+        type: string
+        format: uuid,
+        description: The ID of the partner carrier associated with the service
+      service_type_id:
+        type: string
+        description: The id of the service's type
+      service_type_display_name:
+        type: string
+        description: The display name for the service's type
+      address_1:
+        type: string
+        description: The first address line of the service
+      address_2:
+        type: string
+        description: The second address line of the service
+      suite:
+        type: string
+        description: The suite of the service's address
+      city:
+        type: string
+        description: The city of the service's address
+      postal:
+        type: string
+        description: The postal code of the service's address
+      phone:
+        type: string
+        description: The phone number of the service
+      phone_ext:
+        type: string
+        description: The phone extension of the service
+      fax:
+        type: string
+        description: The fax number of the service
+      email:
+        type: string
+        description: The email address of the service
+      country:
+        type: string
+        description: The country of the service
+      state:
+        type: string
+        description: The state of the service
+      timezone:
+        type: string
+        description: The timezone in which the service resides
+      primary_contact_name:
+        type: string
+        description: The name of the service's primary contact
+      primary_contact_email:
+        type: string
+        description: The email of the service's primary contact
+      dispatch_contact_name:
+        type: string
+        description: The name of the service's dispatch contact
+      dispatch_contact_email:
+        type: string
+        description: The email of the service's dispatch contact
+      billing_contact_name:
+        type: string
+        description: The name of the service's billing contact
+      billing_contact_email:
+        type: string
+        description: The email of the service's billing contact
+  PartnerCarrier:
+    description: A partner carrier
+    type: object
+    properties:
+      created_at:
+        type: string
+        format: date-time
+        description: The timestamp for the creation of the partner carrier
+      updated_at:
+        type: string
+        format: date-time
+        description: The timestamp for the last update of the partner carrier
+      id:
+        type: string
+        format: uuid
+      org_id:
+        type: string
+        format: uuid
+        description: The uuid for the organization of the partner carrier
+      qb_external_id:
+        type: string
+        description: The external identifier for the partner carrier in QBO
+      external_id:
+        type: string
+        description: the external identifier for the partner carrier
+      name:
+        type: string
+        description: The name of the partner carrier
+      address_1:
+        type: string
+        description: The first address line of the partner carrier
+      address_2:
+        type: string
+        description: The second address line of the partner carrier
+      suite:
+        type: string
+        description: The suite of the partner carrier's address
+      city:
+        type: string
+        description: The city of the partner carrier's address
+      postal:
+        type: string
+        description: The postal code of the partner carrier's address
+      phone:
+        type: string
+        description: The phone number of the partner carrier
+      phone_ext:
+        type: string
+        description: The phone extension of the partner carrier
+      fax:
+        type: string
+        description: The fax number of the partner carrier
+      email:
+        type: string
+        description: The email address of the partner carrier
+      country:
+        type: string
+        description: The country of the partner carrier
+      state:
+        type: string
+        description: The state of the partner carrier
+      timezone:
+        type: string
+        description: The timezone in which the partner carrier resides
+      dispatch_contact_name:
+        type: string
+        description: The contact name for dispatches to partner carrier
+      dispatch_contact_email:
+        type: string
+        description: The contact email for dispatches to partner carrier
+      billing_contact_name:
+        type: string
+        description: The contact name for billing to partner carrier
+      billing_contact_email:
+        type: string
+        description: The contact email for billing to partner carrier
+      sales_contact_name:
+        type: string
+        description: The contact name for sales to partner carrier
+      sales_contact_email:
+        type: string
+        description: The contact email for sales to partner carrier
+      motor_carrier_id:
+        type: string
+        description: The motor carrier id of the partner carrier
+      dept_of_transportation_id:
+        type: string
+        description: The partner carrier's department of transportation id
+      standard_carrier_alpha_code:
+        type: string
+        description: The SCAC of the partner carrier
+      provincial_operating_authority_num:
+        type: string
+        description: The provincial operating authority number for the partner carrier
   CommodityReviseRequest:
     description: A request to change the commodities of an order/leg
     type: object
