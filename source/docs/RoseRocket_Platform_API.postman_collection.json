@@ -1,0 +1,3519 @@
+{
+	"info": {
+		"_postman_id": "32680b7a-e102-4d76-a8a8-aefa8395687a",
+		"name": "Rose Rocket Platform API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers?offset=0&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search (term)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers?offset=0&limit=10&search_term=Cus",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search_term",
+									"value": "Cus"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By External ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Customer6\",\n    \"short_code\": \"CUS6\",\n    \"external_id\": \"CUS6\",\n    \"address_1\": \"23 Sheppard Ave E\",\n    \"address_2\": \"\",\n    \"suite\": \"\",\n    \"city\": \"Toronto\",\n    \"postal\": \"M2N0C8\",\n    \"phone\": \"\",\n    \"phone_ext\": \"\",\n    \"fax\": \"\",\n    \"email\": \"\",\n    \"country\": \"CA\",\n    \"state\": \"ON\",\n    \"latitude\": null,\n    \"longitude\": null,\n    \"timezone\": \"\",\n    \"measurement_unit\": \"inch\",\n    \"weight_unit\": \"lb\",\n    \"default_billing_option\": \"prepaid\",\n    \"default_dim_type\": \"ltl\",\n    \"default_order_notes\": \"Hi there\",\n    \"bus_hours_mon_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_mon_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_tue_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_tue_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_wed_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_wed_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_thu_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_thu_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_fri_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_fri_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sat_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sat_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sun_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sun_end_at\": \"2017-03-02T23:30:00Z\",\n    \"dispatch_contact_name\": \"\",\n    \"dispatch_contact_number\": \"\",\n    \"dispatch_contact_email\": \"\",\n    \"billing_contact_name\": \"\",\n    \"billing_contact_number\": \"\",\n    \"billing_contact_email\": \"\",\n    \"sales_contact_name\": \"\",\n    \"sales_contact_number\": \"\",\n    \"sales_contact_email\": \"\",\n    \"management_contact_name\": \"\",\n    \"management_contact_number\": \"\",\n    \"management_contact_email\": \"\",\n    \"other_contact_name\": \"\",\n    \"other_contact_number\": \"\",\n    \"other_contact_email\": \"\",\n    \"us_ca_custom_broker_name\": \"US-CA\",\n    \"us_ca_custom_broker_contact_name\": \"\",\n    \"us_ca_custom_broker_email\": \"\",\n    \"us_ca_custom_broker_phone\": \"\",\n    \"us_ca_custom_broker_phone_ext\": \"\",\n    \"us_ca_custom_broker_notes\": \"The notes us-ca\",\n    \"ca_us_custom_broker_name\": \"CA-US\",\n    \"ca_us_custom_broker_contact_name\": \"\",\n    \"ca_us_custom_broker_email\": \"\",\n    \"ca_us_custom_broker_phone\": \"\",\n    \"ca_us_custom_broker_phone_ext\": \"\",\n    \"ca_us_custom_broker_notes\": \"The notes ca-us\",\n    \"currency\": \"cad\",\n    \"credit_limit\": 0,\n    \"credit_balance\": 0,\n    \"is_active\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Customer6\",\n    \"short_code\": \"CUS6\",\n    \"external_id\": \"CUS6\",\n    \"address_1\": \"23 Sheppard Ave E\",\n    \"address_2\": \"\",\n    \"suite\": \"\",\n    \"city\": \"Toronto\",\n    \"postal\": \"M2N0C8\",\n    \"phone\": \"\",\n    \"phone_ext\": \"\",\n    \"fax\": \"\",\n    \"email\": \"\",\n    \"country\": \"CA\",\n    \"state\": \"ON\",\n    \"latitude\": null,\n    \"longitude\": null,\n    \"timezone\": \"\",\n    \"measurement_unit\": \"inch\",\n    \"weight_unit\": \"lb\",\n    \"default_billing_option\": \"prepaid\",\n    \"default_dim_type\": \"ltl\",\n    \"default_order_notes\": \"Hi there\",\n    \"bus_hours_mon_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_mon_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_tue_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_tue_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_wed_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_wed_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_thu_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_thu_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_fri_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_fri_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sat_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sat_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sun_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sun_end_at\": \"2017-03-02T23:30:00Z\",\n    \"dispatch_contact_name\": \"\",\n    \"dispatch_contact_number\": \"\",\n    \"dispatch_contact_email\": \"\",\n    \"billing_contact_name\": \"\",\n    \"billing_contact_number\": \"\",\n    \"billing_contact_email\": \"\",\n    \"sales_contact_name\": \"\",\n    \"sales_contact_number\": \"\",\n    \"sales_contact_email\": \"\",\n    \"management_contact_name\": \"\",\n    \"management_contact_number\": \"\",\n    \"management_contact_email\": \"\",\n    \"other_contact_name\": \"\",\n    \"other_contact_number\": \"\",\n    \"other_contact_email\": \"\",\n    \"us_ca_custom_broker_name\": \"US-CA\",\n    \"us_ca_custom_broker_contact_name\": \"\",\n    \"us_ca_custom_broker_email\": \"\",\n    \"us_ca_custom_broker_phone\": \"\",\n    \"us_ca_custom_broker_phone_ext\": \"\",\n    \"us_ca_custom_broker_notes\": \"The notes us-ca\",\n    \"ca_us_custom_broker_name\": \"CA-US\",\n    \"ca_us_custom_broker_contact_name\": \"\",\n    \"ca_us_custom_broker_email\": \"\",\n    \"ca_us_custom_broker_phone\": \"\",\n    \"ca_us_custom_broker_phone_ext\": \"\",\n    \"ca_us_custom_broker_notes\": \"The notes ca-us\",\n    \"currency\": \"cad\",\n    \"credit_limit\": 0,\n    \"credit_balance\": 0,\n    \"is_active\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By External ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Customer6\",\n    \"short_code\": \"CUS6\",\n    \"external_id\": \"CUS6\",\n    \"address_1\": \"23 Sheppard Ave E\",\n    \"address_2\": \"\",\n    \"suite\": \"\",\n    \"city\": \"Toronto\",\n    \"postal\": \"M2N0C8\",\n    \"phone\": \"\",\n    \"phone_ext\": \"\",\n    \"fax\": \"\",\n    \"email\": \"\",\n    \"country\": \"CA\",\n    \"state\": \"ON\",\n    \"latitude\": null,\n    \"longitude\": null,\n    \"timezone\": \"\",\n    \"measurement_unit\": \"inch\",\n    \"weight_unit\": \"lb\",\n    \"default_billing_option\": \"prepaid\",\n    \"default_dim_type\": \"ltl\",\n    \"default_order_notes\": \"Hi there\",\n    \"bus_hours_mon_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_mon_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_tue_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_tue_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_wed_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_wed_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_thu_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_thu_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_fri_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_fri_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sat_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sat_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sun_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sun_end_at\": \"2017-03-02T23:30:00Z\",\n    \"dispatch_contact_name\": \"\",\n    \"dispatch_contact_number\": \"\",\n    \"dispatch_contact_email\": \"\",\n    \"billing_contact_name\": \"\",\n    \"billing_contact_number\": \"\",\n    \"billing_contact_email\": \"\",\n    \"sales_contact_name\": \"\",\n    \"sales_contact_number\": \"\",\n    \"sales_contact_email\": \"\",\n    \"management_contact_name\": \"\",\n    \"management_contact_number\": \"\",\n    \"management_contact_email\": \"\",\n    \"other_contact_name\": \"\",\n    \"other_contact_number\": \"\",\n    \"other_contact_email\": \"\",\n    \"us_ca_custom_broker_name\": \"US-CA\",\n    \"us_ca_custom_broker_contact_name\": \"\",\n    \"us_ca_custom_broker_email\": \"\",\n    \"us_ca_custom_broker_phone\": \"\",\n    \"us_ca_custom_broker_phone_ext\": \"\",\n    \"us_ca_custom_broker_notes\": \"The notes us-ca\",\n    \"ca_us_custom_broker_name\": \"CA-US\",\n    \"ca_us_custom_broker_contact_name\": \"\",\n    \"ca_us_custom_broker_email\": \"\",\n    \"ca_us_custom_broker_phone\": \"\",\n    \"ca_us_custom_broker_phone_ext\": \"\",\n    \"ca_us_custom_broker_notes\": \"The notes ca-us\",\n    \"currency\": \"cad\",\n    \"credit_limit\": 0,\n    \"credit_balance\": 0,\n    \"is_active\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/ext:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"ext:xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert By ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Customer6\",\n    \"short_code\": \"CUS6\",\n    \"external_id\": \"CUS6\",\n    \"address_1\": \"23 Sheppard Ave E\",\n    \"address_2\": \"\",\n    \"suite\": \"\",\n    \"city\": \"Toronto\",\n    \"postal\": \"M2N0C8\",\n    \"phone\": \"\",\n    \"phone_ext\": \"\",\n    \"fax\": \"\",\n    \"email\": \"\",\n    \"country\": \"CA\",\n    \"state\": \"ON\",\n    \"latitude\": null,\n    \"longitude\": null,\n    \"timezone\": \"\",\n    \"measurement_unit\": \"inch\",\n    \"weight_unit\": \"lb\",\n    \"default_billing_option\": \"prepaid\",\n    \"default_dim_type\": \"ltl\",\n    \"default_order_notes\": \"Hi there\",\n    \"bus_hours_mon_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_mon_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_tue_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_tue_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_wed_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_wed_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_thu_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_thu_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_fri_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_fri_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sat_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sat_end_at\": \"2017-03-02T23:30:00Z\",\n    \"bus_hours_sun_start_at\": \"2017-03-02T11:00:00Z\",\n    \"bus_hours_sun_end_at\": \"2017-03-02T23:30:00Z\",\n    \"dispatch_contact_name\": \"\",\n    \"dispatch_contact_number\": \"\",\n    \"dispatch_contact_email\": \"\",\n    \"billing_contact_name\": \"\",\n    \"billing_contact_number\": \"\",\n    \"billing_contact_email\": \"\",\n    \"sales_contact_name\": \"\",\n    \"sales_contact_number\": \"\",\n    \"sales_contact_email\": \"\",\n    \"management_contact_name\": \"\",\n    \"management_contact_number\": \"\",\n    \"management_contact_email\": \"\",\n    \"other_contact_name\": \"\",\n    \"other_contact_number\": \"\",\n    \"other_contact_email\": \"\",\n    \"us_ca_custom_broker_name\": \"US-CA\",\n    \"us_ca_custom_broker_contact_name\": \"\",\n    \"us_ca_custom_broker_email\": \"\",\n    \"us_ca_custom_broker_phone\": \"\",\n    \"us_ca_custom_broker_phone_ext\": \"\",\n    \"us_ca_custom_broker_notes\": \"The notes us-ca\",\n    \"ca_us_custom_broker_name\": \"CA-US\",\n    \"ca_us_custom_broker_contact_name\": \"\",\n    \"ca_us_custom_broker_email\": \"\",\n    \"ca_us_custom_broker_phone\": \"\",\n    \"ca_us_custom_broker_phone_ext\": \"\",\n    \"ca_us_custom_broker_notes\": \"The notes ca-us\",\n    \"currency\": \"cad\",\n    \"credit_limit\": 0,\n    \"credit_balance\": 0,\n    \"is_active\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from\": \"alex.l@roserocket.com\",\n  \"cc\": \"\",\n  \"emails\": \"alex.l@roserocket.com,justin.h@roserocket.com\",\n  \"subject\": \"POD!!!\",\n  \"message\": \"Hi There!\",\n  \"copy_to_myself\": true,\n  \"include_as_attachment\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By External ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from\": \"alex.l@roserocket.com\",\n  \"cc\": \"\",\n  \"emails\": \"alex.l@roserocket.com,justin.h@roserocket.com\",\n  \"subject\": \"POD!!!\",\n  \"message\": \"Hi There!\",\n  \"copy_to_myself\": true,\n  \"include_as_attachment\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/ext:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"ext:xxxxx"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Search (term) copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders?offset=0&limit=10&search_term=123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search_term",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search (term)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders?offset=0&limit=10&search_term=123",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "search_term",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search (date range)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders?offset=0&limit=10&start_at=2017-04-10&end_at=2017-04-10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "start_at",
+									"value": "2017-04-10"
+								},
+								{
+									"key": "end_at",
+									"value": "2017-04-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search (multi customers)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders?offset=0&limit=10&customers=xxxxx,xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "customers",
+									"value": "xxxxx,xxxxx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Full ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revise Destination",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"address\" : {\n\"org_name\":\"melorg\",\n\"contact_name\":\"mel\",\n\"address_1\":\"343 vancouver st.\",\n\"city\":\"Toronto\",\n\"state\":\"ON\",\n\"country\":\"CA\",\n\"postal\":\"L8X 2Sk\"\t\n}\n\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/revise_destination",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"revise_destination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revise Origin",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\"address\" : {\n\"org_name\":\"melorg\",\n\"contact_name\":\"mel\",\n\"address_1\":\"343 vancouver st.\",\n\"city\":\"Toronto\",\n\"state\":\"ON\",\n\"country\":\"CA\",\n\"postal\":\"L8X 2Sk\"\t\n}\n\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/revise_origin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"revise_origin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revise Commodities",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"commodities\":\n\t[\n\t\t{\n\t\t\t\"measurement_unit\": \"inch\",\n\t\t\t\"weight_unit\":\"lb\",\n\t\t\t\"description\":\"some very new commodity\",\n\t\t\t\"feet\":10,\n\t\t\t\"volume\":20,\n\t\t\t\"length\":30,\n\t\t\t\"width\":30,\n\t\t\t\"height\":40,\n\t\t\t\"weight\":80,\n\t\t\t\"quantity\":4,\n\t\t\t\"pieces\":4,\n\t\t\t\"sku\":\"4450\",\n\t\t\t\"commodity_type\":\"other\",\n\t\t\t\"freight_class\":\"none\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/revise_commodities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"revise_commodities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Legs By Order ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders/xxxx/legs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders",
+								"xxxx",
+								"legs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By External ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/ext:xxxxx/orders/ext:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"ext:xxxxx",
+								"orders",
+								"ext:xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"external_id\": \"LO767\",\n    \"origin\": {\n        \"address_book_id\": null,\n        \"org_name\": \"CN Tower\",\n        \"contact_name\": \"\",\n        \"address_1\": \"301 Front Street West\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Toronto\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"M5V 2T6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"destination\": {\n        \"org_name\": \"Vancouver International Airport\",\n        \"contact_name\": \"\",\n        \"address_1\": \"3211 Grant McConachie Way\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Richmond\",\n        \"state\": \"BC\",\n        \"country\": \"CA\",\n        \"postal\": \"V7B 0A4\",\n        \"phone\": \"(604) 207-7077\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing\": {\n        \"address_book_id\": null,\n        \"org_name\": \"Nuvo Iron\",\n        \"contact_name\": \"\",\n        \"address_1\": \"13371 Coleraine Drive\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Caledon\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L7E 3B6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing_option\": \"prepaid\",\n    \"notes\": \"\",\n    \"po_num\": \"\",\n    \"tender_num\": \"\",\n    \"ref_num\": \"\",\n    \"custom_broker\": \"\",\n    \"pickup_start_at\": \"2018-10-24T13:00:00.00Z\",\n    \"pickup_end_at\": \"2018-10-24T14:00:00.00Z\",\n    \"pickup_appt_start_at\": \"2018-10-24T13:00:00.00Z\",\n    \"pickup_appt_end_at\": \"2018-10-24T14:00:00.00Z\",\n    \"delivery_start_at\": \"2018-10-30T16:00:00.00Z\",\n    \"delivery_end_at\": \"2018-10-30T17:00:00.00Z\",\n    \"delivery_appt_start_at\": \"2018-10-30T16:00:00.00Z\",\n    \"delivery_appt_end_at\":\"2018-10-30T17:00:00.00Z\",\n    \"dim_type\": \"ltl\",\n    \"commodities\": [\n        {\n            \"measurement_unit\": \"inch\",\n            \"weight_unit\": \"lb\",\n            \"freight_class\": \"none\",\n            \"commodity_type\": \"skid\",\n            \"description\": \"Fence\",\n            \"feet\": 0,\n            \"length\": 48,\n            \"width\": 42,\n            \"height\": 53,\n            \"weight\": 1013,\n            \"nmfc\": \"\",\n            \"is_stackable\": false,\n            \"quantity\": 1,\n            \"pieces\": null,\n            \"commodity_type_other\": \"\"\n        }\n    ],\n    \"accessorials\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Bulk",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"orders\": [{\n\t\t\t\"origin\": {\n\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\"org_name\": \"Google\",\n\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\"address_1\": \"111 8th Avenue\",\n\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\"suite\": \"\",\n\t\t\t\t\"city\": \"New York\",\n\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\"postal\": \"10011\",\n\t\t\t\t\"phone\": \"\",\n\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\"email\": \"\",\n\t\t\t\t\"fax\": \"\",\n\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t},\n\t\t\t\"destination\": {\n\t\t\t\t\"org_name\": \"Shelburne Home Hardware Building Centre\",\n\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\"address_1\": \"725 Steeles Street\",\n\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\"suite\": \"\",\n\t\t\t\t\"city\": \"Shelburne\",\n\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\"postal\": \"L9V 3M7\",\n\t\t\t\t\"phone\": \"(519) 925-3991\",\n\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\"email\": \"\",\n\t\t\t\t\"fax\": \"\",\n\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t},\n\t\t\t\"billing\": {\n\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\"org_name\": \"Nuvo Iron\",\n\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\"address_1\": \"13371 Coleraine Drive\",\n\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\"suite\": \"\",\n\t\t\t\t\"city\": \"Caledon\",\n\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\"postal\": \"L7E 3B6\",\n\t\t\t\t\"phone\": \"\",\n\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\"email\": \"\",\n\t\t\t\t\"fax\": \"\",\n\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t},\n\t\t\t\"billing_option\": \"prepaid\",\n\t\t\t\"notes\": \"\",\n\t\t\t\"po_num\": \"\",\n\t\t\t\"tender_num\": \"\",\n\t\t\t\"ref_num\": \"\",\n\t\t\t\"custom_broker\": \"\",\n\t\t\t\"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n\t\t\t\"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n\t\t\t\"pickup_appt_start_at\": null,\n\t\t\t\"pickup_appt_end_at\": null,\n\t\t\t\"delivery_start_at\": null,\n\t\t\t\"delivery_end_at\": null,\n\t\t\t\"delivery_appt_start_at\": null,\n\t\t\t\"delivery_appt_end_at\": null,\n\t\t\t\"dim_type\": \"ltl\",\n\t\t\t\"commodities\": [{\n\t\t\t\t\"measurement_unit\": \"inch\",\n\t\t\t\t\"weight_unit\": \"lb\",\n\t\t\t\t\"freight_class\": \"none\",\n\t\t\t\t\"commodity_type\": \"skid\",\n\t\t\t\t\"description\": \"Fence\",\n\t\t\t\t\"feet\": 0,\n\t\t\t\t\"length\": 48,\n\t\t\t\t\"width\": 42,\n\t\t\t\t\"height\": 53,\n\t\t\t\t\"weight\": 1013,\n\t\t\t\t\"nmfc\": \"\",\n\t\t\t\t\"is_stackable\": false,\n\t\t\t\t\"quantity\": 1,\n\t\t\t\t\"pieces\": null,\n\t\t\t\t\"commodity_type_other\": \"\"\n\t\t\t}],\n\t\t\t\"accessorials\": []\n\t\t}\n\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/bulk_create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"bulk_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Booked Bulk",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"email\":\"jonathan.f@roserocket.com\",\n\t\"orders\": [{\n\t\t\t\"origin\": {\n\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\"org_name\": \"Google\",\n\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\"address_1\": \"111 8th Avenue\",\n\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\"suite\": \"\",\n\t\t\t\t\"city\": \"New York\",\n\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\"postal\": \"10011\",\n\t\t\t\t\"phone\": \"\",\n\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\"email\": \"\",\n\t\t\t\t\"fax\": \"\",\n\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t},\n\t\t\t\"destination\": {\n\t\t\t\t\"org_name\": \"Shelburne Home Hardware Building Centre\",\n\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\"address_1\": \"725 Steeles Street\",\n\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\"suite\": \"\",\n\t\t\t\t\"city\": \"Shelburne\",\n\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\"postal\": \"L9V 3M7\",\n\t\t\t\t\"phone\": \"(519) 925-3991\",\n\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\"email\": \"\",\n\t\t\t\t\"fax\": \"\",\n\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t},\n\t\t\t\"billing\": {\n\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\"org_name\": \"Nuvo Iron\",\n\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\"address_1\": \"13371 Coleraine Drive\",\n\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\"suite\": \"\",\n\t\t\t\t\"city\": \"Caledon\",\n\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\"postal\": \"L7E 3B6\",\n\t\t\t\t\"phone\": \"\",\n\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\"email\": \"\",\n\t\t\t\t\"fax\": \"\",\n\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t},\n\t\t\t\"billing_option\": \"prepaid\",\n\t\t\t\"notes\": \"\",\n\t\t\t\"po_num\": \"\",\n\t\t\t\"tender_num\": \"\",\n\t\t\t\"ref_num\": \"\",\n\t\t\t\"custom_broker\": \"\",\n\t\t\t\"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n\t\t\t\"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n\t\t\t\"pickup_appt_start_at\": null,\n\t\t\t\"pickup_appt_end_at\": null,\n\t\t\t\"delivery_start_at\": null,\n\t\t\t\"delivery_end_at\": null,\n\t\t\t\"delivery_appt_start_at\": null,\n\t\t\t\"delivery_appt_end_at\": null,\n\t\t\t\"dim_type\": \"ltl\",\n\t\t\t\"commodities\": [{\n\t\t\t\t\"measurement_unit\": \"inch\",\n\t\t\t\t\"weight_unit\": \"lb\",\n\t\t\t\t\"freight_class\": \"none\",\n\t\t\t\t\"commodity_type\": \"skid\",\n\t\t\t\t\"description\": \"Fence\",\n\t\t\t\t\"feet\": 0,\n\t\t\t\t\"length\": 48,\n\t\t\t\t\"width\": 42,\n\t\t\t\t\"height\": 53,\n\t\t\t\t\"weight\": 1013,\n\t\t\t\t\"nmfc\": \"\",\n\t\t\t\t\"is_stackable\": false,\n\t\t\t\t\"quantity\": 1,\n\t\t\t\t\"pieces\": null,\n\t\t\t\t\"commodity_type_other\": \"\"\n\t\t\t}],\n\t\t\t\"accessorials\": []\n\t\t}\n\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/bulk_create_booked_order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"bulk_create_booked_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Bulk Booked (Customer Agnostic)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"email\":\"jonathan.f@roserocket.com\",\n\t\"orders\": [{\n\t\t\t\t\"origin\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Google\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"111 8th Avenue\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"New York\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"10011\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"destination\": {\n\t\t\t\t\t\"org_name\": \"Shelburne Home Hardware Building Centre\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"725 Steeles Street\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Shelburne\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L9V 3M7\",\n\t\t\t\t\t\"phone\": \"(519) 925-3991\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Nuvo Iron\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"13371 Coleraine Drive\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Caledon\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L7E 3B6\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing_option\": \"prepaid\",\n\t\t\t\t\"notes\": \"\",\n\t\t\t\t\"po_num\": \"\",\n\t\t\t\t\"tender_num\": \"\",\n\t\t\t\t\"ref_num\": \"\",\n\t\t\t\t\"custom_broker\": \"\",\n\t\t\t\t\"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n\t\t\t\t\"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n\t\t\t\t\"pickup_appt_start_at\": null,\n\t\t\t\t\"pickup_appt_end_at\": null,\n\t\t\t\t\"delivery_start_at\": null,\n\t\t\t\t\"delivery_end_at\": null,\n\t\t\t\t\"delivery_appt_start_at\": null,\n\t\t\t\t\"delivery_appt_end_at\": null,\n\t\t\t\t\"dim_type\": \"ltl\",\n\t\t\t\t\"external_id\":\"bloop-bloop-bloop-bleep6\",\n\t\t\t\t\"commodities\": [{\n\t\t\t\t\t\"measurement_unit\": \"inch\",\n\t\t\t\t\t\"weight_unit\": \"lb\",\n\t\t\t\t\t\"freight_class\": \"none\",\n\t\t\t\t\t\"commodity_type\": \"skid\",\n\t\t\t\t\t\"description\": \"Fence\",\n\t\t\t\t\t\"feet\": 0,\n\t\t\t\t\t\"length\": 48,\n\t\t\t\t\t\"width\": 42,\n\t\t\t\t\t\"height\": 53,\n\t\t\t\t\t\"weight\": 1013,\n\t\t\t\t\t\"nmfc\": \"\",\n\t\t\t\t\t\"is_stackable\": false,\n\t\t\t\t\t\"quantity\": 1,\n\t\t\t\t\t\"pieces\": null,\n\t\t\t\t\t\"commodity_type_other\": \"\"\n\t\t\t\t}],\n                \"accessorials\": [],\n                \"customer\" : {\n                    \"external_id\" : \"GOO\"\n                }\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"origin\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Google\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"111 8th Avenue\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"New York\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"10011\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"destination\": {\n\t\t\t\t\t\"org_name\": \"Shelburne Home Hardware Building Centre\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"725 Steeles Street\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Shelburne\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L9V 3M7\",\n\t\t\t\t\t\"phone\": \"(519) 925-3991\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Nuvo Iron\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"13371 Coleraine Drive\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Caledon\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L7E 3B6\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing_option\": \"prepaid\",\n\t\t\t\t\"notes\": \"\",\n\t\t\t\t\"po_num\": \"\",\n\t\t\t\t\"tender_num\": \"\",\n\t\t\t\t\"ref_num\": \"\",\n\t\t\t\t\"custom_broker\": \"\",\n\t\t\t\t\"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n\t\t\t\t\"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n\t\t\t\t\"pickup_appt_start_at\": null,\n\t\t\t\t\"pickup_appt_end_at\": null,\n\t\t\t\t\"delivery_start_at\": null,\n\t\t\t\t\"delivery_end_at\": null,\n\t\t\t\t\"delivery_appt_start_at\": null,\n\t\t\t\t\"delivery_appt_end_at\": null,\n\t\t\t\t\"dim_type\": \"ltl\",\n\t\t\t\t\"commodities\": [{\n\t\t\t\t\t\"measurement_unit\": \"inch\",\n\t\t\t\t\t\"weight_unit\": \"lb\",\n\t\t\t\t\t\"freight_class\": \"none\",\n\t\t\t\t\t\"commodity_type\": \"skid\",\n\t\t\t\t\t\"description\": \"Fence\",\n\t\t\t\t\t\"feet\": 0,\n\t\t\t\t\t\"length\": 48,\n\t\t\t\t\t\"width\": 42,\n\t\t\t\t\t\"height\": 53,\n\t\t\t\t\t\"weight\": 1013,\n\t\t\t\t\t\"nmfc\": \"\",\n\t\t\t\t\t\"is_stackable\": false,\n\t\t\t\t\t\"quantity\": 1,\n\t\t\t\t\t\"pieces\": null,\n\t\t\t\t\t\"commodity_type_other\": \"\"\n\t\t\t\t}],\n                \"accessorials\": [],\n                \"customer\" : {\n                    \"external_id\" : \"sdfsdfsdf\"\n                }\n\t\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders/bulk_create_booked_order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders",
+								"bulk_create_booked_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert Bulk Booked (Customer Agnostic)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"jonathan.f@roserocket.com\",\n  \"orders\": [\n      {\n            \"origin\": {\n                \"address_book_id\": null,\n                \"org_name\": \"Google\",\n                \"contact_name\": \"\",\n                \"address_1\": \"111 8th Avenue\",\n                \"address_2\": \"\",\n                \"suite\": \"\",\n                \"city\": \"New York\",\n                \"state\": \"ON\",\n                \"country\": \"CA\",\n                \"postal\": \"10014\",\n                \"phone\": \"\",\n                \"phone_ext\": \"\",\n                \"email\": \"\",\n                \"fax\": \"\",\n                \"bus_hours_start_at\": null,\n                \"bus_hours_end_at\": null\n            },\n            \"destination\": {\n                \"org_name\": \"Shelburne Home Hardware Building Centre\",\n                \"contact_name\": \"\",\n                \"address_1\": \"725 Steeles Street\",\n                \"address_2\": \"\",\n                \"suite\": \"\",\n                \"city\": \"Shelburne\",\n                \"state\": \"ON\",\n                \"country\": \"CA\",\n                \"postal\": \"L9V 3M7\",\n                \"phone\": \"(519) 925-3991\",\n                \"phone_ext\": \"\",\n                \"email\": \"\",\n                \"fax\": \"\",\n                \"bus_hours_start_at\": null,\n                \"bus_hours_end_at\": null\n            },\n            \"billing\": {\n                \"address_book_id\": null,\n                \"org_name\": \"Nuvo Iron\",\n                \"contact_name\": \"\",\n                \"address_1\": \"200 Coleraine Drive\",\n                \"address_2\": \"\",\n                \"suite\": \"\",\n                \"city\": \"Caledon\",\n                \"state\": \"ON\",\n                \"country\": \"CA\",\n                \"postal\": \"L7E 3B6\",\n                \"phone\": \"\",\n                \"phone_ext\": \"\",\n                \"email\": \"\",\n                \"fax\": \"\",\n                \"bus_hours_start_at\": null,\n                \"bus_hours_end_at\": null\n            },\n            \"billing_option\": \"prepaid\",\n            \"notes\": \"\",\n            \"po_num\": \"\",\n            \"tender_num\": \"This one\",\n            \"ref_num\": \"\",\n            \"custom_broker\": \"\",\n            \"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n            \"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n            \"pickup_appt_start_at\": null,\n            \"pickup_appt_end_at\": null,\n            \"delivery_start_at\": null,\n            \"delivery_end_at\": null,\n            \"delivery_appt_start_at\": null,\n            \"delivery_appt_end_at\": null,\n            \"dim_type\": \"cube\",\n            \"commodities\": [\n                {\t\n                    \"measurement_unit\": \"inch\",\n                    \"weight_unit\": \"lb\",\n                    \"freight_class\": \"none\",\n                    \"commodity_type\": \"skid\",\n                    \"description\": \"\",\n                    \"name\":\"\",\n                    \"feet\": 0,\n                    \"length\": 8,\n                    \"width\": 0,\n                    \"height\": 56,\n                    \"weight\": 0,\n                    \"nmfc\": \"\",\n                    \"is_stackable\": false,\n                    \"quantity\": 1,\n                    \"pieces\": null,\n                    \"commodity_type_other\": \"\"\n                }\n            ],\n            \"accessorials\": [],\n            \"customer\": {\n              \"external_id\":\"GOO\"\n            },\n              \"external_id\":\"bleep-bleep-91\"\n        }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders/bulk_upsert_booked_order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders",
+								"bulk_upsert_booked_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Bulk (Customer Agnostic)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"email\":\"jonathan.f@roserocket.com\",\n\t\"orders\": [{\n\t\t\t\t\"origin\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Google\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"111 8th Avenue\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"New York\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"10011\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"destination\": {\n\t\t\t\t\t\"org_name\": \"Shelburne Home Hardware Building Centre\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"725 Steeles Street\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Shelburne\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L9V 3M7\",\n\t\t\t\t\t\"phone\": \"(519) 925-3991\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Nuvo Iron\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"13371 Coleraine Drive\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Caledon\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L7E 3B6\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing_option\": \"prepaid\",\n\t\t\t\t\"notes\": \"\",\n\t\t\t\t\"po_num\": \"\",\n\t\t\t\t\"tender_num\": \"\",\n\t\t\t\t\"ref_num\": \"\",\n\t\t\t\t\"custom_broker\": \"\",\n\t\t\t\t\"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n\t\t\t\t\"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n\t\t\t\t\"pickup_appt_start_at\": null,\n\t\t\t\t\"pickup_appt_end_at\": null,\n\t\t\t\t\"delivery_start_at\": null,\n\t\t\t\t\"delivery_end_at\": null,\n\t\t\t\t\"delivery_appt_start_at\": null,\n\t\t\t\t\"delivery_appt_end_at\": null,\n\t\t\t\t\"dim_type\": \"ltl\",\n\t\t\t\t\"external_id\":\"bloop-bloop-bloop-bleep230\",\n\t\t\t\t\"commodities\": [{\n\t\t\t\t\t\"measurement_unit\": \"inch\",\n\t\t\t\t\t\"weight_unit\": \"lb\",\n\t\t\t\t\t\"freight_class\": \"none\",\n\t\t\t\t\t\"commodity_type\": \"skid\",\n\t\t\t\t\t\"description\": \"Fence\",\n\t\t\t\t\t\"feet\": 0,\n\t\t\t\t\t\"length\": 48,\n\t\t\t\t\t\"width\": 42,\n\t\t\t\t\t\"height\": 53,\n\t\t\t\t\t\"weight\": 1013,\n\t\t\t\t\t\"nmfc\": \"\",\n\t\t\t\t\t\"is_stackable\": false,\n\t\t\t\t\t\"quantity\": 1,\n\t\t\t\t\t\"pieces\": null,\n\t\t\t\t\t\"commodity_type_other\": \"\"\n\t\t\t\t}],\n                \"accessorials\": [],\n                \"customer\" : {\n                    \"external_id\" : \"GOO\"\n                }\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"origin\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Google\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"111 8th Avenue\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"New York\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"10011\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"destination\": {\n\t\t\t\t\t\"org_name\": \"Shelburne Home Hardware Building Centre\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"725 Steeles Street\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Shelburne\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L9V 3M7\",\n\t\t\t\t\t\"phone\": \"(519) 925-3991\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing\": {\n\t\t\t\t\t\"address_book_id\": null,\n\t\t\t\t\t\"org_name\": \"Nuvo Iron\",\n\t\t\t\t\t\"contact_name\": \"\",\n\t\t\t\t\t\"address_1\": \"13371 Coleraine Drive\",\n\t\t\t\t\t\"address_2\": \"\",\n\t\t\t\t\t\"suite\": \"\",\n\t\t\t\t\t\"city\": \"Caledon\",\n\t\t\t\t\t\"state\": \"ON\",\n\t\t\t\t\t\"country\": \"CA\",\n\t\t\t\t\t\"postal\": \"L7E 3B6\",\n\t\t\t\t\t\"phone\": \"\",\n\t\t\t\t\t\"phone_ext\": \"\",\n\t\t\t\t\t\"email\": \"\",\n\t\t\t\t\t\"fax\": \"\",\n\t\t\t\t\t\"bus_hours_start_at\": null,\n\t\t\t\t\t\"bus_hours_end_at\": null\n\t\t\t\t},\n\t\t\t\t\"billing_option\": \"prepaid\",\n\t\t\t\t\"notes\": \"\",\n\t\t\t\t\"po_num\": \"\",\n\t\t\t\t\"tender_num\": \"\",\n\t\t\t\t\"ref_num\": \"\",\n\t\t\t\t\"custom_broker\": \"\",\n\t\t\t\t\"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n\t\t\t\t\"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n\t\t\t\t\"pickup_appt_start_at\": null,\n\t\t\t\t\"pickup_appt_end_at\": null,\n\t\t\t\t\"delivery_start_at\": null,\n\t\t\t\t\"delivery_end_at\": null,\n\t\t\t\t\"delivery_appt_start_at\": null,\n\t\t\t\t\"delivery_appt_end_at\": null,\n\t\t\t\t\"dim_type\": \"ltl\",\n\t\t\t\t\"commodities\": [{\n\t\t\t\t\t\"measurement_unit\": \"inch\",\n\t\t\t\t\t\"weight_unit\": \"lb\",\n\t\t\t\t\t\"freight_class\": \"none\",\n\t\t\t\t\t\"commodity_type\": \"skid\",\n\t\t\t\t\t\"description\": \"Fence\",\n\t\t\t\t\t\"feet\": 0,\n\t\t\t\t\t\"length\": 48,\n\t\t\t\t\t\"width\": 42,\n\t\t\t\t\t\"height\": 53,\n\t\t\t\t\t\"weight\": 1013,\n\t\t\t\t\t\"nmfc\": \"\",\n\t\t\t\t\t\"is_stackable\": false,\n\t\t\t\t\t\"quantity\": 1,\n\t\t\t\t\t\"pieces\": null,\n\t\t\t\t\t\"commodity_type_other\": \"\"\n\t\t\t\t}],\n                \"accessorials\": [],\n                \"customer\" : {\n                    \"external_id\" : \"sdfsdfsdf\"\n                }\n\t\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders/bulk_create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders",
+								"bulk_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Booked Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"external_id\": \"PO895\",\n    \"origin\": {\n        \"address_book_id\": null,\n        \"org_name\": \"Nuvo Iron\",\n        \"contact_name\": \"\",\n        \"address_1\": \"13371 Coleraine Drive\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Caledon\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L7E 3B6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"destination\": {\n        \"org_name\": \"Shelburne Home Hardware Building Centre\",\n        \"contact_name\": \"\",\n        \"address_1\": \"725 Steeles Street\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Shelburne\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L9V 3M7\",\n        \"phone\": \"(519) 925-3991\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing\": {\n        \"address_book_id\": null,\n        \"org_name\": \"Nuvo Iron\",\n        \"contact_name\": \"\",\n        \"address_1\": \"13371 Coleraine Drive\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Caledon\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L7E 3B6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing_option\": \"prepaid\",\n    \"notes\": \"\",\n    \"po_num\": \"\",\n    \"tender_num\": \"\",\n    \"ref_num\": \"\",\n    \"custom_broker\": \"\",\n    \"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n    \"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n    \"pickup_appt_start_at\": null,\n    \"pickup_appt_end_at\": null,\n    \"delivery_start_at\": null,\n    \"delivery_end_at\": null,\n    \"delivery_appt_start_at\": null,\n    \"delivery_appt_end_at\": null,\n    \"dim_type\": \"ltl\",\n    \"commodities\": [\n        {\n            \"measurement_unit\": \"inch\",\n            \"weight_unit\": \"lb\",\n            \"freight_class\": \"none\",\n            \"commodity_type\": \"skid\",\n            \"description\": \"Fence\",\n            \"feet\": 0,\n            \"length\": 48,\n            \"width\": 42,\n            \"height\": 53,\n            \"weight\": 1013,\n            \"nmfc\": \"\",\n            \"is_stackable\": false,\n            \"quantity\": 1,\n            \"pieces\": null,\n            \"commodity_type_other\": \"\"\n        }\n    ],\n    \"accessorials\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/create_booked_order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"create_booked_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"external_id\": \"PO123\",\n    \"origin\": {\n        \"address_book_id\": null,\n        \"org_name\": \"Nuvo Iron\",\n        \"contact_name\": \"\",\n        \"address_1\": \"13371 Coleraine Drive\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Caledon\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L7E 3B6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"destination\": {\n        \"address_book_id\": \"f679a279-30a0-4221-bd2c-b7300dfbbf96\",\n        \"org_name\": \"Shelburne Home Hardware Building Centre\",\n        \"contact_name\": \"\",\n        \"address_1\": \"725 Steeles Street\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Shelburne\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L9V 3M7\",\n        \"phone\": \"(519) 925-3991\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing\": {\n        \"address_book_id\": null,\n        \"org_name\": \"Nuvo Iron\",\n        \"contact_name\": \"\",\n        \"address_1\": \"13371 Coleraine Drive\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Caledon\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L7E 3B6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing_option\": \"prepaid\",\n    \"notes\": \"\",\n    \"po_num\": \"\",\n    \"tender_num\": \"\",\n    \"ref_num\": \"\",\n    \"custom_broker\": \"\",\n    \"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n    \"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n    \"pickup_appt_start_at\": null,\n    \"pickup_appt_end_at\": null,\n    \"delivery_start_at\": null,\n    \"delivery_end_at\": null,\n    \"delivery_appt_start_at\": null,\n    \"delivery_appt_end_at\": null,\n    \"dim_type\": \"ltl\",\n    \"commodities\": [\n        {\n            \"id\": \"2c7f5a53-ec73-4557-b221-b5ab9196c462\",\n            \"measurement_unit\": \"inch\",\n            \"weight_unit\": \"lb\",\n            \"freight_class\": \"none\",\n            \"commodity_type\": \"skid\",\n            \"description\": \"Fence\",\n            \"feet\": 0,\n            \"length\": 48,\n            \"width\": 42,\n            \"height\": 53,\n            \"weight\": 1013,\n            \"nmfc\": \"\",\n            \"is_stackable\": false,\n            \"quantity\": 1,\n            \"pieces\": null,\n            \"commodity_type_other\": \"\"\n        },\n        {\n            \"measurement_unit\": \"inch\",\n            \"weight_unit\": \"lb\",\n            \"freight_class\": \"none\",\n            \"commodity_type\": \"skid\",\n            \"description\": \"Fence\",\n            \"feet\": 0,\n            \"length\": 48,\n            \"width\": 42,\n            \"height\": 53,\n            \"weight\": 1013,\n            \"nmfc\": \"\",\n            \"is_stackable\": false,\n            \"quantity\": 1,\n            \"pieces\": null,\n            \"commodity_type_other\": \"\"\n        }\n    ],\n    \"accessorials\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By External ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"external_id\": \"PO123\",\n    \"origin\": {\n        \"address_book_id\": null,\n        \"org_name\": \"Nuvo Iron\",\n        \"contact_name\": \"\",\n        \"address_1\": \"13371 Coleraine Drive\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Caledon\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L7E 3B6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"destination\": {\n        \"address_book_id\": \"f679a279-30a0-4221-bd2c-b7300dfbbf96\",\n        \"org_name\": \"Shelburne Home Hardware Building Centre\",\n        \"contact_name\": \"\",\n        \"address_1\": \"725 Steeles Street\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Shelburne\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L9V 3M7\",\n        \"phone\": \"(519) 925-3991\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing\": {\n        \"address_book_id\": null,\n        \"org_name\": \"Nuvo Iron\",\n        \"contact_name\": \"\",\n        \"address_1\": \"13371 Coleraine Drive\",\n        \"address_2\": \"\",\n        \"suite\": \"\",\n        \"city\": \"Caledon\",\n        \"state\": \"ON\",\n        \"country\": \"CA\",\n        \"postal\": \"L7E 3B6\",\n        \"phone\": \"\",\n        \"phone_ext\": \"\",\n        \"email\": \"\",\n        \"fax\": \"\",\n        \"bus_hours_start_at\": null,\n        \"bus_hours_end_at\": null\n    },\n    \"billing_option\": \"prepaid\",\n    \"notes\": \"\",\n    \"po_num\": \"\",\n    \"tender_num\": \"\",\n    \"ref_num\": \"\",\n    \"custom_broker\": \"\",\n    \"pickup_start_at\": \"2017-07-06T15:00:16.957Z\",\n    \"pickup_end_at\": \"2017-07-06T15:00:16.958Z\",\n    \"pickup_appt_start_at\": null,\n    \"pickup_appt_end_at\": null,\n    \"delivery_start_at\": null,\n    \"delivery_end_at\": null,\n    \"delivery_appt_start_at\": null,\n    \"delivery_appt_end_at\": null,\n    \"dim_type\": \"ltl\",\n    \"commodities\": [\n        {\n            \"id\": \"2c7f5a53-ec73-4557-b221-b5ab9196c462\",\n            \"measurement_unit\": \"inch\",\n            \"weight_unit\": \"lb\",\n            \"freight_class\": \"none\",\n            \"commodity_type\": \"skid\",\n            \"description\": \"Fence\",\n            \"feet\": 0,\n            \"length\": 48,\n            \"width\": 42,\n            \"height\": 53,\n            \"weight\": 1013,\n            \"nmfc\": \"\",\n            \"is_stackable\": false,\n            \"quantity\": 1,\n            \"pieces\": null,\n            \"commodity_type_other\": \"\"\n        },\n        {\n            \"measurement_unit\": \"inch\",\n            \"weight_unit\": \"lb\",\n            \"freight_class\": \"none\",\n            \"commodity_type\": \"skid\",\n            \"description\": \"Fence\",\n            \"feet\": 0,\n            \"length\": 48,\n            \"width\": 42,\n            \"height\": 53,\n            \"weight\": 1013,\n            \"nmfc\": \"\",\n            \"is_stackable\": false,\n            \"quantity\": 1,\n            \"pieces\": null,\n            \"commodity_type_other\": \"\"\n        }\n    ],\n    \"accessorials\": []\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from\": \"alex.l@roserocket.com\",\n  \"cc\": \"\",\n  \"emails\": \"alex.l@roserocket.com,justin.h@roserocket.com\",\n  \"subject\": \"POD!!!\",\n  \"message\": \"Hi There!\",\n  \"copy_to_myself\": true,\n  \"include_as_attachment\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By External ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from\": \"alex.l@roserocket.com\",\n  \"cc\": \"\",\n  \"emails\": \"alex.l@roserocket.com,justin.h@roserocket.com\",\n  \"subject\": \"POD!!!\",\n  \"message\": \"Hi There!\",\n  \"copy_to_myself\": true,\n  \"include_as_attachment\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Spot Quote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"currency\": \"cad\",\n  \"notes\": \"Special price!\",\n  \"est_delivery_start_at\": null,\n  \"est_delivery_end_at\": null,\n\n  \"service_id\": \"7d5c1556-b2f3-4956-a04d-ce844e02d38b\",\n  \"freight_charge\": 500.00,\n  \"original_freight_charge\": null,\n  \"fuel_charge_pct\": 10.00,\n  \"original_fuel_charge_pct\": null,\n  \"accessorial_charges\": [{\n    \"accessorial_id\": \"dd2989a4-4a41-45af-8b50-9bfe473d8582\",\n    \"charge\": 20.00,\n    \"original_charge\": null\n  }]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders/xxxxx/spot_quote",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders",
+								"xxxxx",
+								"spot_quote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quote_id\": \"897207e1-76ce-47f8-a36b-c9d2c7b1dd0a\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/book",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revise",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/revise",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"revise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark In Transit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notes\": \"This is a note\",\n  \"po_num\": \"po333\",\n  \"ref_num\": \"ref333\",\n  \"tender_num\": \"tender333\",\n  \"declared_value\": 1000,\n  \"delivery_appt_start_at\": \"2017-08-30T13:00:00Z\",\n  \"delivery_appt_end_at\": \"2017-08-30T13:00:00Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/mark_in_transit",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"mark_in_transit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark Delivered",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notes\": \"This is a note\",\n  \"po_num\": \"po333\",\n  \"ref_num\": \"ref333\",\n  \"tender_num\": \"tender333\",\n  \"declared_value\": 1000,\n  \"delivery_appt_start_at\": \"2017-08-30T13:00:00Z\",\n  \"delivery_appt_end_at\": \"2017-08-30T13:00:00Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/mark_delivered",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"mark_delivered"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Internal Note",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notes\": \"This is a note\",\n  \"po_num\": \"po333\",\n  \"ref_num\": \"ref333\",\n  \"tender_num\": \"tender333\",\n  \"declared_value\": 1000,\n  \"delivery_appt_start_at\": \"2017-08-30T13:00:00Z\",\n  \"delivery_appt_end_at\": \"2017-08-30T13:00:00Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/events/internal_notes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"events",
+								"internal_notes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Internal Notes (Audit History)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/events/internal_notes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"events",
+								"internal_notes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comment\":\"some comment\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/events/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"events",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Problems - Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"This is a problem\",\n\t\"description\": \"description\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/problems",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"problems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Files",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/files",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type_of\": \"bol\",\n    \"url\": \"https://cdn.filestackcontent.com/vSQWteTQseV3H1tQaEWc\",\n    \"description\": \"from platform1\",\n    \"longitude\": null,\n    \"latitude\": null,\n    \"meta_data\": {}\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/files",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								},
+								{
+									"key": "type",
+									"value": "other",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Some file",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/upload_file",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"upload_file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Bulk Booked (Customer Agnostic)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jonathan.f@roserocket.com\",\n    \"orders\": [\n    \t{\"customer_id\": \"ext:GOO\",\n    \t\"order_id\": \"ext:bleep-bleep-91\"}\n    ]\n}\n"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/orders/bulk_cancel_booked_order",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"orders",
+								"bulk_cancel_booked_order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quote",
+			"item": [
+				{
+					"name": "Generate Quotes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/quotes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"quotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Quotes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/customers/xxxxx/orders/xxxxx/quotes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"customers",
+								"xxxxx",
+								"orders",
+								"xxxxx",
+								"quotes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Connector Org",
+			"item": [
+				{
+					"name": "Get by ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "borderconnect2_client_id",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"type": "any"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic cXVpY2tib29rczpwYXNzd29yZA==",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/connectors_orgs/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"connectors_orgs",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{authorizationToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"311998bd-b870-4cd6-8551-21966553515c\",\n    \"connector_id\": \"borderconnect2\",\n    \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n    \"app_id\": \"838181ae-dec2-49fe-9088-9570930fc370\",\n    \"integration_user_id\": \"bd4f943e-7aaf-4dd1-9943-2c44eccdeadc\",\n    \"is_active\": true,\n    \"activated_by_user_id\": \"bd4f943e-7aaf-4dd1-9943-2c44eccdeadc\",\n    \"activated_at\": \"2017-11-24T17:57:03.700965Z\",\n    \"deactivated_by_user_id\": null,\n    \"deactivated_at\": null,\n    \"config\": {\n        \"client_id\": \"Q077UbMi2GaTRQKCFQ9YYl0QOouTrYZAwyrMGR0HbXPtPMDQL5\",\n        \"client_secret\": \"QFpsRqN8WaaPFGSSkloEVdWtddHf7jXnqjwbtXSL\",\n        \"realm_id\": \"123145930858644\",\n        \"refresh_token\": \"Q011521763045wavXikRMq9eqrlHZEvlCv17o8rq27FIxTxsjz\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/connectors_orgs/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"connectors_orgs",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Get by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/invoices/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"invoices",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by external ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/invoices/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"invoices",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"6f052072-8d09-4258-9be2-f8e0d5a54c53\",\n    \"org_id\": \"23be1161-c63d-4e51-8ae1-d2ed3d1dc6f7\",\n    \"order_id\": \"619f674b-7102-455e-b64e-f8dede815bfe\",\n    \"quote_id\": \"bcb087a8-3170-4ce4-ab0e-e47b86c4d71d\",\n    \"status\": \"draft\",\n    \"currency\": \"usd\",\n    \"term\": \"due-in-30-days\",\n    \"public_id\": \"INV-CAR1-ASHL-171\",\n    \"external_id\": \"asd123\",\n    \"revision\": 1,\n    \"invoice_date\": \"2017-11-08T20:47:34.259833Z\",\n    \"due_date\": \"2017-12-08T20:47:34.259833Z\",\n    \"sent_at\": null,\n    \"paid_at\": null,\n    \"to_email\": \"\",\n    \"cc_email\": \"\",\n    \"bill_to\": {\n        \"company_name\": \"Ashley\",\n        \"contact_name\": \"\",\n        \"address_1\": \"635 6th Ave\",\n        \"address_2\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"postal\": \"10011\",\n        \"country\": \"US\"\n    },\n    \"notes\": \"\",\n    \"remit_to\": {\n        \"company_name\": \"\",\n        \"contact_name\": \"\",\n        \"address_1\": \"\",\n        \"address_2\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"postal\": \"\",\n        \"country\": \"\"\n    },\n    \"sub_total_amount\": 0,\n    \"tax_amount\": 0,\n    \"total_amount\": 0\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/invoices/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"invoices",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update by external ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"6f052072-8d09-4258-9be2-f8e0d5a54c53\",\n    \"org_id\": \"23be1161-c63d-4e51-8ae1-d2ed3d1dc6f7\",\n    \"order_id\": \"619f674b-7102-455e-b64e-f8dede815bfe\",\n    \"quote_id\": \"bcb087a8-3170-4ce4-ab0e-e47b86c4d71d\",\n    \"status\": \"draft\",\n    \"currency\": \"usd\",\n    \"term\": \"due-in-30-days\",\n    \"public_id\": \"INV-CAR1-ASHL-171\",\n    \"external_id\": \"asd123\",\n    \"revision\": 1,\n    \"invoice_date\": \"2017-11-08T20:47:34.259833Z\",\n    \"due_date\": \"2017-12-08T20:47:34.259833Z\",\n    \"sent_at\": null,\n    \"paid_at\": null,\n    \"to_email\": \"\",\n    \"cc_email\": \"\",\n    \"bill_to\": {\n        \"company_name\": \"Ashley\",\n        \"contact_name\": \"\",\n        \"address_1\": \"635 6th Ave\",\n        \"address_2\": \"\",\n        \"city\": \"New York\",\n        \"state\": \"NY\",\n        \"postal\": \"10011\",\n        \"country\": \"US\"\n    },\n    \"notes\": \"\",\n    \"remit_to\": {\n        \"company_name\": \"\",\n        \"contact_name\": \"\",\n        \"address_1\": \"\",\n        \"address_2\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"postal\": \"\",\n        \"country\": \"\"\n    },\n    \"sub_total_amount\": 0,\n    \"tax_amount\": 0,\n    \"total_amount\": 0\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/invoices/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"invoices",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Partner Carrier",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers?offset=0&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By External ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers/qb_external_id:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers",
+								"qb_external_id:xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"qb_external_id\": \"12\",\n    \"name\": \"Test2\",\n    \"address_1\": \"Test Address 1\",\n    \"address_2\": \"Test Address 2\",\n    \"suite\": \"\",\n    \"city\": \"Toronto\",\n    \"postal\": \"m3d1s3\",\n    \"phone\": \"\",\n    \"phone_ext\": \"\",\n    \"fax\": \"\",\n    \"email\": \"\",\n    \"country\": \"CA\",\n    \"state\": \"ON\",\n    \"is_active\": true,\n    \"timezone\": \"\",\n    \"dispatch_contact_name\": \"\",\n    \"dispatch_contact_email\": \"\",\n    \"billing_contact_name\": \"\",\n    \"billing_contact_email\": \"\",\n    \"sales_contact_name\": \"\",\n    \"sales_contact_email\": \"\",\n    \"logo_is_shown\": false,\n    \"logo_file_url\": null,\n    \"logo_file_uploaded_at\": null,\n    \"logo_file_uploaded_by\": null,\n    \"motor_carrier_id\": \"\",\n    \"dept_of_transportation_id\": \"\",\n    \"standard_carrier_alpha_code\": \"\",\n    \"provincial_operating_authority_num\": \"\",\n    \"workers_comp_policy_num\": null,\n    \"workers_comp_amount\": null,\n    \"workers_comp_exp_date\": null,\n    \"workers_comp_allow_dispatch\": null,\n    \"workers_comp_file_url\": null,\n    \"workers_comp_file_uploaded_at\": null,\n    \"workers_comp_file_uploaded_by\": null,\n    \"cargo_ins_policy_num\": null,\n    \"cargo_ins_amount\": null,\n    \"cargo_ins_exp_date\": null,\n    \"cargo_ins_allow_dispatch\": null,\n    \"cargo_ins_file_url\": null,\n    \"cargo_ins_file_uploaded_at\": null,\n    \"cargo_ins_file_uploaded_by\": null,\n    \"liability_ins_policy_num\": null,\n    \"liability_ins_amount\": null,\n    \"liability_ins_exp_date\": null,\n    \"liability_ins_allow_dispatch\": null,\n    \"liability_ins_file_url\": null,\n    \"liability_ins_file_uploaded_at\": null,\n    \"liability_ins_file_uploaded_by\": null,\n    \"auto_liability_ins_policy_num\": null,\n    \"auto_liability_ins_amount\": null,\n    \"auto_liability_ins_exp_date\": null,\n    \"auto_liability_ins_allow_dispatch\": null,\n    \"auto_liability_ins_file_url\": null,\n    \"auto_liability_ins_file_uploaded_at\": null,\n    \"auto_liability_ins_file_uploaded_by\": null\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"715b7c87-fc93-43f0-b05f-cf3bdf346667\",\n    \"qb_external_id\": \"12\",\n    \"name\": \"Test2\",\n    \"address_1\": \"Test Address 1\",\n    \"address_2\": \"Test Address 2\",\n    \"suite\": \"\",\n    \"city\": \"Toronto\",\n    \"postal\": \"m3d1s3\",\n    \"phone\": \"\",\n    \"phone_ext\": \"\",\n    \"fax\": \"\",\n    \"email\": \"\",\n    \"country\": \"CA\",\n    \"state\": \"ON\",\n    \"is_active\": true,\n    \"timezone\": \"\",\n    \"dispatch_contact_name\": \"\",\n    \"dispatch_contact_email\": \"\",\n    \"billing_contact_name\": \"\",\n    \"billing_contact_email\": \"\",\n    \"sales_contact_name\": \"\",\n    \"sales_contact_email\": \"\",\n    \"logo_is_shown\": false,\n    \"logo_file_url\": null,\n    \"logo_file_uploaded_at\": null,\n    \"logo_file_uploaded_by\": null,\n    \"motor_carrier_id\": \"\",\n    \"dept_of_transportation_id\": \"\",\n    \"standard_carrier_alpha_code\": \"\",\n    \"provincial_operating_authority_num\": \"\",\n    \"workers_comp_policy_num\": null,\n    \"workers_comp_amount\": null,\n    \"workers_comp_exp_date\": null,\n    \"workers_comp_allow_dispatch\": null,\n    \"workers_comp_file_url\": null,\n    \"workers_comp_file_uploaded_at\": null,\n    \"workers_comp_file_uploaded_by\": null,\n    \"cargo_ins_policy_num\": null,\n    \"cargo_ins_amount\": null,\n    \"cargo_ins_exp_date\": null,\n    \"cargo_ins_allow_dispatch\": null,\n    \"cargo_ins_file_url\": null,\n    \"cargo_ins_file_uploaded_at\": null,\n    \"cargo_ins_file_uploaded_by\": null,\n    \"liability_ins_policy_num\": null,\n    \"liability_ins_amount\": null,\n    \"liability_ins_exp_date\": null,\n    \"liability_ins_allow_dispatch\": null,\n    \"liability_ins_file_url\": null,\n    \"liability_ins_file_uploaded_at\": null,\n    \"liability_ins_file_uploaded_by\": null,\n    \"auto_liability_ins_policy_num\": null,\n    \"auto_liability_ins_amount\": null,\n    \"auto_liability_ins_exp_date\": null,\n    \"auto_liability_ins_allow_dispatch\": null,\n    \"auto_liability_ins_file_url\": null,\n    \"auto_liability_ins_file_uploaded_at\": null,\n    \"auto_liability_ins_file_uploaded_by\": null\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By External ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"715b7c87-fc93-43f0-b05f-cf3bdf346667\",\n    \"qb_external_id\": \"12\",\n    \"name\": \"Test2\",\n    \"address_1\": \"Test Address 1\",\n    \"address_2\": \"Test Address 2\",\n    \"suite\": \"\",\n    \"city\": \"Toronto\",\n    \"postal\": \"m3d1s3\",\n    \"phone\": \"\",\n    \"phone_ext\": \"\",\n    \"fax\": \"\",\n    \"email\": \"\",\n    \"country\": \"CA\",\n    \"state\": \"ON\",\n    \"is_active\": true,\n    \"timezone\": \"\",\n    \"dispatch_contact_name\": \"\",\n    \"dispatch_contact_email\": \"\",\n    \"billing_contact_name\": \"\",\n    \"billing_contact_email\": \"\",\n    \"sales_contact_name\": \"\",\n    \"sales_contact_email\": \"\",\n    \"logo_is_shown\": false,\n    \"logo_file_url\": null,\n    \"logo_file_uploaded_at\": null,\n    \"logo_file_uploaded_by\": null,\n    \"motor_carrier_id\": \"\",\n    \"dept_of_transportation_id\": \"\",\n    \"standard_carrier_alpha_code\": \"\",\n    \"provincial_operating_authority_num\": \"\",\n    \"workers_comp_policy_num\": null,\n    \"workers_comp_amount\": null,\n    \"workers_comp_exp_date\": null,\n    \"workers_comp_allow_dispatch\": null,\n    \"workers_comp_file_url\": null,\n    \"workers_comp_file_uploaded_at\": null,\n    \"workers_comp_file_uploaded_by\": null,\n    \"cargo_ins_policy_num\": null,\n    \"cargo_ins_amount\": null,\n    \"cargo_ins_exp_date\": null,\n    \"cargo_ins_allow_dispatch\": null,\n    \"cargo_ins_file_url\": null,\n    \"cargo_ins_file_uploaded_at\": null,\n    \"cargo_ins_file_uploaded_by\": null,\n    \"liability_ins_policy_num\": null,\n    \"liability_ins_amount\": null,\n    \"liability_ins_exp_date\": null,\n    \"liability_ins_allow_dispatch\": null,\n    \"liability_ins_file_url\": null,\n    \"liability_ins_file_uploaded_at\": null,\n    \"liability_ins_file_uploaded_by\": null,\n    \"auto_liability_ins_policy_num\": null,\n    \"auto_liability_ins_amount\": null,\n    \"auto_liability_ins_exp_date\": null,\n    \"auto_liability_ins_allow_dispatch\": null,\n    \"auto_liability_ins_file_url\": null,\n    \"auto_liability_ins_file_uploaded_at\": null,\n    \"auto_liability_ins_file_uploaded_by\": null\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers/ext:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers",
+								"ext:xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from\": \"alex.l@roserocket.com\",\n  \"cc\": \"\",\n  \"emails\": \"alex.l@roserocket.com,justin.h@roserocket.com\",\n  \"subject\": \"POD!!!\",\n  \"message\": \"Hi There!\",\n  \"copy_to_myself\": true,\n  \"include_as_attachment\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete By External ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from\": \"alex.l@roserocket.com\",\n  \"cc\": \"\",\n  \"emails\": \"alex.l@roserocket.com,justin.h@roserocket.com\",\n  \"subject\": \"POD!!!\",\n  \"message\": \"Hi There!\",\n  \"copy_to_myself\": true,\n  \"include_as_attachment\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/partner_carriers/qb_external_id:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"partner_carriers",
+								"qb_external_id:xxxxx"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "977d8f5e-74e2-4b29-9008-c86e6b2dcf98",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "697fee27-07c9-423f-b55f-94faac48a32e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/users/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"users",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By External ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/users/qb_external_id:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"users",
+								"qb_external_id:xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"bd4f943e-7aaf-4dd1-9943-2c44eccdeadc\",\n    \"email\": \"srdjan.l@roserocket.com\",\n    \"qb_external_id\": \"10\",\n    \"user_status_id\": \"active\",\n    \"profile\": {\n        \"remit_to\": {\n            \"first_name\": \"Srdjan\",\n            \"last_name\": \"Lakovic\",\n            \"address_1\": \"\",\n            \"address_2\": \"\",\n            \"city\": \"\",\n            \"state\": \"\",\n            \"postal\": \"\",\n            \"country\": \"\",\n            \"phone\": \"\",\n            \"phone_ext\": \"\",\n            \"email\": \"srdjan.l@roserocket.com\",\n            \"fax\": \"\"\n        },\n        \"pay_amount\": 0,\n        \"pay_type_id\": \"other\",\n        \"pay2_amount\": null,\n        \"pay2_type_id\": null,\n        \"pay3_amount\": null,\n        \"pay3_type_id\": null,\n        \"driver_license_no\": \"\",\n        \"driver_license_expiry_date\": null,\n        \"insurance_company_name\": \"\",\n        \"insurance_policy_no\": \"\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/users/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"users",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By External ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"bd4f943e-7aaf-4dd1-9943-2c44eccdeadc\",\n    \"email\": \"srdjan.l@roserocket.com\",\n    \"qb_external_id\": \"10\",\n    \"user_status_id\": \"active\",\n    \"profile\": {\n        \"remit_to\": {\n            \"first_name\": \"Srdjan\",\n            \"last_name\": \"Lakovic\",\n            \"address_1\": \"\",\n            \"address_2\": \"\",\n            \"city\": \"\",\n            \"state\": \"\",\n            \"postal\": \"\",\n            \"country\": \"\",\n            \"phone\": \"\",\n            \"phone_ext\": \"\",\n            \"email\": \"srdjan.l@roserocket.com\",\n            \"fax\": \"\"\n        },\n        \"pay_amount\": 0,\n        \"pay_type_id\": \"other\",\n        \"pay2_amount\": null,\n        \"pay2_type_id\": null,\n        \"pay3_amount\": null,\n        \"pay3_type_id\": null,\n        \"driver_license_no\": \"\",\n        \"driver_license_expiry_date\": null,\n        \"insurance_company_name\": \"\",\n        \"insurance_policy_no\": \"\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/users/qb_external_id:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"users",
+								"qb_external_id:xxxxx"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "977d8f5e-74e2-4b29-9008-c86e6b2dcf98",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "697fee27-07c9-423f-b55f-94faac48a32e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Bills",
+			"item": [
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/bills/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"bills",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By External ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/bills/qb_external_id:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"bills",
+								"qb_external_id:xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"845cbc88-9a0c-40c9-9ce5-cd12a4398092\",\n    \"created_by\": \"bd4f943e-7aaf-4dd1-9943-2c44eccdeadc\",\n    \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n    \"status_id\": \"saved\",\n    \"currency_id\": \"usd\",\n    \"pay_term_id\": \"04bdf31c-12e6-4acb-a007-a6b4b0f91f50\",\n    \"master_trip_id\": \"419526c6-98ce-4cfd-9824-a0cda29348ab\",\n    \"partner_carrier_id\": null,\n    \"driver_id\": \"b3643346-a44f-4c51-a725-f093af6c2a10\",\n    \"full_id\": \"\",\n    \"external_id\": \"\",\n    \"qb_external_id\": \"10\",\n    \"revision\": 1,\n    \"bill_date\": \"2018-02-07T17:41:38.940975Z\",\n    \"due_date\": \"2018-03-09T17:41:38.940975Z\",\n    \"sent_at\": null,\n    \"paid_at\": null,\n    \"send_to_email\": \"\",\n    \"cc_to_email\": \"\",\n    \"bill_to\": {\n        \"company_name\": \"SrdjanCus LakovicCus\",\n        \"contact_name\": \"SrdjanCus LakovicCus\",\n        \"address_1\": \"\",\n        \"address_2\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"postal\": \"\",\n        \"country\": \"\"\n    },\n    \"is_tax_on\": true,\n    \"notes\": \"test\",\n    \"remit_to\": {\n        \"company_name\": \"Cory\",\n        \"contact_name\": \"Srdjan Lakovic\",\n        \"address_1\": \"\",\n        \"address_2\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"postal\": \"\",\n        \"country\": \"US\"\n    },\n    \"sub_total_amount\": 320,\n    \"tax_amount\": 15.6,\n    \"total_amount\": 335.6,\n    \"created_by_name\": \"Srdjan Lakovic\",\n    \"items\": [\n        {\n            \"id\": \"69df3b6c-fa16-43a5-ab26-5d63bff57e6c\",\n            \"bill_id\": \"845cbc88-9a0c-40c9-9ce5-cd12a4398092\",\n            \"bill_item_type_id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n            \"manifest_payment_item_id\": null,\n            \"unit_price\": 100,\n            \"quantity\": 1,\n            \"tax_id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n            \"total_amount\": 100,\n            \"description\": \"Example\",\n            \"bill_item_type\": {\n                \"id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n                \"class\": \"misc\",\n                \"name\": \"Miscellaneous\",\n                \"description\": \"Miscellaneous\",\n                \"external_id\": \"\",\n                \"qb_external_id\": \"\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\"\n            },\n            \"tax\": {\n                \"id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n                \"tax\": 13,\n                \"country\": \"CA\",\n                \"state\": \"ON\",\n                \"name\": \"Harmonized Tax Sales\",\n                \"qb_external_id\": \"TAX\",\n                \"is_active\": true\n            }\n        },\n        {\n            \"id\": \"9845a06e-c9c8-400e-86d2-b3b5c0845c53\",\n            \"bill_id\": \"845cbc88-9a0c-40c9-9ce5-cd12a4398092\",\n            \"bill_item_type_id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n            \"manifest_payment_item_id\": null,\n            \"unit_price\": 10,\n            \"quantity\": 2,\n            \"tax_id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n            \"total_amount\": 20,\n            \"description\": \"Test\",\n            \"bill_item_type\": {\n                \"id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n                \"class\": \"misc\",\n                \"name\": \"Miscellaneous\",\n                \"description\": \"Miscellaneous\",\n                \"external_id\": \"\",\n                \"qb_external_id\": \"\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\"\n            },\n            \"tax\": {\n                \"id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n                \"tax\": 13,\n                \"country\": \"CA\",\n                \"state\": \"ON\",\n                \"name\": \"Harmonized Tax Sales\",\n                \"qb_external_id\": \"TAX\",\n                \"is_active\": true\n            }\n        }\n    ],\n    \"pay_term\": {\n        \"id\": \"04bdf31c-12e6-4acb-a007-a6b4b0f91f50\",\n        \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n        \"number_of_days\": 30,\n        \"name\": \"Due in 30 Days\",\n        \"qb_external_id\": \"3\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/bills/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"bills",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update By External ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"845cbc88-9a0c-40c9-9ce5-cd12a4398092\",\n    \"created_by\": \"bd4f943e-7aaf-4dd1-9943-2c44eccdeadc\",\n    \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n    \"status_id\": \"saved\",\n    \"currency_id\": \"usd\",\n    \"pay_term_id\": \"04bdf31c-12e6-4acb-a007-a6b4b0f91f50\",\n    \"master_trip_id\": \"419526c6-98ce-4cfd-9824-a0cda29348ab\",\n    \"partner_carrier_id\": null,\n    \"driver_id\": \"b3643346-a44f-4c51-a725-f093af6c2a10\",\n    \"full_id\": \"\",\n    \"external_id\": \"\",\n    \"qb_external_id\": \"10\",\n    \"revision\": 1,\n    \"bill_date\": \"2018-02-07T17:41:38.940975Z\",\n    \"due_date\": \"2018-03-09T17:41:38.940975Z\",\n    \"sent_at\": null,\n    \"paid_at\": null,\n    \"send_to_email\": \"\",\n    \"cc_to_email\": \"\",\n    \"bill_to\": {\n        \"company_name\": \"SrdjanCus LakovicCus\",\n        \"contact_name\": \"SrdjanCus LakovicCus\",\n        \"address_1\": \"\",\n        \"address_2\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"postal\": \"\",\n        \"country\": \"\"\n    },\n    \"is_tax_on\": true,\n    \"notes\": \"test\",\n    \"remit_to\": {\n        \"company_name\": \"Cory\",\n        \"contact_name\": \"Srdjan Lakovic\",\n        \"address_1\": \"\",\n        \"address_2\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"postal\": \"\",\n        \"country\": \"US\"\n    },\n    \"sub_total_amount\": 320,\n    \"tax_amount\": 15.6,\n    \"total_amount\": 335.6,\n    \"created_by_name\": \"Srdjan Lakovic\",\n    \"items\": [\n        {\n            \"id\": \"69df3b6c-fa16-43a5-ab26-5d63bff57e6c\",\n            \"bill_id\": \"845cbc88-9a0c-40c9-9ce5-cd12a4398092\",\n            \"bill_item_type_id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n            \"manifest_payment_item_id\": null,\n            \"unit_price\": 100,\n            \"quantity\": 1,\n            \"tax_id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n            \"total_amount\": 100,\n            \"description\": \"Example\",\n            \"bill_item_type\": {\n                \"id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n                \"class\": \"misc\",\n                \"name\": \"Miscellaneous\",\n                \"description\": \"Miscellaneous\",\n                \"external_id\": \"\",\n                \"qb_external_id\": \"\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\"\n            },\n            \"tax\": {\n                \"id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n                \"tax\": 13,\n                \"country\": \"CA\",\n                \"state\": \"ON\",\n                \"name\": \"Harmonized Tax Sales\",\n                \"qb_external_id\": \"TAX\",\n                \"is_active\": true\n            }\n        },\n        {\n            \"id\": \"9845a06e-c9c8-400e-86d2-b3b5c0845c53\",\n            \"bill_id\": \"845cbc88-9a0c-40c9-9ce5-cd12a4398092\",\n            \"bill_item_type_id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n            \"manifest_payment_item_id\": null,\n            \"unit_price\": 10,\n            \"quantity\": 2,\n            \"tax_id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n            \"total_amount\": 20,\n            \"description\": \"Test\",\n            \"bill_item_type\": {\n                \"id\": \"625bf269-ab21-4127-816a-aa75264d3874\",\n                \"class\": \"misc\",\n                \"name\": \"Miscellaneous\",\n                \"description\": \"Miscellaneous\",\n                \"external_id\": \"\",\n                \"qb_external_id\": \"\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\"\n            },\n            \"tax\": {\n                \"id\": \"b582bf89-4d9c-422c-9eab-91bd7457312a\",\n                \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n                \"tax\": 13,\n                \"country\": \"CA\",\n                \"state\": \"ON\",\n                \"name\": \"Harmonized Tax Sales\",\n                \"qb_external_id\": \"TAX\",\n                \"is_active\": true\n            }\n        }\n    ],\n    \"pay_term\": {\n        \"id\": \"04bdf31c-12e6-4acb-a007-a6b4b0f91f50\",\n        \"org_id\": \"fa75a7c5-bfe0-4103-8754-957bb480f481\",\n        \"number_of_days\": 30,\n        \"name\": \"Due in 30 Days\",\n        \"qb_external_id\": \"3\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/bills/qb_external_id:xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"bills",
+								"qb_external_id:xxxxx"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "977d8f5e-74e2-4b29-9008-c86e6b2dcf98",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "697fee27-07c9-423f-b55f-94faac48a32e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Manifests",
+			"item": [
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"manifest\":{\"external_id\":\"my manifest\"}\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/payment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upsert Payment Items",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"payment_items\":[{\"bill_class\":\"misc\",\"quantity\":4814, \"description\":\"thing\"}]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/payment/items/upsert",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"payment",
+								"items",
+								"upsert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment Items",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"payment_item_ids\":[\"2491fcb7-b84a-45ec-8a04-5805bb9ce1ee\"]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/payment/items",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"payment",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Legs To Manifest (Bulk)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\n\t\"leg_ids\":[\"175f9ad3-f803-484a-94d9-1307d4508407\"]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/add_legs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"add_legs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Carrier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"partner_carrier_id\":\"fb41a6f7-68f3-4eb0-9264-5cfcda7afea7\",\n\t\"service_id\":\"fb15ed93-8121-4310-be3d-f6401d8bd1a1\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/assign_carrier",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"assign_carrier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Driver",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"driver_user_id\":\"bca85e4b-f566-42a2-8807-b6526de322f1\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/assign_driver",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"assign_driver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Stop Schedule",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n  \n  {\n    \"schedule_start_at\":\"2018-10-18T19:00:00Z\",\n    \"schedule_end_at\":\"2018-10-18T20:55:00Z\"\n  }"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/stops/xxxxx/update_schedule",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"stops",
+								"xxxxx",
+								"update_schedule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Legs By ManifestID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/legs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"legs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Manifest Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\":\"Hello\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/manifests/xxxxx/notes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"manifests",
+								"xxxxx",
+								"notes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Legs",
+			"item": [
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxx"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Files",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxx/files",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxx",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"id\":\"\",\n\"created_at\":\"\",\n\"updated_at\":\"\",\n\n\"org_id\":\"\",\n\"leg_id\":\"\",\n\"uploaded_by\":\"\",\n\"uploaded_at\":\"\",\n\"type\":\"\",\n\"url\":\"\",\n\n\"description\":\"\",\n\"task_id\":\"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxx/files",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxx",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update File",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"id\":\"\",\n\"created_at\":\"\",\n\"updated_at\":\"\",\n\n\"org_id\":\"\",\n\"leg_id\":\"\",\n\"uploaded_by\":\"\",\n\"uploaded_at\":\"\",\n\"type\":\"\",\n\"url\":\"\",\n\n\"description\":\"\",\n\"task_id\":\"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxx/files/{fileID}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxx",
+								"files",
+								"{fileID}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Uploaded File",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/{legID}/upload_file/{fileID}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"{legID}",
+								"upload_file",
+								"{fileID}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/{legID}/upload_file",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"{legID}",
+								"upload_file"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload BOL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": ""
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/{legID}/upload_bol",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"{legID}",
+								"upload_bol"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete File",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxx/files/{fileID}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxx",
+								"files",
+								"{fileID}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load By ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"from_arrive_at\": null,\n  \"from_in_at\": null,\n  \"from_out_at\": null\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxx/load",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxx",
+								"load"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unload By ID Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"to_arrive_at\": null,\n  \"to_in_at\": null,\n  \"to_out_at\": null\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxx/unload",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxx",
+								"unload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Origin Address",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"address\" : {\n\t\"org_name\":\"\",\n\t\"contact_name\":\"jonathan\",\n\"address_1\":\"4010 Sawmill Valley Drive\",\n\"address_2\":\"\",\n\"suite\":\"\",\n\"city\":\"Newmarket\",\n\"state\":\"ON\",\n\"country\":\"CA\",\n\"postal\":\"L8X2W1\",\n\"phone\":\"\",\n\"phone_ext\":\"\",\n\"email\":\"\",\n\"fax\":\"\"}\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxxx/revise_origin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxxx",
+								"revise_origin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Destination Address",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"address\" : {\n\t\"org_name\":\"\",\n\t\"contact_name\":\"jonathan\",\n\"address_1\":\"2000 Sawmill Valley Drive\",\n\"address_2\":\"\",\n\"suite\":\"\",\n\"city\":\"Newmarket\",\n\"state\":\"ON\",\n\"country\":\"CA\",\n\"postal\":\"BKX2W1\",\n\"phone\":\"\",\n\"phone_ext\":\"\",\n\"email\":\"\",\n\"fax\":\"\"}\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxxx/revise_destination",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxxx",
+								"revise_destination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Commodities",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authorizationToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n        \"commodities\": [\n            {\t\n                \"measurement_unit\": \"inch\",\n                \"weight_unit\": \"lb\",\n                \"freight_class\": \"50\",\n                \"commodity_type\": \"skid\",\n                \"name\": \"beep beep\",\n                \"description\": \"bloop bleep\",\n                \"feet\": 0,\n                \"volume\": 0,\n                \"length\": 1,\n                \"width\": 1,\n                \"height\": 1,\n                \"weight\": 1,\n                \"nmfc\": \"\",\n                \"is_stackable\": false,\n                \"quantity\": 1,\n                \"pieces\": 1,\n                \"commodity_type_other\": \"\",\n                \"sku\": \"1\"\n            },\n            {\n                \"measurement_unit\": \"inch\",\n                \"weight_unit\": \"lb\",\n                \"freight_class\": \"none\",\n                \"commodity_type\": \"skid\",\n                \"name\": \"1\",\n                \"description\": \"TEST ONE\",\n                \"feet\": 0,\n                \"volume\": 0,\n                \"length\": 1,\n                \"width\": 1,\n                \"height\": 1,\n                \"weight\": 1,\n                \"nmfc\": \"\",\n                \"is_stackable\": false,\n                \"quantity\": 1,\n                \"pieces\": 1,\n                \"commodity_type_other\": \"\",\n                \"sku\": \"1\"\n            }\n        ]\n    }\n"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/{{apiVersion}}/legs/xxxxx/revise_commodities",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"{{apiVersion}}",
+								"legs",
+								"xxxxx",
+								"revise_commodities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grant_type\": \"password\",\n    \"username\": \"[USERNAME]\",\n    \"password\": \"[PASSWORD]\",\n    \"client_id\": \"510c4452-68b4-40eb-bc80-12ee9e66a9fe\",\n    \"client_secret\": \"nfgDsc2WD8F2qNfHK5a84jjJkwzDkh9h2fhfUVuS9jZ8uVbhV3vC5AWX39IVUWSP2NcHciWvqZTa2N95RxRTZHWUsaD6HEdz0ThbXfQ6pYSQ3n267l1VQKGNbSuJE9fQ\"\n}\n"
+				},
+				"url": {
+					"raw": "{{authUrl}}/oauth2/token",
+					"host": [
+						"{{authUrl}}"
+					],
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}

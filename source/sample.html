@@ -1,0 +1,480 @@
+doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <title>Rose Rocket Platform REST API</title>
+
+        <style>
+            .highlight table td {
+                padding: 5px;
+            }
+            .highlight table pre {
+                margin: 0;
+            }
+            .highlight .gh {
+                color: #999999;
+            }
+            .highlight .sr {
+                color: #f6aa11;
+            }
+            .highlight .go {
+                color: #888888;
+            }
+            .highlight .gp {
+                color: #555555;
+            }
+            .highlight .gs {
+            }
+            .highlight .gu {
+                color: #aaaaaa;
+            }
+            .highlight .nb {
+                color: #f6aa11;
+            }
+            .highlight .cm {
+                color: #75715e;
+            }
+            .highlight .cp {
+                color: #75715e;
+            }
+            .highlight .c1 {
+                color: #75715e;
+            }
+            .highlight .cs {
+                color: #75715e;
+            }
+            .highlight .c,
+            .highlight .cd {
+                color: #75715e;
+            }
+            .highlight .err {
+                color: #960050;
+            }
+            .highlight .gr {
+                color: #960050;
+            }
+            .highlight .gt {
+                color: #960050;
+            }
+            .highlight .gd {
+                color: #49483e;
+            }
+            .highlight .gi {
+                color: #49483e;
+            }
+            .highlight .ge {
+                color: #49483e;
+            }
+            .highlight .kc {
+                color: #66d9ef;
+            }
+            .highlight .kd {
+                color: #66d9ef;
+            }
+            .highlight .kr {
+                color: #66d9ef;
+            }
+            .highlight .no {
+                color: #66d9ef;
+            }
+            .highlight .kt {
+                color: #66d9ef;
+            }
+            .highlight .mf {
+                color: #ae81ff;
+            }
+            .highlight .mh {
+                color: #ae81ff;
+            }
+            .highlight .il {
+                color: #ae81ff;
+            }
+            .highlight .mi {
+                color: #ae81ff;
+            }
+            .highlight .mo {
+                color: #ae81ff;
+            }
+            .highlight .m,
+            .highlight .mb,
+            .highlight .mx {
+                color: #ae81ff;
+            }
+            .highlight .sc {
+                color: #ae81ff;
+            }
+            .highlight .se {
+                color: #ae81ff;
+            }
+            .highlight .ss {
+                color: #ae81ff;
+            }
+            .highlight .sd {
+                color: #e6db74;
+            }
+            .highlight .s2 {
+                color: #e6db74;
+            }
+            .highlight .sb {
+                color: #e6db74;
+            }
+            .highlight .sh {
+                color: #e6db74;
+            }
+            .highlight .si {
+                color: #e6db74;
+            }
+            .highlight .sx {
+                color: #e6db74;
+            }
+            .highlight .s1 {
+                color: #e6db74;
+            }
+            .highlight .s {
+                color: #e6db74;
+            }
+            .highlight .na {
+                color: #a6e22e;
+            }
+            .highlight .nc {
+                color: #a6e22e;
+            }
+            .highlight .nd {
+                color: #a6e22e;
+            }
+            .highlight .ne {
+                color: #a6e22e;
+            }
+            .highlight .nf {
+                color: #a6e22e;
+            }
+            .highlight .vc {
+                color: #ffffff;
+            }
+            .highlight .nn {
+                color: #ffffff;
+            }
+            .highlight .nl {
+                color: #ffffff;
+            }
+            .highlight .ni {
+                color: #ffffff;
+            }
+            .highlight .bp {
+                color: #ffffff;
+            }
+            .highlight .vg {
+                color: #ffffff;
+            }
+            .highlight .vi {
+                color: #ffffff;
+            }
+            .highlight .nv {
+                color: #ffffff;
+            }
+            .highlight .w {
+                color: #ffffff;
+            }
+            .highlight {
+                color: #ffffff;
+            }
+            .highlight .n,
+            .highlight .py,
+            .highlight .nx {
+                color: #ffffff;
+            }
+            .highlight .ow {
+                color: #f92672;
+            }
+            .highlight .nt {
+                color: #f92672;
+            }
+            .highlight .k,
+            .highlight .kv {
+                color: #f92672;
+            }
+            .highlight .kn {
+                color: #f92672;
+            }
+            .highlight .kp {
+                color: #f92672;
+            }
+            .highlight .o {
+                color: #f92672;
+            }
+            .content.sample > h1,
+            .content.sample > h2,
+            .content.sample > h3,
+            .content.sample > h4,
+            .content.sample > h5,
+            .content.sample > h6,
+            .content.sample > p,
+            .content.sample > table,
+            .content.sample > ul,
+            .content.sample > ol,
+            .content.sample > aside,
+            .content.sample > dl {
+                margin-right: 0px;
+            }
+            .content.sample > p,
+            .content.sample > ol {
+                width: 75%;
+            }
+            .content.sample img {
+                max-width: 100%;
+                border: 1px solid #999;
+            }
+            .red {
+                color: red;
+            }
+            .green {
+                color: green;
+            }
+        </style>
+        <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+        <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+        <script src="javascripts/all_nosearch.js"></script>
+    </head>
+
+    <body class="sample" data-languages="[]">
+        <a href="#" id="nav-button">
+            <span>
+                NAV
+                <img src="images/navbar.png" alt="Navbar" />
+            </span>
+        </a>
+        <div class="tocify-wrapper">
+            <div style="text-align: center; margin-top: 10px"><img src="images/logo.png" /></div>
+            <div id="toc"></div>
+        </div>
+        <div class="page-wrapper">
+            <div class="content sample">
+                <h1 id="rose-rocket-platform-rest-api">Rose Rocket Platform API Sample Guide</h1>
+
+                <p>
+                    The purpose of this page is to provide a guided tutorial in executing a simple,
+                    sample task in the hopes that the pattern established here will provide further
+                    insight to integration&nbsp;developers. This task will just be to list all
+                    customers within your organization. While ultimately very simple, it should
+                    serve as a foundational basis to perform even the more
+                    complicated&nbsp;API&nbsp;calls.
+                </p>
+
+                <p>
+                    <b
+                        >N.B. These examples <em>will not work as is</em>, they are meant to be
+                        updated with your organization's particular&nbsp;configuration.</b
+                    >
+                </p>
+                <p>Base Request URLs:</p>
+
+                <ul>
+                    <li>
+                        <b>API:</b><br />
+                        <a href="https://platform.sandbox01.roserocket.com/v1"
+                            >https://platform.sandbox01.roserocket.com/v1</a
+                        >
+                    </li>
+                    <li>
+                        <b>Authentication:</b><br />
+                        <a href="https://auth.sandbox01.roserocket.com/v1"
+                            >https://auth.sandbox01.roserocket.com/v1</a
+                        >
+                    </li>
+                </ul>
+                <h1 id="postman">Postman</h1>
+
+                <h2 id="postman_download">Download</h2>
+                <p>
+                    For the purposes of providing visual cues, we'll be using the POSTMAN
+                    Application to perform this guided tutorial. Exact endpoints and code samples
+                    are provided in the full API document, and will be linked with each sample.
+                    <br /><br />You can download POSTMAN from the link&nbsp;below:
+                    <br />
+                    <a href="https://www.getpostman.com/downloads/" target="_blank"
+                        >https://www.getpostman.com/downloads/
+                    </a>
+                </p>
+                <h2 id="postman_setup">Setup</h2>
+                <p>
+                    Once downloaded, you'll need to setup the calls that we'll be using. We've
+                    provided Postman Profiles to speed up this process.<br />
+                    Please download the following files:
+                </p>
+                <ul>
+                    <li>
+                        <a
+                            href="docs/RoseRocket_Platform_API_sandbox.postman_environment.json"
+                            target="_blank"
+                            download
+                            >RoseRocket_Platform_API_sandbox.postman_environment.json</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="docs/RoseRocket_Platform_API.postman_collection.json"
+                            target="_blank"
+                            download
+                            >RoseRocket_Platform_API.postman_collection.json</a
+                        >
+                    </li>
+                </ul>
+                <p>
+                    Referring to the screenshot below, please import the aforementioned files using
+                    the 'Import' function outlined in <span class="red">red</span>. On successful
+                    import, your UI should be updated with the profile required to follow this
+                    tutorial. Please note the fields outlined in <span class="green">green</span>.
+                    <br /><br />
+                    <img src="docs/ss1.png" />
+                </p>
+
+                <h1 id="authentication">Authentication</h1>
+
+                <p>
+                    In order to execute any of the actions supported by the RoseRocket API, your
+                    session must be authenticated using the 'Auth' endpoint. Access tokens last for
+                    a maximum of 24 hours, and must be included in the header with all API requests.
+                    <br />
+                    <br />
+                    <b>API ENDPOINT:</b><br />
+                    <a href="https://auth.sandbox01.roserocket.com/oauth2/token"
+                        >https://auth.sandbox01.roserocket.com/oauth2/token</a
+                    >
+                </p>
+                <h2 id="auth_api_setup">RoseRocket Account Setup:</h2>
+                <p>
+                    Some initial setup is required in your organization's environment in order for
+                    authentication to proceed. Your integration needs to be registered as an
+                    official 'App', or the API will refuse connections outright. Please execute the
+                    following steps; reference points can be found in the provided&nbsp;screenshots.
+                </p>
+                <ol>
+                    <li>
+                        Navigate to your organization configuration screen
+                        <sup class="red">1</sup> and scroll down to the section labelled
+                        'Org&nbsp;Apps'&nbsp;<sup class="red">2</sup>
+                    </li>
+                    <li>
+                        Fill out the 'Name'&nbsp;<sup class="red">3</sup> field with any name that
+                        will help you identify the use of this key (ex. "My Integration
+                        Application") and click on the 'plus' icon.
+                    </li>
+                    <li>
+                        On success, you will see immediate confirmation, much like the example key
+                        in the screenshot, outlined&nbsp;in&nbsp;<span class="green">green</span>.
+                    </li>
+                </ol>
+                <p>
+                    <img src="docs/ss2.png" />
+                </p>
+
+                <h2 id="auth_setup">Postman Auth Setup:</h2>
+                <ol>
+                    <li>
+                        In the left navigation, please select the
+                        'Authenticate'&nbsp;action&nbsp;<sup class="red">1</sup>
+                    </li>
+                    <li>
+                        Update the Request body by selecting the 'Body' tab in
+                        the&nbsp;submenu&nbsp;<sup class="red">2</sup>
+                    </li>
+                    <li>
+                        Update the username and passwword fields with your RoseRocket
+                        Login&nbsp;Credentials
+                    </li>
+                    <li>
+                        Update the 'client_id' with the Org App&nbsp;Key&nbsp;<sup class="red"
+                            >3</sup
+                        >.
+                    </li>
+                    <li>
+                        Update the client_secret. The secret key is not visible in the UI, but will
+                        be copied to your clipboard when you click on the
+                        <nobr>secret&ndash;key&nbsp;button&nbsp;<sup class="red">4</sup></nobr
+                        >.
+                    </li>
+                </ol>
+                <p>
+                    <img src="docs/ss4.png" /><br /><br />
+                    <img src="docs/ss3.png" style="max-width:500px;" />
+                </p>
+
+                <h2 id="auth_confirmation">Postman Auth Completion:</h2>
+                <p>
+                    Once setup is complete, clicking on the 'Send' button should respond with a
+                    positive response, including an access token. As stated before, this access
+                    token will only be valid for 24 hours, and is required for all requests into the
+                    system. <br /><br />
+                    <b
+                        >Once these steps are complete, every POSTMAN request will contain the
+                        access token in their headers, opening up access to the rest of the API.</b
+                    >
+                    <br /><br />
+                    Using the included access key, you will need to update your headers, by
+                    following these few steps:
+                </p>
+                <ol>
+                    <li>
+                        After click 'Send'&nbsp;<sup class="red">1</sup>, the response body will
+                        contain a JSON object, with an attribute listed as
+                        'access_token'&nbsp;<sup>2</sup>. Copy it for step 2.
+                    </li>
+                    <li>
+                        Click on the 'Environment Quick Look' in the top toolbar&nbsp;<sup
+                            class="red"
+                            >3</sup
+                        >
+                        to open the submenu.
+                    </li>
+                    <li>
+                        Update the 'authorizationToken'&nbsp;<sup class="red">4</sup> with the field
+                        copied from step 1.
+                    </li>
+                </ol>
+
+                <p>
+                    <img src="docs/ss5.png" />
+                    <br /><br />
+                    <img src="docs/ss6.png" />
+                </p>
+                <h1 id="rose-rocket-platform-rest-api-order">Simple Example: List Customers</h1>
+                <h2 id="sample-overview">Overview:</h2>
+                <p>
+                    The execution of this API call within POSTMAN will provide example feedback for
+                    what to expect, and will hopefully make clear how this is achieved when compared
+                    side-by-side with the
+                    <a href="/?javascript#searchcustomers" target="_blank">API guide entry.</a>
+                </p>
+
+                <h2 id="search-customers">Search Customers:</h2>
+                <p>Please execute the following steps to execute this example using POSTMAN.</p>
+                <ol>
+                    <li>
+                        In the left nav, expand the 'Customers' section&nbsp;<sup class="red">1</sup
+                        >, and select the 'Search' action.
+                    </li>
+                    <li>
+                        Once you click 'Send', you should see the JSON response with a list of your
+                        customers. (Please note the limit & offset&nbsp;<sup class="red">2</sup>, to
+                        help manage&nbsp;results.
+                    </li>
+                    <li>
+                        The screenshot also show the headers that were passed with the
+                        request&nbsp;<sup class="red">3</sup>. This should coincide with the example
+                        code block&nbsp;<sup class="red">4</sup>.
+                    </li>
+                </ol>
+                <p>
+                    <img src="docs/ss7.png" />
+
+                    <br /><br />
+                    <a href="/?javascript#searchcustomers" target="_blank"
+                        ><img src="docs/ss8.png"
+                    /></a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

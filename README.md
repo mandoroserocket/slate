@@ -51,6 +51,12 @@ You're going to need:
 # installing bundler (as admin)
 sudo gem install bundler
 
+# install all other packages
+npm install
+
+# install yaml to json library (to avoid having to use other third parties)
+npm install -g yamljs
+
 # run bundle, it will install it's own dependencies
 bundle
 

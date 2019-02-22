@@ -3,7 +3,9 @@ info:
   description: >-
     The Platform REST API lets you integrate with Rose Rocket applications using
     simple HTTP methods, in JSON formats, making this an ideal API for
-    developing mobile applications or external clients.
+    developing mobile applications or external clients. <br /><br />
+    <b>A sample implementation and quick synopsis can be found by clicking on
+    <nobr><a href="/sample.html" target="_blank">this sample link</a>.</nobr></b>
   version: 1.0.0
   title: Rose Rocket Platform REST API
   termsOfService: 'http://swagger.io/terms/'
