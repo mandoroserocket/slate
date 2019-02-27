@@ -8,6 +8,10 @@
             "email": "alex.l@roserocket.com"
         }
     ],
+    "scripts": {
+        "build": "./updateDocs.sh",
+        "start": "./runServer.sh"
+    },
     "keywords": [],
     "dependencies": {
         "widdershins": "^3.6.7",
