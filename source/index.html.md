@@ -21,7 +21,7 @@ headingLevel: 2
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
-The Platform REST API lets you integrate with Rose Rocket applications using simple HTTP methods, in JSON formats, making this an ideal API for developing mobile applications or external clients. <br /><br /> <b>A sample implementation and quick synopsis can be found by clicking on <nobr><a href="/sample.html" target="_blank">this sample link</a>.</nobr></b>
+The Platform REST API lets you integrate with Rose Rocket applications using simple HTTP methods, in JSON formats, making this an ideal API for developing mobile applications or external clients. <h3>A sample implementation has been provided and can be access by clicking on <nobr><a href="/sample.html" target="_blank" style='color:blue'>this sample link</a>.</nobr></h3>
 
 Base URLs:
 
@@ -242,8 +242,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "destination": {
         "address_book_id": "string",
@@ -263,8 +263,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing": {
         "address_book_id": "string",
@@ -284,8 +284,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "status": "new",
       "billing_option": "prepaid",
@@ -296,14 +296,14 @@ func main() {
       "custom_broker": "string",
       "declared_value": 0,
       "declared_value_currency": "cad",
-      "pickup_start_at": "2019-02-22T16:16:51Z",
-      "pickup_end_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-      "delivery_start_at": "2019-02-22T16:16:51Z",
-      "delivery_end_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+      "pickup_start_at": "2019-02-27T16:09:58Z",
+      "pickup_end_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+      "delivery_start_at": "2019-02-27T16:09:58Z",
+      "delivery_end_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_end_at": "2019-02-27T16:09:58Z",
       "dim_type": "ltl",
       "commodities": [
         {
@@ -536,8 +536,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -556,8 +556,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -576,8 +576,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -587,14 +587,14 @@ const inputBody = '{
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-  "delivery_start_at": "2019-02-22T16:16:51Z",
-  "delivery_end_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+  "delivery_start_at": "2019-02-27T16:09:58Z",
+  "delivery_end_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_end_at": "2019-02-27T16:09:58Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -748,8 +748,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -768,8 +768,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -788,8 +788,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -799,14 +799,14 @@ func main() {
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-  "delivery_start_at": "2019-02-22T16:16:51Z",
-  "delivery_end_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+  "delivery_start_at": "2019-02-27T16:09:58Z",
+  "delivery_end_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_end_at": "2019-02-27T16:09:58Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -876,8 +876,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -897,8 +897,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -918,8 +918,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -930,14 +930,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -1165,8 +1165,8 @@ const inputBody = '{
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "destination": {
         "address_book_external_id": "string",
@@ -1185,8 +1185,8 @@ const inputBody = '{
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing": {
         "address_book_external_id": "string",
@@ -1205,8 +1205,8 @@ const inputBody = '{
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing_option": "prepaid",
       "notes": "string",
@@ -1216,14 +1216,14 @@ const inputBody = '{
       "custom_broker": "string",
       "declared_value": 0,
       "declared_value_currency": "cad",
-      "pickup_start_at": "2019-02-22T16:16:51Z",
-      "pickup_end_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-      "delivery_start_at": "2019-02-22T16:16:51Z",
-      "delivery_end_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+      "pickup_start_at": "2019-02-27T16:09:58Z",
+      "pickup_end_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+      "delivery_start_at": "2019-02-27T16:09:58Z",
+      "delivery_end_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_end_at": "2019-02-27T16:09:58Z",
       "dim_type": "ltl",
       "commodities": [
         {
@@ -1381,8 +1381,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "destination": {
         "address_book_external_id": "string",
@@ -1401,8 +1401,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing": {
         "address_book_external_id": "string",
@@ -1421,8 +1421,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing_option": "prepaid",
       "notes": "string",
@@ -1432,14 +1432,14 @@ func main() {
       "custom_broker": "string",
       "declared_value": 0,
       "declared_value_currency": "cad",
-      "pickup_start_at": "2019-02-22T16:16:51Z",
-      "pickup_end_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-      "delivery_start_at": "2019-02-22T16:16:51Z",
-      "delivery_end_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+      "pickup_start_at": "2019-02-27T16:09:58Z",
+      "pickup_end_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+      "delivery_start_at": "2019-02-27T16:09:58Z",
+      "delivery_end_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_end_at": "2019-02-27T16:09:58Z",
       "dim_type": "ltl",
       "commodities": [
         {
@@ -1679,8 +1679,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "destination": {
           "address_book_external_id": "string",
@@ -1699,8 +1699,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing": {
           "address_book_external_id": "string",
@@ -1719,8 +1719,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing_option": "prepaid",
         "notes": "string",
@@ -1730,14 +1730,14 @@ const inputBody = '{
         "custom_broker": "string",
         "declared_value": 0,
         "declared_value_currency": "cad",
-        "pickup_start_at": "2019-02-22T16:16:51Z",
-        "pickup_end_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-        "delivery_start_at": "2019-02-22T16:16:51Z",
-        "delivery_end_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+        "pickup_start_at": "2019-02-27T16:09:58Z",
+        "pickup_end_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+        "delivery_start_at": "2019-02-27T16:09:58Z",
+        "delivery_end_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_end_at": "2019-02-27T16:09:58Z",
         "dim_type": "ltl",
         "commodities": [
           {
@@ -1897,8 +1897,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "destination": {
           "address_book_external_id": "string",
@@ -1917,8 +1917,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing": {
           "address_book_external_id": "string",
@@ -1937,8 +1937,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing_option": "prepaid",
         "notes": "string",
@@ -1948,14 +1948,14 @@ func main() {
         "custom_broker": "string",
         "declared_value": 0,
         "declared_value_currency": "cad",
-        "pickup_start_at": "2019-02-22T16:16:51Z",
-        "pickup_end_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-        "delivery_start_at": "2019-02-22T16:16:51Z",
-        "delivery_end_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+        "pickup_start_at": "2019-02-27T16:09:58Z",
+        "pickup_end_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+        "delivery_start_at": "2019-02-27T16:09:58Z",
+        "delivery_end_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_end_at": "2019-02-27T16:09:58Z",
         "dim_type": "ltl",
         "commodities": [
           {
@@ -2195,8 +2195,8 @@ const inputBody = '{
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "destination": {
         "address_book_external_id": "string",
@@ -2215,8 +2215,8 @@ const inputBody = '{
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing": {
         "address_book_external_id": "string",
@@ -2235,8 +2235,8 @@ const inputBody = '{
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing_option": "prepaid",
       "notes": "string",
@@ -2246,14 +2246,14 @@ const inputBody = '{
       "custom_broker": "string",
       "declared_value": 0,
       "declared_value_currency": "cad",
-      "pickup_start_at": "2019-02-22T16:16:51Z",
-      "pickup_end_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-      "delivery_start_at": "2019-02-22T16:16:51Z",
-      "delivery_end_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+      "pickup_start_at": "2019-02-27T16:09:58Z",
+      "pickup_end_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+      "delivery_start_at": "2019-02-27T16:09:58Z",
+      "delivery_end_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_end_at": "2019-02-27T16:09:58Z",
       "dim_type": "ltl",
       "commodities": [
         {
@@ -2411,8 +2411,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "destination": {
         "address_book_external_id": "string",
@@ -2431,8 +2431,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing": {
         "address_book_external_id": "string",
@@ -2451,8 +2451,8 @@ func main() {
         "fax": "string",
         "latitude": 0,
         "longitude": 0,
-        "bus_hours_start_at": "2019-02-22T16:16:51Z",
-        "bus_hours_end_at": "2019-02-22T16:16:51Z"
+        "bus_hours_start_at": "2019-02-27T16:09:58Z",
+        "bus_hours_end_at": "2019-02-27T16:09:58Z"
       },
       "billing_option": "prepaid",
       "notes": "string",
@@ -2462,14 +2462,14 @@ func main() {
       "custom_broker": "string",
       "declared_value": 0,
       "declared_value_currency": "cad",
-      "pickup_start_at": "2019-02-22T16:16:51Z",
-      "pickup_end_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-      "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-      "delivery_start_at": "2019-02-22T16:16:51Z",
-      "delivery_end_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-      "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+      "pickup_start_at": "2019-02-27T16:09:58Z",
+      "pickup_end_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+      "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+      "delivery_start_at": "2019-02-27T16:09:58Z",
+      "delivery_end_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+      "delivery_appt_end_at": "2019-02-27T16:09:58Z",
       "dim_type": "ltl",
       "commodities": [
         {
@@ -2709,8 +2709,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "destination": {
           "address_book_external_id": "string",
@@ -2729,8 +2729,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing": {
           "address_book_external_id": "string",
@@ -2749,8 +2749,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing_option": "prepaid",
         "notes": "string",
@@ -2760,14 +2760,14 @@ const inputBody = '{
         "custom_broker": "string",
         "declared_value": 0,
         "declared_value_currency": "cad",
-        "pickup_start_at": "2019-02-22T16:16:51Z",
-        "pickup_end_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-        "delivery_start_at": "2019-02-22T16:16:51Z",
-        "delivery_end_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+        "pickup_start_at": "2019-02-27T16:09:58Z",
+        "pickup_end_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+        "delivery_start_at": "2019-02-27T16:09:58Z",
+        "delivery_end_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_end_at": "2019-02-27T16:09:58Z",
         "dim_type": "ltl",
         "commodities": [
           {
@@ -2927,8 +2927,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "destination": {
           "address_book_external_id": "string",
@@ -2947,8 +2947,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing": {
           "address_book_external_id": "string",
@@ -2967,8 +2967,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing_option": "prepaid",
         "notes": "string",
@@ -2978,14 +2978,14 @@ func main() {
         "custom_broker": "string",
         "declared_value": 0,
         "declared_value_currency": "cad",
-        "pickup_start_at": "2019-02-22T16:16:51Z",
-        "pickup_end_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-        "delivery_start_at": "2019-02-22T16:16:51Z",
-        "delivery_end_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+        "pickup_start_at": "2019-02-27T16:09:58Z",
+        "pickup_end_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+        "delivery_start_at": "2019-02-27T16:09:58Z",
+        "delivery_end_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_end_at": "2019-02-27T16:09:58Z",
         "dim_type": "ltl",
         "commodities": [
           {
@@ -3226,8 +3226,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "destination": {
           "address_book_external_id": "string",
@@ -3246,8 +3246,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing": {
           "address_book_external_id": "string",
@@ -3266,8 +3266,8 @@ const inputBody = '{
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing_option": "prepaid",
         "notes": "string",
@@ -3277,14 +3277,14 @@ const inputBody = '{
         "custom_broker": "string",
         "declared_value": 0,
         "declared_value_currency": "cad",
-        "pickup_start_at": "2019-02-22T16:16:51Z",
-        "pickup_end_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-        "delivery_start_at": "2019-02-22T16:16:51Z",
-        "delivery_end_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+        "pickup_start_at": "2019-02-27T16:09:58Z",
+        "pickup_end_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+        "delivery_start_at": "2019-02-27T16:09:58Z",
+        "delivery_end_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_end_at": "2019-02-27T16:09:58Z",
         "dim_type": "ltl",
         "commodities": [
           {
@@ -3444,8 +3444,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "destination": {
           "address_book_external_id": "string",
@@ -3464,8 +3464,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing": {
           "address_book_external_id": "string",
@@ -3484,8 +3484,8 @@ func main() {
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing_option": "prepaid",
         "notes": "string",
@@ -3495,14 +3495,14 @@ func main() {
         "custom_broker": "string",
         "declared_value": 0,
         "declared_value_currency": "cad",
-        "pickup_start_at": "2019-02-22T16:16:51Z",
-        "pickup_end_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-        "delivery_start_at": "2019-02-22T16:16:51Z",
-        "delivery_end_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+        "pickup_start_at": "2019-02-27T16:09:58Z",
+        "pickup_end_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+        "delivery_start_at": "2019-02-27T16:09:58Z",
+        "delivery_end_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_end_at": "2019-02-27T16:09:58Z",
         "dim_type": "ltl",
         "commodities": [
           {
@@ -3738,8 +3738,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   }
 }';
 const headers = {
@@ -3867,8 +3867,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   }
 }
 ```
@@ -3915,8 +3915,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -3936,8 +3936,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -3957,8 +3957,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -3969,14 +3969,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -4052,14 +4052,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -4086,14 +4086,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -4175,8 +4175,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   }
 }';
 const headers = {
@@ -4304,8 +4304,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   }
 }
 ```
@@ -4352,8 +4352,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -4373,8 +4373,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -4394,8 +4394,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -4406,14 +4406,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -4489,14 +4489,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -4523,14 +4523,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -4791,8 +4791,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -4812,8 +4812,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -4833,8 +4833,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -4845,14 +4845,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -4928,14 +4928,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -4962,14 +4962,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -5147,8 +5147,8 @@ func main() {
   "order_audit_history": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "user_id": "string",
       "order_id": "string",
       "data": {}
@@ -5367,8 +5367,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -5388,8 +5388,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -5409,8 +5409,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -5421,14 +5421,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -5654,8 +5654,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -5674,8 +5674,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -5694,8 +5694,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -5705,14 +5705,14 @@ const inputBody = '{
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-  "delivery_start_at": "2019-02-22T16:16:51Z",
-  "delivery_end_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+  "delivery_start_at": "2019-02-27T16:09:58Z",
+  "delivery_end_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_end_at": "2019-02-27T16:09:58Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -5866,8 +5866,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -5886,8 +5886,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -5906,8 +5906,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -5917,14 +5917,14 @@ func main() {
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-  "delivery_start_at": "2019-02-22T16:16:51Z",
-  "delivery_end_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+  "delivery_start_at": "2019-02-27T16:09:58Z",
+  "delivery_end_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_end_at": "2019-02-27T16:09:58Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -5995,8 +5995,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -6016,8 +6016,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -6037,8 +6037,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -6049,14 +6049,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -6401,8 +6401,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -6422,8 +6422,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -6443,8 +6443,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -6455,14 +6455,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -6688,8 +6688,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -6708,8 +6708,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -6728,8 +6728,8 @@ const inputBody = '{
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -6739,14 +6739,14 @@ const inputBody = '{
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-  "delivery_start_at": "2019-02-22T16:16:51Z",
-  "delivery_end_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+  "delivery_start_at": "2019-02-27T16:09:58Z",
+  "delivery_end_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_end_at": "2019-02-27T16:09:58Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -6900,8 +6900,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "destination": {
     "address_book_external_id": "string",
@@ -6920,8 +6920,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing": {
     "address_book_external_id": "string",
@@ -6940,8 +6940,8 @@ func main() {
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing_option": "prepaid",
   "notes": "string",
@@ -6951,14 +6951,14 @@ func main() {
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-  "delivery_start_at": "2019-02-22T16:16:51Z",
-  "delivery_end_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+  "delivery_start_at": "2019-02-27T16:09:58Z",
+  "delivery_end_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_end_at": "2019-02-27T16:09:58Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -7028,8 +7028,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -7049,8 +7049,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -7070,8 +7070,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -7082,14 +7082,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -7165,14 +7165,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -7199,14 +7199,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -7587,8 +7587,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -7608,8 +7608,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -7629,8 +7629,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -7641,14 +7641,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -7968,8 +7968,8 @@ func main() {
   "leg_files": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "org_id": "string",
       "leg_id": "string",
       "uploaded_by": "string",
@@ -8218,8 +8218,8 @@ func main() {
 {
   "leg_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -8461,8 +8461,8 @@ metadata: {}
 {
   "leg_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -8874,8 +8874,8 @@ file: string
 {
   "order_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -9123,8 +9123,8 @@ type: other
 {
   "order_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -9373,8 +9373,8 @@ type: other
 {
   "order_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -9486,8 +9486,9 @@ $.ajax({
 const fetch = require('node-fetch');
 const inputBody = '{
   "notes": "string",
-  "est_delivery_start_at": "2019-02-22T16:16:51Z",
-  "est_delivery_end_at": "2019-02-22T16:16:51Z",
+  "est_delivery_start_at": "2019-02-27T16:09:58Z",
+  "est_delivery_end_at": "2019-02-27T16:09:58Z",
+  "service_id": "string",
   "freight_charge": 0,
   "original_freight_charge": 0,
   "fuel_charge": 0,
@@ -9609,8 +9610,9 @@ func main() {
 ```json
 {
   "notes": "string",
-  "est_delivery_start_at": "2019-02-22T16:16:51Z",
-  "est_delivery_end_at": "2019-02-22T16:16:51Z",
+  "est_delivery_start_at": "2019-02-27T16:09:58Z",
+  "est_delivery_end_at": "2019-02-27T16:09:58Z",
+  "service_id": "string",
   "freight_charge": 0,
   "original_freight_charge": 0,
   "fuel_charge": 0,
@@ -9645,10 +9647,10 @@ func main() {
     "currency": "cad",
     "customer_service_id": "string",
     "is_expired": true,
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "est_delivery_start_at": "2019-02-22T16:16:51Z",
-    "est_delivery_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "est_delivery_start_at": "2019-02-27T16:09:58Z",
+    "est_delivery_end_at": "2019-02-27T16:09:58Z",
     "notes": "string",
     "error_message": "string",
     "status": "quote-success",
@@ -9892,10 +9894,10 @@ func main() {
       "currency": "cad",
       "customer_service_id": "string",
       "is_expired": true,
-      "pickup_start_at": "2019-02-22T16:16:51Z",
-      "pickup_end_at": "2019-02-22T16:16:51Z",
-      "est_delivery_start_at": "2019-02-22T16:16:51Z",
-      "est_delivery_end_at": "2019-02-22T16:16:51Z",
+      "pickup_start_at": "2019-02-27T16:09:58Z",
+      "pickup_end_at": "2019-02-27T16:09:58Z",
+      "est_delivery_start_at": "2019-02-27T16:09:58Z",
+      "est_delivery_end_at": "2019-02-27T16:09:58Z",
       "notes": "string",
       "error_message": "string",
       "status": "quote-success",
@@ -10146,10 +10148,10 @@ func main() {
       "currency": "cad",
       "customer_service_id": "string",
       "is_expired": true,
-      "pickup_start_at": "2019-02-22T16:16:51Z",
-      "pickup_end_at": "2019-02-22T16:16:51Z",
-      "est_delivery_start_at": "2019-02-22T16:16:51Z",
-      "est_delivery_end_at": "2019-02-22T16:16:51Z",
+      "pickup_start_at": "2019-02-27T16:09:58Z",
+      "pickup_end_at": "2019-02-27T16:09:58Z",
+      "est_delivery_start_at": "2019-02-27T16:09:58Z",
+      "est_delivery_end_at": "2019-02-27T16:09:58Z",
       "notes": "string",
       "error_message": "string",
       "status": "quote-success",
@@ -11424,8 +11426,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -11445,8 +11447,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -11466,8 +11468,8 @@ func main() {
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -11478,14 +11480,14 @@ func main() {
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -12486,14 +12488,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -12520,14 +12522,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ],
@@ -12903,14 +12905,14 @@ func main() {
       "longitude": 0
     },
     "status": "available",
-    "origin_start_at": "2019-02-22T16:16:51Z",
-    "origin_end_at": "2019-02-22T16:16:51Z",
-    "origin_appt_start_at": "2019-02-22T16:16:51Z",
-    "origin_appt_end_at": "2019-02-22T16:16:51Z",
-    "destination_start_at": "2019-02-22T16:16:51Z",
-    "destination_end_at": "2019-02-22T16:16:51Z",
-    "destination_appt_start_at": "2019-02-22T16:16:51Z",
-    "destination_appt_end_at": "2019-02-22T16:16:51Z",
+    "origin_start_at": "2019-02-27T16:09:58Z",
+    "origin_end_at": "2019-02-27T16:09:58Z",
+    "origin_appt_start_at": "2019-02-27T16:09:58Z",
+    "origin_appt_end_at": "2019-02-27T16:09:58Z",
+    "destination_start_at": "2019-02-27T16:09:58Z",
+    "destination_end_at": "2019-02-27T16:09:58Z",
+    "destination_appt_start_at": "2019-02-27T16:09:58Z",
+    "destination_appt_end_at": "2019-02-27T16:09:58Z",
     "commodities": [
       {
         "id": "string",
@@ -12937,14 +12939,14 @@ func main() {
       "string"
     ],
     "history": {
-      "origin_arrived_at": "2019-02-22T16:16:51Z",
-      "origin_in_at": "2019-02-22T16:16:51Z",
-      "origin_pickedup_at": "2019-02-22T16:16:51Z",
-      "origin_out_at": "2019-02-22T16:16:51Z",
-      "destination_arrived_at": "2019-02-22T16:16:51Z",
-      "destination_in_at": "2019-02-22T16:16:51Z",
-      "destination_delivered_at": "2019-02-22T16:16:51Z",
-      "destination_out_at": "2019-02-22T16:16:51Z"
+      "origin_arrived_at": "2019-02-27T16:09:58Z",
+      "origin_in_at": "2019-02-27T16:09:58Z",
+      "origin_pickedup_at": "2019-02-27T16:09:58Z",
+      "origin_out_at": "2019-02-27T16:09:58Z",
+      "destination_arrived_at": "2019-02-27T16:09:58Z",
+      "destination_in_at": "2019-02-27T16:09:58Z",
+      "destination_delivered_at": "2019-02-27T16:09:58Z",
+      "destination_out_at": "2019-02-27T16:09:58Z"
     }
   }
 }
@@ -13313,14 +13315,14 @@ func main() {
       "longitude": 0
     },
     "status": "available",
-    "origin_start_at": "2019-02-22T16:16:51Z",
-    "origin_end_at": "2019-02-22T16:16:51Z",
-    "origin_appt_start_at": "2019-02-22T16:16:51Z",
-    "origin_appt_end_at": "2019-02-22T16:16:51Z",
-    "destination_start_at": "2019-02-22T16:16:51Z",
-    "destination_end_at": "2019-02-22T16:16:51Z",
-    "destination_appt_start_at": "2019-02-22T16:16:51Z",
-    "destination_appt_end_at": "2019-02-22T16:16:51Z",
+    "origin_start_at": "2019-02-27T16:09:58Z",
+    "origin_end_at": "2019-02-27T16:09:58Z",
+    "origin_appt_start_at": "2019-02-27T16:09:58Z",
+    "origin_appt_end_at": "2019-02-27T16:09:58Z",
+    "destination_start_at": "2019-02-27T16:09:58Z",
+    "destination_end_at": "2019-02-27T16:09:58Z",
+    "destination_appt_start_at": "2019-02-27T16:09:58Z",
+    "destination_appt_end_at": "2019-02-27T16:09:58Z",
     "commodities": [
       {
         "id": "string",
@@ -13347,14 +13349,14 @@ func main() {
       "string"
     ],
     "history": {
-      "origin_arrived_at": "2019-02-22T16:16:51Z",
-      "origin_in_at": "2019-02-22T16:16:51Z",
-      "origin_pickedup_at": "2019-02-22T16:16:51Z",
-      "origin_out_at": "2019-02-22T16:16:51Z",
-      "destination_arrived_at": "2019-02-22T16:16:51Z",
-      "destination_in_at": "2019-02-22T16:16:51Z",
-      "destination_delivered_at": "2019-02-22T16:16:51Z",
-      "destination_out_at": "2019-02-22T16:16:51Z"
+      "origin_arrived_at": "2019-02-27T16:09:58Z",
+      "origin_in_at": "2019-02-27T16:09:58Z",
+      "origin_pickedup_at": "2019-02-27T16:09:58Z",
+      "origin_out_at": "2019-02-27T16:09:58Z",
+      "destination_arrived_at": "2019-02-27T16:09:58Z",
+      "destination_in_at": "2019-02-27T16:09:58Z",
+      "destination_delivered_at": "2019-02-27T16:09:58Z",
+      "destination_out_at": "2019-02-27T16:09:58Z"
     }
   }
 }
@@ -13729,14 +13731,14 @@ func main() {
       "longitude": 0
     },
     "status": "available",
-    "origin_start_at": "2019-02-22T16:16:51Z",
-    "origin_end_at": "2019-02-22T16:16:51Z",
-    "origin_appt_start_at": "2019-02-22T16:16:51Z",
-    "origin_appt_end_at": "2019-02-22T16:16:51Z",
-    "destination_start_at": "2019-02-22T16:16:51Z",
-    "destination_end_at": "2019-02-22T16:16:51Z",
-    "destination_appt_start_at": "2019-02-22T16:16:51Z",
-    "destination_appt_end_at": "2019-02-22T16:16:51Z",
+    "origin_start_at": "2019-02-27T16:09:58Z",
+    "origin_end_at": "2019-02-27T16:09:58Z",
+    "origin_appt_start_at": "2019-02-27T16:09:58Z",
+    "origin_appt_end_at": "2019-02-27T16:09:58Z",
+    "destination_start_at": "2019-02-27T16:09:58Z",
+    "destination_end_at": "2019-02-27T16:09:58Z",
+    "destination_appt_start_at": "2019-02-27T16:09:58Z",
+    "destination_appt_end_at": "2019-02-27T16:09:58Z",
     "commodities": [
       {
         "id": "string",
@@ -13763,14 +13765,14 @@ func main() {
       "string"
     ],
     "history": {
-      "origin_arrived_at": "2019-02-22T16:16:51Z",
-      "origin_in_at": "2019-02-22T16:16:51Z",
-      "origin_pickedup_at": "2019-02-22T16:16:51Z",
-      "origin_out_at": "2019-02-22T16:16:51Z",
-      "destination_arrived_at": "2019-02-22T16:16:51Z",
-      "destination_in_at": "2019-02-22T16:16:51Z",
-      "destination_delivered_at": "2019-02-22T16:16:51Z",
-      "destination_out_at": "2019-02-22T16:16:51Z"
+      "origin_arrived_at": "2019-02-27T16:09:58Z",
+      "origin_in_at": "2019-02-27T16:09:58Z",
+      "origin_pickedup_at": "2019-02-27T16:09:58Z",
+      "origin_out_at": "2019-02-27T16:09:58Z",
+      "destination_arrived_at": "2019-02-27T16:09:58Z",
+      "destination_in_at": "2019-02-27T16:09:58Z",
+      "destination_delivered_at": "2019-02-27T16:09:58Z",
+      "destination_out_at": "2019-02-27T16:09:58Z"
     }
   }
 }
@@ -14091,14 +14093,14 @@ func main() {
       "longitude": 0
     },
     "status": "available",
-    "origin_start_at": "2019-02-22T16:16:51Z",
-    "origin_end_at": "2019-02-22T16:16:51Z",
-    "origin_appt_start_at": "2019-02-22T16:16:51Z",
-    "origin_appt_end_at": "2019-02-22T16:16:51Z",
-    "destination_start_at": "2019-02-22T16:16:51Z",
-    "destination_end_at": "2019-02-22T16:16:51Z",
-    "destination_appt_start_at": "2019-02-22T16:16:51Z",
-    "destination_appt_end_at": "2019-02-22T16:16:51Z",
+    "origin_start_at": "2019-02-27T16:09:58Z",
+    "origin_end_at": "2019-02-27T16:09:58Z",
+    "origin_appt_start_at": "2019-02-27T16:09:58Z",
+    "origin_appt_end_at": "2019-02-27T16:09:58Z",
+    "destination_start_at": "2019-02-27T16:09:58Z",
+    "destination_end_at": "2019-02-27T16:09:58Z",
+    "destination_appt_start_at": "2019-02-27T16:09:58Z",
+    "destination_appt_end_at": "2019-02-27T16:09:58Z",
     "commodities": [
       {
         "id": "string",
@@ -14125,14 +14127,14 @@ func main() {
       "string"
     ],
     "history": {
-      "origin_arrived_at": "2019-02-22T16:16:51Z",
-      "origin_in_at": "2019-02-22T16:16:51Z",
-      "origin_pickedup_at": "2019-02-22T16:16:51Z",
-      "origin_out_at": "2019-02-22T16:16:51Z",
-      "destination_arrived_at": "2019-02-22T16:16:51Z",
-      "destination_in_at": "2019-02-22T16:16:51Z",
-      "destination_delivered_at": "2019-02-22T16:16:51Z",
-      "destination_out_at": "2019-02-22T16:16:51Z"
+      "origin_arrived_at": "2019-02-27T16:09:58Z",
+      "origin_in_at": "2019-02-27T16:09:58Z",
+      "origin_pickedup_at": "2019-02-27T16:09:58Z",
+      "origin_out_at": "2019-02-27T16:09:58Z",
+      "destination_arrived_at": "2019-02-27T16:09:58Z",
+      "destination_in_at": "2019-02-27T16:09:58Z",
+      "destination_delivered_at": "2019-02-27T16:09:58Z",
+      "destination_out_at": "2019-02-27T16:09:58Z"
     }
   }
 }
@@ -14453,14 +14455,14 @@ func main() {
       "longitude": 0
     },
     "status": "available",
-    "origin_start_at": "2019-02-22T16:16:51Z",
-    "origin_end_at": "2019-02-22T16:16:51Z",
-    "origin_appt_start_at": "2019-02-22T16:16:51Z",
-    "origin_appt_end_at": "2019-02-22T16:16:51Z",
-    "destination_start_at": "2019-02-22T16:16:51Z",
-    "destination_end_at": "2019-02-22T16:16:51Z",
-    "destination_appt_start_at": "2019-02-22T16:16:51Z",
-    "destination_appt_end_at": "2019-02-22T16:16:51Z",
+    "origin_start_at": "2019-02-27T16:09:58Z",
+    "origin_end_at": "2019-02-27T16:09:58Z",
+    "origin_appt_start_at": "2019-02-27T16:09:58Z",
+    "origin_appt_end_at": "2019-02-27T16:09:58Z",
+    "destination_start_at": "2019-02-27T16:09:58Z",
+    "destination_end_at": "2019-02-27T16:09:58Z",
+    "destination_appt_start_at": "2019-02-27T16:09:58Z",
+    "destination_appt_end_at": "2019-02-27T16:09:58Z",
     "commodities": [
       {
         "id": "string",
@@ -14487,14 +14489,14 @@ func main() {
       "string"
     ],
     "history": {
-      "origin_arrived_at": "2019-02-22T16:16:51Z",
-      "origin_in_at": "2019-02-22T16:16:51Z",
-      "origin_pickedup_at": "2019-02-22T16:16:51Z",
-      "origin_out_at": "2019-02-22T16:16:51Z",
-      "destination_arrived_at": "2019-02-22T16:16:51Z",
-      "destination_in_at": "2019-02-22T16:16:51Z",
-      "destination_delivered_at": "2019-02-22T16:16:51Z",
-      "destination_out_at": "2019-02-22T16:16:51Z"
+      "origin_arrived_at": "2019-02-27T16:09:58Z",
+      "origin_in_at": "2019-02-27T16:09:58Z",
+      "origin_pickedup_at": "2019-02-27T16:09:58Z",
+      "origin_out_at": "2019-02-27T16:09:58Z",
+      "destination_arrived_at": "2019-02-27T16:09:58Z",
+      "destination_in_at": "2019-02-27T16:09:58Z",
+      "destination_delivered_at": "2019-02-27T16:09:58Z",
+      "destination_out_at": "2019-02-27T16:09:58Z"
     }
   }
 }
@@ -14795,8 +14797,8 @@ func main() {
 {
   "leg_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -15205,8 +15207,8 @@ func main() {
   "leg_files": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "org_id": "string",
       "leg_id": "string",
       "uploaded_by": "string",
@@ -15456,8 +15458,8 @@ func main() {
 {
   "leg_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -15690,8 +15692,8 @@ file: string
 {
   "leg_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -15940,8 +15942,8 @@ type: other
 {
   "leg_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -16191,8 +16193,8 @@ type: other
 {
   "leg_file": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "org_id": "string",
     "leg_id": "string",
     "uploaded_by": "string",
@@ -16458,14 +16460,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -16492,14 +16494,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -16817,14 +16819,14 @@ func main() {
       "longitude": 0
     },
     "status": "available",
-    "origin_start_at": "2019-02-22T16:16:51Z",
-    "origin_end_at": "2019-02-22T16:16:51Z",
-    "origin_appt_start_at": "2019-02-22T16:16:51Z",
-    "origin_appt_end_at": "2019-02-22T16:16:51Z",
-    "destination_start_at": "2019-02-22T16:16:51Z",
-    "destination_end_at": "2019-02-22T16:16:51Z",
-    "destination_appt_start_at": "2019-02-22T16:16:51Z",
-    "destination_appt_end_at": "2019-02-22T16:16:51Z",
+    "origin_start_at": "2019-02-27T16:09:58Z",
+    "origin_end_at": "2019-02-27T16:09:58Z",
+    "origin_appt_start_at": "2019-02-27T16:09:58Z",
+    "origin_appt_end_at": "2019-02-27T16:09:58Z",
+    "destination_start_at": "2019-02-27T16:09:58Z",
+    "destination_end_at": "2019-02-27T16:09:58Z",
+    "destination_appt_start_at": "2019-02-27T16:09:58Z",
+    "destination_appt_end_at": "2019-02-27T16:09:58Z",
     "commodities": [
       {
         "id": "string",
@@ -16851,14 +16853,14 @@ func main() {
       "string"
     ],
     "history": {
-      "origin_arrived_at": "2019-02-22T16:16:51Z",
-      "origin_in_at": "2019-02-22T16:16:51Z",
-      "origin_pickedup_at": "2019-02-22T16:16:51Z",
-      "origin_out_at": "2019-02-22T16:16:51Z",
-      "destination_arrived_at": "2019-02-22T16:16:51Z",
-      "destination_in_at": "2019-02-22T16:16:51Z",
-      "destination_delivered_at": "2019-02-22T16:16:51Z",
-      "destination_out_at": "2019-02-22T16:16:51Z"
+      "origin_arrived_at": "2019-02-27T16:09:58Z",
+      "origin_in_at": "2019-02-27T16:09:58Z",
+      "origin_pickedup_at": "2019-02-27T16:09:58Z",
+      "origin_out_at": "2019-02-27T16:09:58Z",
+      "destination_arrived_at": "2019-02-27T16:09:58Z",
+      "destination_in_at": "2019-02-27T16:09:58Z",
+      "destination_delivered_at": "2019-02-27T16:09:58Z",
+      "destination_out_at": "2019-02-27T16:09:58Z"
     }
   }
 }
@@ -17142,10 +17144,10 @@ func main() {
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   }
 }
 ```
@@ -17259,10 +17261,10 @@ const inputBody = '{
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   }
 }';
 const headers = {
@@ -17385,10 +17387,10 @@ func main() {
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   }
 }
 ```
@@ -17449,10 +17451,10 @@ func main() {
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   }
 }
 ```
@@ -17694,10 +17696,10 @@ func main() {
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   },
   "driver_user_name": "string"
 }
@@ -17944,10 +17946,10 @@ func main() {
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   },
   "partner_carrier_id": "string",
   "service_id": "string"
@@ -18217,10 +18219,10 @@ func main() {
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   },
   "partner_carrier_id": "string",
   "service_id": "string"
@@ -18501,10 +18503,10 @@ func main() {
     "partner_carrier_service_id": "string",
     "sequential_id": "string",
     "full_id": "string",
-    "start_at": "2019-02-22T16:16:51Z",
+    "start_at": "2019-02-27T16:09:58Z",
     "status": "planning",
-    "dispatched_at": "2019-02-22T16:16:51Z",
-    "completed_at": "2019-02-22T16:16:51Z"
+    "dispatched_at": "2019-02-27T16:09:58Z",
+    "completed_at": "2019-02-27T16:09:58Z"
   },
   "partner_carrier_id": "string",
   "service_id": "string"
@@ -18767,14 +18769,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -18801,14 +18803,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -19150,14 +19152,14 @@ func main() {
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -19184,14 +19186,14 @@ func main() {
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -19464,9 +19466,9 @@ func main() {
 {
   "manifest_payment": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
-    "created_by": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
+    "created_by": "2019-02-27T16:09:58Z",
     "manifest_id": "string",
     "currency_id": "cad",
     "full_id": "string",
@@ -19489,8 +19491,8 @@ func main() {
   "payment_items": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "manifest_payment_id": "string",
       "bill_class": "misc",
       "unit_price": 0,
@@ -19615,9 +19617,9 @@ const fetch = require('node-fetch');
 const inputBody = '{
   "manifest_payment": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
-    "created_by": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
+    "created_by": "2019-02-27T16:09:58Z",
     "manifest_id": "string",
     "currency_id": "cad",
     "full_id": "string",
@@ -19748,9 +19750,9 @@ func main() {
 {
   "manifest_payment": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
-    "created_by": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
+    "created_by": "2019-02-27T16:09:58Z",
     "manifest_id": "string",
     "currency_id": "cad",
     "full_id": "string",
@@ -19818,9 +19820,9 @@ func main() {
 {
   "manifest_payment": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
-    "created_by": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
+    "created_by": "2019-02-27T16:09:58Z",
     "manifest_id": "string",
     "currency_id": "cad",
     "full_id": "string",
@@ -19843,8 +19845,8 @@ func main() {
   "payment_items": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "manifest_payment_id": "string",
       "bill_class": "misc",
       "unit_price": 0,
@@ -19972,8 +19974,8 @@ const inputBody = '{
   "payment_items": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "manifest_payment_id": "string",
       "bill_class": "misc",
       "unit_price": 0,
@@ -20094,8 +20096,8 @@ func main() {
   "payment_items": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "manifest_payment_id": "string",
       "bill_class": "misc",
       "unit_price": 0,
@@ -20143,9 +20145,9 @@ func main() {
 {
   "manifest_payment": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
-    "created_by": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
+    "created_by": "2019-02-27T16:09:58Z",
     "manifest_id": "string",
     "currency_id": "cad",
     "full_id": "string",
@@ -20168,8 +20170,8 @@ func main() {
   "payment_items": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "manifest_payment_id": "string",
       "bill_class": "misc",
       "unit_price": 0,
@@ -20428,9 +20430,9 @@ func main() {
 {
   "manifest_payment": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
-    "created_by": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
+    "created_by": "2019-02-27T16:09:58Z",
     "manifest_id": "string",
     "currency_id": "cad",
     "full_id": "string",
@@ -20453,8 +20455,8 @@ func main() {
   "payment_items": [
     {
       "id": "string",
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "manifest_payment_id": "string",
       "bill_class": "misc",
       "unit_price": 0,
@@ -20690,9 +20692,9 @@ func main() {
 {
   "event": {
     "id": "string",
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
-    "user_id": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
+    "user_id": "2019-02-27T16:09:58Z",
     "manifest_id": "string",
     "data": {
       "author": "string",
@@ -20899,8 +20901,8 @@ func main() {
       "manifest_id": "string",
       "ordinal": 0,
       "type": "stop",
-      "schedule_start_at": "2019-02-22T16:16:51Z",
-      "schedule_end_at": "2019-02-22T16:16:51Z",
+      "schedule_start_at": "2019-02-27T16:09:58Z",
+      "schedule_end_at": "2019-02-27T16:09:58Z",
       "org_name": "string",
       "contact_name": "string",
       "address_1": "string",
@@ -21132,8 +21134,8 @@ func main() {
     "manifest_id": "string",
     "ordinal": 0,
     "type": "stop",
-    "schedule_start_at": "2019-02-22T16:16:51Z",
-    "schedule_end_at": "2019-02-22T16:16:51Z",
+    "schedule_start_at": "2019-02-27T16:09:58Z",
+    "schedule_end_at": "2019-02-27T16:09:58Z",
     "org_name": "string",
     "contact_name": "string",
     "address_1": "string",
@@ -21249,8 +21251,8 @@ $.ajax({
 ```javascript--nodejs
 const fetch = require('node-fetch');
 const inputBody = '{
-  "schedule_start_at": "2019-02-22T16:16:51Z",
-  "schedule_end_at": "2019-02-22T16:16:51Z"
+  "schedule_start_at": "2019-02-27T16:09:58Z",
+  "schedule_end_at": "2019-02-27T16:09:58Z"
 }';
 const headers = {
   'Content-Type':'application/json',
@@ -21360,8 +21362,8 @@ func main() {
 
 ```json
 {
-  "schedule_start_at": "2019-02-22T16:16:51Z",
-  "schedule_end_at": "2019-02-22T16:16:51Z"
+  "schedule_start_at": "2019-02-27T16:09:58Z",
+  "schedule_end_at": "2019-02-27T16:09:58Z"
 }
 ```
 
@@ -21386,8 +21388,8 @@ func main() {
     "manifest_id": "string",
     "ordinal": 0,
     "type": "stop",
-    "schedule_start_at": "2019-02-22T16:16:51Z",
-    "schedule_end_at": "2019-02-22T16:16:51Z",
+    "schedule_start_at": "2019-02-27T16:09:58Z",
+    "schedule_end_at": "2019-02-27T16:09:58Z",
     "org_name": "string",
     "contact_name": "string",
     "address_1": "string",
@@ -21612,8 +21614,8 @@ func main() {
 {
   "partner_carriers": [
     {
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "id": "string",
       "org_id": "string",
       "qb_external_id": "string",
@@ -21744,8 +21746,8 @@ $.ajax({
 ```javascript--nodejs
 const fetch = require('node-fetch');
 const inputBody = '{
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "id": "string",
   "org_id": "string",
   "qb_external_id": "string",
@@ -21878,8 +21880,8 @@ func main() {
 
 ```json
 {
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "id": "string",
   "org_id": "string",
   "qb_external_id": "string",
@@ -21923,8 +21925,8 @@ func main() {
 ```json
 {
   "partner_carrier": {
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "id": "string",
     "org_id": "string",
     "qb_external_id": "string",
@@ -22154,8 +22156,8 @@ func main() {
 ```json
 {
   "partner_carrier": {
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "id": "string",
     "org_id": "string",
     "qb_external_id": "string",
@@ -22186,8 +22188,8 @@ func main() {
   },
   "services": [
     {
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "id": "string",
       "org_id": "string",
       "carrier_app_id": "string",
@@ -22354,8 +22356,8 @@ $.ajax({
 ```javascript--nodejs
 const fetch = require('node-fetch');
 const inputBody = '{
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "id": "string",
   "org_id": "string",
   "qb_external_id": "string",
@@ -22488,8 +22490,8 @@ func main() {
 
 ```json
 {
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "id": "string",
   "org_id": "string",
   "qb_external_id": "string",
@@ -22534,8 +22536,8 @@ func main() {
 ```json
 {
   "partner_carrier": {
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "id": "string",
     "org_id": "string",
     "qb_external_id": "string",
@@ -22765,8 +22767,8 @@ func main() {
 ```json
 {
   "partner_carrier": {
-    "created_at": "2019-02-22T16:16:51Z",
-    "updated_at": "2019-02-22T16:16:51Z",
+    "created_at": "2019-02-27T16:09:58Z",
+    "updated_at": "2019-02-27T16:09:58Z",
     "id": "string",
     "org_id": "string",
     "qb_external_id": "string",
@@ -22797,8 +22799,8 @@ func main() {
   },
   "services": [
     {
-      "created_at": "2019-02-22T16:16:51Z",
-      "updated_at": "2019-02-22T16:16:51Z",
+      "created_at": "2019-02-27T16:09:58Z",
+      "updated_at": "2019-02-27T16:09:58Z",
       "id": "string",
       "org_id": "string",
       "carrier_app_id": "string",
@@ -22956,8 +22958,8 @@ This operation does not require authentication
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "destination": {
     "address_book_id": "string",
@@ -22977,8 +22979,8 @@ This operation does not require authentication
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "billing": {
     "address_book_id": "string",
@@ -22998,8 +23000,8 @@ This operation does not require authentication
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   },
   "status": "new",
   "billing_option": "prepaid",
@@ -23010,14 +23012,14 @@ This operation does not require authentication
   "custom_broker": "string",
   "declared_value": 0,
   "declared_value_currency": "cad",
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-  "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-  "delivery_start_at": "2019-02-22T16:16:51Z",
-  "delivery_end_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-  "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+  "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+  "delivery_start_at": "2019-02-27T16:09:58Z",
+  "delivery_end_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+  "delivery_appt_end_at": "2019-02-27T16:09:58Z",
   "dim_type": "ltl",
   "commodities": [
     {
@@ -23142,8 +23144,8 @@ This operation does not require authentication
   "fax": "string",
   "latitude": 0,
   "longitude": 0,
-  "bus_hours_start_at": "2019-02-22T16:16:51Z",
-  "bus_hours_end_at": "2019-02-22T16:16:51Z"
+  "bus_hours_start_at": "2019-02-27T16:09:58Z",
+  "bus_hours_end_at": "2019-02-27T16:09:58Z"
 }
 
 ```
@@ -23313,14 +23315,14 @@ This operation does not require authentication
     "longitude": 0
   },
   "status": "available",
-  "origin_start_at": "2019-02-22T16:16:51Z",
-  "origin_end_at": "2019-02-22T16:16:51Z",
-  "origin_appt_start_at": "2019-02-22T16:16:51Z",
-  "origin_appt_end_at": "2019-02-22T16:16:51Z",
-  "destination_start_at": "2019-02-22T16:16:51Z",
-  "destination_end_at": "2019-02-22T16:16:51Z",
-  "destination_appt_start_at": "2019-02-22T16:16:51Z",
-  "destination_appt_end_at": "2019-02-22T16:16:51Z",
+  "origin_start_at": "2019-02-27T16:09:58Z",
+  "origin_end_at": "2019-02-27T16:09:58Z",
+  "origin_appt_start_at": "2019-02-27T16:09:58Z",
+  "origin_appt_end_at": "2019-02-27T16:09:58Z",
+  "destination_start_at": "2019-02-27T16:09:58Z",
+  "destination_end_at": "2019-02-27T16:09:58Z",
+  "destination_appt_start_at": "2019-02-27T16:09:58Z",
+  "destination_appt_end_at": "2019-02-27T16:09:58Z",
   "commodities": [
     {
       "id": "string",
@@ -23347,14 +23349,14 @@ This operation does not require authentication
     "string"
   ],
   "history": {
-    "origin_arrived_at": "2019-02-22T16:16:51Z",
-    "origin_in_at": "2019-02-22T16:16:51Z",
-    "origin_pickedup_at": "2019-02-22T16:16:51Z",
-    "origin_out_at": "2019-02-22T16:16:51Z",
-    "destination_arrived_at": "2019-02-22T16:16:51Z",
-    "destination_in_at": "2019-02-22T16:16:51Z",
-    "destination_delivered_at": "2019-02-22T16:16:51Z",
-    "destination_out_at": "2019-02-22T16:16:51Z"
+    "origin_arrived_at": "2019-02-27T16:09:58Z",
+    "origin_in_at": "2019-02-27T16:09:58Z",
+    "origin_pickedup_at": "2019-02-27T16:09:58Z",
+    "origin_out_at": "2019-02-27T16:09:58Z",
+    "destination_arrived_at": "2019-02-27T16:09:58Z",
+    "destination_in_at": "2019-02-27T16:09:58Z",
+    "destination_delivered_at": "2019-02-27T16:09:58Z",
+    "destination_out_at": "2019-02-27T16:09:58Z"
   }
 }
 
@@ -23463,14 +23465,14 @@ This operation does not require authentication
 
 ```json
 {
-  "origin_arrived_at": "2019-02-22T16:16:51Z",
-  "origin_in_at": "2019-02-22T16:16:51Z",
-  "origin_pickedup_at": "2019-02-22T16:16:51Z",
-  "origin_out_at": "2019-02-22T16:16:51Z",
-  "destination_arrived_at": "2019-02-22T16:16:51Z",
-  "destination_in_at": "2019-02-22T16:16:51Z",
-  "destination_delivered_at": "2019-02-22T16:16:51Z",
-  "destination_out_at": "2019-02-22T16:16:51Z"
+  "origin_arrived_at": "2019-02-27T16:09:58Z",
+  "origin_in_at": "2019-02-27T16:09:58Z",
+  "origin_pickedup_at": "2019-02-27T16:09:58Z",
+  "origin_out_at": "2019-02-27T16:09:58Z",
+  "destination_arrived_at": "2019-02-27T16:09:58Z",
+  "destination_in_at": "2019-02-27T16:09:58Z",
+  "destination_delivered_at": "2019-02-27T16:09:58Z",
+  "destination_out_at": "2019-02-27T16:09:58Z"
 }
 
 ```
@@ -23500,8 +23502,8 @@ This operation does not require authentication
   "manifest_id": "string",
   "ordinal": 0,
   "type": "stop",
-  "schedule_start_at": "2019-02-22T16:16:51Z",
-  "schedule_end_at": "2019-02-22T16:16:51Z",
+  "schedule_start_at": "2019-02-27T16:09:58Z",
+  "schedule_end_at": "2019-02-27T16:09:58Z",
   "org_name": "string",
   "contact_name": "string",
   "address_1": "string",
@@ -23673,8 +23675,9 @@ This operation does not require authentication
 ```json
 {
   "notes": "string",
-  "est_delivery_start_at": "2019-02-22T16:16:51Z",
-  "est_delivery_end_at": "2019-02-22T16:16:51Z",
+  "est_delivery_start_at": "2019-02-27T16:09:58Z",
+  "est_delivery_end_at": "2019-02-27T16:09:58Z",
+  "service_id": "string",
   "freight_charge": 0,
   "original_freight_charge": 0,
   "fuel_charge": 0,
@@ -23697,6 +23700,7 @@ This operation does not require authentication
 |notes|string|false|none|Notes|
 |est_delivery_start_at|string(date-time)|false|none|Estimated delivery time range (start). This field value can be _null_|
 |est_delivery_end_at|string(date-time)|false|none|Estimated delivery time range (end). This field value can be _null_|
+|service_id|string(uuid)|false|none|Id of the organization's service that the spot quote will be listed as|
 |freight_charge|number(float)|false|none|Freight charge|
 |original_freight_charge|number(float)|false|none|Orginal freight charge. This field value can be _null_|
 |fuel_charge|number(float)|false|none|Fuel charge|
@@ -23717,10 +23721,10 @@ This operation does not require authentication
   "currency": "cad",
   "customer_service_id": "string",
   "is_expired": true,
-  "pickup_start_at": "2019-02-22T16:16:51Z",
-  "pickup_end_at": "2019-02-22T16:16:51Z",
-  "est_delivery_start_at": "2019-02-22T16:16:51Z",
-  "est_delivery_end_at": "2019-02-22T16:16:51Z",
+  "pickup_start_at": "2019-02-27T16:09:58Z",
+  "pickup_end_at": "2019-02-27T16:09:58Z",
+  "est_delivery_start_at": "2019-02-27T16:09:58Z",
+  "est_delivery_end_at": "2019-02-27T16:09:58Z",
   "notes": "string",
   "error_message": "string",
   "status": "quote-success",
@@ -23824,10 +23828,10 @@ This operation does not require authentication
   "partner_carrier_service_id": "string",
   "sequential_id": "string",
   "full_id": "string",
-  "start_at": "2019-02-22T16:16:51Z",
+  "start_at": "2019-02-27T16:09:58Z",
   "status": "planning",
-  "dispatched_at": "2019-02-22T16:16:51Z",
-  "completed_at": "2019-02-22T16:16:51Z"
+  "dispatched_at": "2019-02-27T16:09:58Z",
+  "completed_at": "2019-02-27T16:09:58Z"
 }
 
 ```
@@ -23875,9 +23879,9 @@ This operation does not require authentication
 ```json
 {
   "id": "string",
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
-  "user_id": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
+  "user_id": "2019-02-27T16:09:58Z",
   "manifest_id": "string",
   "data": {
     "author": "string",
@@ -23915,9 +23919,9 @@ This operation does not require authentication
 ```json
 {
   "id": "string",
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
-  "created_by": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
+  "created_by": "2019-02-27T16:09:58Z",
   "manifest_id": "string",
   "currency_id": "cad",
   "full_id": "string",
@@ -23981,8 +23985,8 @@ This operation does not require authentication
 ```json
 {
   "id": "string",
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "manifest_payment_id": "string",
   "bill_class": "misc",
   "unit_price": 0,
@@ -24073,8 +24077,8 @@ This operation does not require authentication
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "destination": {
           "address_book_id": "string",
@@ -24094,8 +24098,8 @@ This operation does not require authentication
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "billing": {
           "address_book_id": "string",
@@ -24115,8 +24119,8 @@ This operation does not require authentication
           "fax": "string",
           "latitude": 0,
           "longitude": 0,
-          "bus_hours_start_at": "2019-02-22T16:16:51Z",
-          "bus_hours_end_at": "2019-02-22T16:16:51Z"
+          "bus_hours_start_at": "2019-02-27T16:09:58Z",
+          "bus_hours_end_at": "2019-02-27T16:09:58Z"
         },
         "status": "new",
         "billing_option": "prepaid",
@@ -24127,14 +24131,14 @@ This operation does not require authentication
         "custom_broker": "string",
         "declared_value": 0,
         "declared_value_currency": "cad",
-        "pickup_start_at": "2019-02-22T16:16:51Z",
-        "pickup_end_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-        "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-        "delivery_start_at": "2019-02-22T16:16:51Z",
-        "delivery_end_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-        "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+        "pickup_start_at": "2019-02-27T16:09:58Z",
+        "pickup_end_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+        "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+        "delivery_start_at": "2019-02-27T16:09:58Z",
+        "delivery_end_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+        "delivery_appt_end_at": "2019-02-27T16:09:58Z",
         "dim_type": "ltl",
         "commodities": [
           {
@@ -24234,8 +24238,8 @@ This operation does not require authentication
 ```json
 {
   "id": "string",
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "org_id": "string",
   "leg_id": "string",
   "uploaded_by": "string",
@@ -24336,8 +24340,8 @@ This operation does not require authentication
 ```json
 {
   "id": "string",
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "org_id": "string",
   "leg_id": "string",
   "uploaded_by": "string",
@@ -24420,8 +24424,8 @@ This operation does not require authentication
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "destination": {
       "address_book_id": "string",
@@ -24441,8 +24445,8 @@ This operation does not require authentication
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "billing": {
       "address_book_id": "string",
@@ -24462,8 +24466,8 @@ This operation does not require authentication
       "fax": "string",
       "latitude": 0,
       "longitude": 0,
-      "bus_hours_start_at": "2019-02-22T16:16:51Z",
-      "bus_hours_end_at": "2019-02-22T16:16:51Z"
+      "bus_hours_start_at": "2019-02-27T16:09:58Z",
+      "bus_hours_end_at": "2019-02-27T16:09:58Z"
     },
     "status": "new",
     "billing_option": "prepaid",
@@ -24474,14 +24478,14 @@ This operation does not require authentication
     "custom_broker": "string",
     "declared_value": 0,
     "declared_value_currency": "cad",
-    "pickup_start_at": "2019-02-22T16:16:51Z",
-    "pickup_end_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_start_at": "2019-02-22T16:16:51Z",
-    "pickup_appt_end_at": "2019-02-22T16:16:51Z",
-    "delivery_start_at": "2019-02-22T16:16:51Z",
-    "delivery_end_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_start_at": "2019-02-22T16:16:51Z",
-    "delivery_appt_end_at": "2019-02-22T16:16:51Z",
+    "pickup_start_at": "2019-02-27T16:09:58Z",
+    "pickup_end_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_start_at": "2019-02-27T16:09:58Z",
+    "pickup_appt_end_at": "2019-02-27T16:09:58Z",
+    "delivery_start_at": "2019-02-27T16:09:58Z",
+    "delivery_end_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_start_at": "2019-02-27T16:09:58Z",
+    "delivery_appt_end_at": "2019-02-27T16:09:58Z",
     "dim_type": "ltl",
     "commodities": [
       {
@@ -24557,14 +24561,14 @@ This operation does not require authentication
         "longitude": 0
       },
       "status": "available",
-      "origin_start_at": "2019-02-22T16:16:51Z",
-      "origin_end_at": "2019-02-22T16:16:51Z",
-      "origin_appt_start_at": "2019-02-22T16:16:51Z",
-      "origin_appt_end_at": "2019-02-22T16:16:51Z",
-      "destination_start_at": "2019-02-22T16:16:51Z",
-      "destination_end_at": "2019-02-22T16:16:51Z",
-      "destination_appt_start_at": "2019-02-22T16:16:51Z",
-      "destination_appt_end_at": "2019-02-22T16:16:51Z",
+      "origin_start_at": "2019-02-27T16:09:58Z",
+      "origin_end_at": "2019-02-27T16:09:58Z",
+      "origin_appt_start_at": "2019-02-27T16:09:58Z",
+      "origin_appt_end_at": "2019-02-27T16:09:58Z",
+      "destination_start_at": "2019-02-27T16:09:58Z",
+      "destination_end_at": "2019-02-27T16:09:58Z",
+      "destination_appt_start_at": "2019-02-27T16:09:58Z",
+      "destination_appt_end_at": "2019-02-27T16:09:58Z",
       "commodities": [
         {
           "id": "string",
@@ -24591,14 +24595,14 @@ This operation does not require authentication
         "string"
       ],
       "history": {
-        "origin_arrived_at": "2019-02-22T16:16:51Z",
-        "origin_in_at": "2019-02-22T16:16:51Z",
-        "origin_pickedup_at": "2019-02-22T16:16:51Z",
-        "origin_out_at": "2019-02-22T16:16:51Z",
-        "destination_arrived_at": "2019-02-22T16:16:51Z",
-        "destination_in_at": "2019-02-22T16:16:51Z",
-        "destination_delivered_at": "2019-02-22T16:16:51Z",
-        "destination_out_at": "2019-02-22T16:16:51Z"
+        "origin_arrived_at": "2019-02-27T16:09:58Z",
+        "origin_in_at": "2019-02-27T16:09:58Z",
+        "origin_pickedup_at": "2019-02-27T16:09:58Z",
+        "origin_out_at": "2019-02-27T16:09:58Z",
+        "destination_arrived_at": "2019-02-27T16:09:58Z",
+        "destination_in_at": "2019-02-27T16:09:58Z",
+        "destination_delivered_at": "2019-02-27T16:09:58Z",
+        "destination_out_at": "2019-02-27T16:09:58Z"
       }
     }
   ]
@@ -24639,8 +24643,8 @@ This operation does not require authentication
     "fax": "string",
     "latitude": 0,
     "longitude": 0,
-    "bus_hours_start_at": "2019-02-22T16:16:51Z",
-    "bus_hours_end_at": "2019-02-22T16:16:51Z"
+    "bus_hours_start_at": "2019-02-27T16:09:58Z",
+    "bus_hours_end_at": "2019-02-27T16:09:58Z"
   }
 }
 
@@ -24661,8 +24665,8 @@ This operation does not require authentication
 ```json
 {
   "id": "string",
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "user_id": "string",
   "order_id": "string",
   "data": {}
@@ -24689,8 +24693,8 @@ This operation does not require authentication
 
 ```json
 {
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "id": "string",
   "org_id": "string",
   "carrier_app_id": "string",
@@ -24776,8 +24780,8 @@ This operation does not require authentication
 
 ```json
 {
-  "created_at": "2019-02-22T16:16:51Z",
-  "updated_at": "2019-02-22T16:16:51Z",
+  "created_at": "2019-02-27T16:09:58Z",
+  "updated_at": "2019-02-27T16:09:58Z",
   "id": "string",
   "org_id": "string",
   "qb_external_id": "string",

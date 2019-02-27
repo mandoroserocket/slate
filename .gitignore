@@ -13,6 +13,9 @@ test/version_tmp
 tmp
 *.DS_STORE
 build/
+node_modules/
+package-lock.json
+updateDocs.sh
 .cache
 .vagrant
 .sass-cache
